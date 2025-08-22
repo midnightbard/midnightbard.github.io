@@ -1,6 +1,6 @@
 ---
 title: Lives
-layout: simplepage
+layout: live-template
 image: 
 description:  
 comments: true
@@ -103,7 +103,7 @@ comments: true
         
     <div id="main-video-title"></div>
     
-    <p>
+    <p>Click on <b>Configure</b><br/>
         <small>$5 - one question</small><br/>
         <small>$10 - two questions</small><br/>
         <small>$20 - general reading</small><br/>
