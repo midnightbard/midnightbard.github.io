@@ -95,7 +95,6 @@ comments: true
     }
 </style>
 
-
 <div class="container">
     <div id="main-player-container"></div>
     
@@ -104,7 +103,6 @@ comments: true
         
     <div id="main-video-title"></div>
     
-
     <p>
         <small>$5 - one question</small><br/>
         <small>$10 - two questions</small><br/>
