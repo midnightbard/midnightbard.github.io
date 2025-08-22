@@ -275,79 +275,13 @@ document.addEventListener("DOMContentLoaded", function () {
     
 <body>
     
-    <div class="container-fluid">
- <header>    
-<nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
-  <div class="container-fluid">
-    
-    
-<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        
-  
-        
-      <h2><i class="bi bi-list"></i></h2>
-    </button>
-    <div class="offcanvas offcanvas-end text-bg-dark bg-dark text-light p-3" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   MIDNIGHT BARD</h5>
-        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-<div class="offcanvas-body">
-    
-<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i>MENU</i></h5>
-    
-    
-<a href="/"><i class="bi bi-cloud-moon"></i> Home</a><br/>
-<a href="/shop"><i class="bi bi-bag"></i>Shop</a><br/>
-<a href="/activity"><i class="bi bi-book"></i>Activity</a><br/>
-<a href="/lives"><i class="bi bi-youtube"></i>Lives</a><br/>
-    <hr/>
-  
-  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i>LINKS</i></h5>
-    
-  <a href="https://github.com/midnightbard"><i class="bi bi-github"></i> Github</a>  <br/>  
-  <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" rel="me"><i class="bi bi-bluesky"></i> Bluesky</a><br/>
-  <a href="https://www.youtube.com/@MidnightBardTarot" rel="me"><i class="bi bi-youtube"></i> YouTube</a>
-    <br/>  
-  
-  <hr/>
-    
-<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CONTACT</h5>
-
-
-<p>
-    <small>
-<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>     
-      
-   </small>
-</p> 
-    
-<hr/>
-  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MY BLOGS</h5>
-  
-<a href="/"><i class="bi bi-star"></i> Blog</a> - spirituality; main<br/> 
-<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a> - tech and internet<br/>
-<a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a> - hobbies and interests    
-    
-
-      </div>
-    </div>
-</div>
-    
-</nav>
-
-
-
-</header>
-                
-<div class="row">
-                
+            
 
                     <style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 2px;
         background-color: #121212;
         color: #e0e0e0;
     }
@@ -435,17 +369,61 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="container">
     <div id="main-player-container"></div>
     
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+  <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+</button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+  View Pricing
+</button>
+    
         <script src="https://gumroad.com/js/gumroad.js"></script>
     <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a>
         
     <div id="main-video-title"></div>
     
-    <p>Click on <b>Configure</b><br />
-        <small>$5 - one question</small><br />
-        <small>$10 - two questions</small><br />
-        <small>$20 - general reading</small><br />
-    </p>
+
+
+<!-- Modal -->
+<div class="modal fade" id="quickLinksModal" tabindex="-1" aria-labelledby="quickLinksLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="quickLinksLabel">Quick Links</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <a href="/" class="d-block mb-2"><i class="bi bi-cloud-moon"></i> Home</a>
+        <a href="/shop" class="d-block mb-2"><i class="bi bi-bag"></i> Shop</a>
+        <a href="/activity" class="d-block"><i class="bi bi-book"></i> Activity</a>
+      </div>
+    </div>
+  </div>
+</div>
     
+    
+
+
+<!-- Modal -->
+<div class="modal fade pricing-modal-moonlight" id="pricingModalMoonlight" tabindex="-1" aria-labelledby="pricingModalLabelMoonlight" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content pricing-content-moonlight">
+      <div class="modal-header pricing-header-moonlight">
+        <h5 class="modal-title" id="pricingModalLabelMoonlight">Service Pricing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pricing-body-moonlight">
+        <p class="pricing-text-moonlight">
+          Click on <b>Configure</b> during checkout to choose from options below<br />
+          <small>$5 – one question</small><br />
+          <small>$10 – two questions</small><br />
+          <small>$20 – general reading</small><br />
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     
     <h2>Incoming live streams</h2> 
     <hr />
@@ -525,17 +503,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-                  
-</div>
+
     
-    <footer>
-        <br/><hr>
-        <center>
-          <script>
-            var CurrentYear = new Date().getFullYear()
-            document.write(CurrentYear)
-          </script>
-        </center>
+    
         
         <button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
         
@@ -575,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
           });
         </script>
-    </footer>
+    
     
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="83de79f1-1180-4cbd-a605-394ac7bb8c34";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     

@@ -10,7 +10,7 @@ comments: true
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 2px;
         background-color: #121212;
         color: #e0e0e0;
     }
@@ -98,17 +98,61 @@ comments: true
 <div class="container">
     <div id="main-player-container"></div>
     
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+  <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+</button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+  View Pricing
+</button>
+    
         <script src="https://gumroad.com/js/gumroad.js"></script>
     <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a>
         
     <div id="main-video-title"></div>
     
-    <p>Click on <b>Configure</b><br/>
-        <small>$5 - one question</small><br/>
-        <small>$10 - two questions</small><br/>
-        <small>$20 - general reading</small><br/>
-    </p>
+
+
+<!-- Modal -->
+<div class="modal fade" id="quickLinksModal" tabindex="-1" aria-labelledby="quickLinksLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="quickLinksLabel">Quick Links</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <a href="/" class="d-block mb-2"><i class="bi bi-cloud-moon"></i> Home</a>
+        <a href="/shop" class="d-block mb-2"><i class="bi bi-bag"></i> Shop</a>
+        <a href="/activity" class="d-block"><i class="bi bi-book"></i> Activity</a>
+      </div>
+    </div>
+  </div>
+</div>
     
+    
+
+
+<!-- Modal -->
+<div class="modal fade pricing-modal-moonlight" id="pricingModalMoonlight" tabindex="-1" aria-labelledby="pricingModalLabelMoonlight" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content pricing-content-moonlight">
+      <div class="modal-header pricing-header-moonlight">
+        <h5 class="modal-title" id="pricingModalLabelMoonlight">Service Pricing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pricing-body-moonlight">
+        <p class="pricing-text-moonlight">
+          Click on <b>Configure</b> during checkout to choose from options below<br/>
+          <small>$5 – one question</small><br/>
+          <small>$10 – two questions</small><br/>
+          <small>$20 – general reading</small><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     
     <h2>Incoming live streams</h2> 
     <hr/>
