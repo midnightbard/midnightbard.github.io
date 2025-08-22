@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+{% include head.html %}
+</head>
+    
+    
+<body>
+    
+    <div class="container-fluid">
+ <header>    
+{% include header.html %}
+</header>
+                
+<div class="row">
+                
+<div class="col-sm-7">
+    
+    <div class="card" style="width: 100%;">
+        
+        <div class="card-footer text-muted">            
+            
+            <div class="post-navigation">
+  {% if page.previous %}
+    <span class="previous">
+        <a href="{{ page.previous.url }}"><button type="button" class="btn btn-dark">Previous Post</button></a>
+    </span>
+  {% endif %}
+  
+  {% if page.next %}
+    <span class="next">
+        <a href="{{ page.next.url }}"><button type="button" class="btn btn-dark">Next Post</button></a>
+    </span>
+  {% endif %}
+</div>
+            
+  </div>
+        
+        <div id="mobilevisible">
+             
+        
+        
+        </div>
+  <div class="card-body">
+      <h2 class="card-title">
+<b>{% if page.media contains "spiritual" %}<i class="bi bi-stars"></i>{% endif %}
+   {% if page.media contains "healing" %}<i class="bi bi-heart"></i>{% endif %}
+    {% if page.media contains "conspiracy" %}<i class="bi bi-eye"></i>{% endif %}
+</b>  {{page.title}}</h2>
+      
+      
+    <div class="card-text">
+        
+        {% if page.website %}
+  on {{ page.website }}
+{% endif %}
+        
+     {%if page.date%}
+        
+  <small>{{ page.date | date: "%B %d, %Y in %H:%M, CET" }}</small> | {% if page.category %} Categories: 
+  <small>
+    {% assign words = page.category | replace: '-', ' ' | split: ' ' %}
+    {% for word in words %}
+      {{ word | capitalize }}{% unless forloop.last %} {% endunless %}
+    {% endfor %}
+  </small>
+{% endif %}
+            
+     <div style="border-bottom:1px white solid;">  
+         {% if page.image %}<img src="{{page.image}}" class="img-fluid"/><br/>{% endif %}
+    {% if page.description %}<b>{{page.description}}</b><br/>{% endif %}
+         
+         
+        
+     </div>   {% endif %}
+        
+<div style="padding-top:5px;">
+{{ content }}             
+{% if page.comments %}{% include disqus.html %}{% endif %}              
+</div>      	
+        
+    </div>
+      
+      
+      <div id="mobilevisible">
+      
+      
+      {% if page.gallery %}
+      <h4>Gallery</h4>
+      <div id="carouselExampleIndicators1" class="carousel slide">
+        <div class="carousel-indicators1">
+          {% for image in page.gallery %}
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
+        <div class="carousel-inner">
+          {% for image in page.gallery %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ image }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    {% endif %} 
+      
+      {% if page.photos %}
+      <h4>Photos</h4>
+      <div id="carouselExampleIndicators4" class="carousel slide">
+        <div class="carousel-indicators4">
+          {% for image in page.photos %}
+            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
+        <div class="carousel-inner">
+          {% for image in page.photos %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ image }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    {% endif %}  
+      
+      </div>
+      
+      
+
+      
+      
+
+  </div>
+        
+<div class="card-footer text-muted">
+            <center><b>
+                
+    {% if page.media contains "spiritual" %}<i class="bi bi-stars"></i>{% endif %}
+   {% if page.media contains "healing" %}<i class="bi bi-heart"></i>{% endif %}
+    {% if page.media contains "conspiracy" %}<i class="bi bi-eye"></i>{% endif %}
+                </b> 
+    </center>
+                
+  </div>        
+</div>
+    
+    
+    
+  {% if page.category contains "diary" %}
+    
+    
+    
+    
+🏵️ <span id="posts-loaded"></span>
+
+<div id="active-feed"></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var postsLoaded = document.getElementById('posts-loaded');
+    var activeFeed = document.getElementById('active-feed');
+    var buttonLoadMore = document.getElementById('button-load-more');
+    var offset = 0;
+    var limit = 10;
+
+    loadMorePosts();
+
+    buttonLoadMore.addEventListener('click', function () {
+        loadMorePosts();
+    });
+
+    function loadMorePosts() {
+        var apiUrl = '/feed.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                var jsonData = JSON.parse(data);
+                var results = jsonData.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+                activeFeed.innerHTML += results;
+                offset += limit;
+                updatePostsLoaded();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+            if (media === "instagram") return '<i class="bi bi-instagram"></i>';
+if (media === "conspiracy") return '<i style="color:red;" class="bi bi-eye"></i>';
+if (media === "healing") return '<i style="color:yellow;" class="bi bi-heart"></i>';
+if (media === "spiritual") return '<i style="color:violet;" class="bi bi-stars"></i>';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="active-feed">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <b class="card-title">
+                                <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                            </b><br/>
+                            <img src="${post.image}" alt="${post.title}" style="max-width: 100%; height: auto;" />
+
+                            <span class="card-text">
+                                <span style="padding: 3px; vertical-align: top;">${post.description}</span><br />
+                            </span>
+                        </div>
+                    </div>
+                </div>`;
+    }
+
+    function updatePostsLoaded() {
+        var postsLoadedText = activeFeed.children.length + ' latest posts loaded.';
+        postsLoaded.textContent = postsLoadedText;
+    }
+});
+</script>    
+    
+<button id="button-load-more">Load More</button>
+    
+    {% else %}{% endif %}
+    
+    
+    
+     {% if page.category contains "blogy" %}
+    
+
+  <div id="posts-loaded"></div>
+<button id="button-load-more">Load More</button>
+<div id="active-feed"></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var postsLoaded = document.getElementById('posts-loaded');
+    var activeFeed = document.getElementById('active-feed');
+    var buttonLoadMore = document.getElementById('button-load-more');
+    var offset = 0;
+    var limit = 10;
+
+    loadMorePosts();
+
+    buttonLoadMore.addEventListener('click', function () {
+        loadMorePosts();
+    });
+
+    function loadMorePosts() {
+        var apiUrl = '/feed2.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                var jsonData = JSON.parse(data);
+                var results = jsonData.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+                activeFeed.innerHTML += results;
+                offset += limit;
+                updatePostsLoaded();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+            if (media === "internet") return '🕸️';
+            if (media === "health") return '🫀';
+            if (media === "video") return '🎥';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="active-feed">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <b class="card-title">
+                                <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                            </b><br/>
+                            <span class="card-text">
+                                <span style="padding: 3px; vertical-align: top;">${post.description}</span><br />
+                            </span>
+                        </div>
+                    </div>
+                </div>`;
+    }
+
+    
+    function updatePostsLoaded() {
+        var postsLoadedText = activeFeed.children.length + ' latest posts loaded.';
+        postsLoaded.textContent = postsLoadedText;
+    }
+});
+</script>    
+    
+
+    
+    {% else %}{% endif %}
+    
+    
+    
+    
+
+</div> 
+                     
+<div class="col-sm-5">
+    
+{% if page.media contains "conspiracy" %}{% include sidebar.html %}{% endif %}     
+{% if page.media contains "spiritual" %}{% include sidebar.html %}{% endif %} 
+{% if page.media contains "healing" %}{% include sidebar.html %}{% endif %}     
+</div>
+</div> 
+</div>
+    
+    <footer>
+        
+        
+       
+        
+   <br/><hr>
+
+<center>
+
+<script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+    
+    </center>
+
+
+
+
+
+<button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+
+<script>
+        
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var btn = document.getElementById("goTopBtn");
+            var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
+
+            if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        }
+
+        
+        function goTop() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        }
+    </script>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var images = document.querySelectorAll('img');
+
+    images.forEach(function (image) {
+      image.addEventListener('click', function (event) {
+        if (!event.target.classList.contains('rounded-image')) {
+          event.preventDefault();
+          console.log('Image click prevented.');
+        }
+      });
+
+      image.addEventListener('contextmenu', function (event) {
+        if (!event.target.classList.contains('rounded-image')) {
+          event.preventDefault();
+          console.log('Context menu prevented.');
+        }
+      });
+    });
+  });
+</script>
+
+
+    </footer>
+    
+
+
+    
+</body>
+</html>

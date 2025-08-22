@@ -1,0 +1,54 @@
+title: midsummer
+titlerss: Midnight Bard
+description: backup
+descriptionrss: RSS
+author: midnightbard
+url: 
+
+logo: /icons/rss.png
+image: /icons/rss.png
+imagerss: /icons/rss.png
+locale: en_US
+
+feed_items: 1000
+feed_update_period: daily
+feed_update_frequency: 1  
+
+layouts_dir: _layouts
+
+collections:
+  blogs:
+    output: true 
+    permalink: /blogs/:title/
+  community:
+    output: true
+    permalink: /community/:title/
+  technology:
+    output: true
+    permalink: /technology/:title/
+
+
+permalink: /:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+plugins:  
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+
+
+exclude:
+  - Gemfile
+  - exclude/
+  
+
+future: false

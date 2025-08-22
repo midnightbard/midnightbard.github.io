@@ -1,0 +1,66 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+>
+	<channel>
+		<title>Journal</title>
+		<description>{{ site.descriptionrss }}</description>		
+		<sy:updatePeriod>{{ site.feed_update_period | default: "daily" | xml_escape }}</sy:updatePeriod>
+		<sy:updateFrequency>{{ site.feed_update_frequency | default: 1 | xml_escape }}</sy:updateFrequency>
+		<link>{{ site.url }}</link>
+		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+		<lastBuildDate>{% for post in site.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
+		
+   <image>
+  <url>{{ site.logo }}</url>
+  <title>{{ site.titlerss }}</title>
+  <link>{{ site.url }}</link>
+</image>
+     
+        
+        
+        
+        {% assign feed_items = site.feed_items | default: 1000 %}
+		{% for post in site.posts limit:feed_items %}
+			
+        <item>
+  <title>{% if post.media contains "journal" %}📑{% endif %}{% if post.media contains "photo" %}📷{% endif %}{% if post.media contains "video" %}🎥{% endif %}{{ post.title | xml_escape }}</title>
+  <dc:creator>{{ site.author }}</dc:creator>
+ <description>
+    {% if post.description %}
+        <b>{{ post.description }}</b><br/>
+    {% endif %}            
+
+    {% if post.image %}
+        {% if post.image contains "badge-image" %}
+            <img style="width:20%;" src="{{ post.image }}" type="image/jpeg" />
+        {% else %}
+            <img style="width:400px; height:400px;" src="{{ post.image }}" type="image/jpeg" />
+        {% endif %}
+    {% endif %}
+                 
+    {{ post.content }}<br/>
+
+    {% if post.extended %}
+        {% if post.extended contains "badge-image" %}
+            <img style="width:20%;" src="{{ post.extended }}" type="image/jpeg" />
+        {% else %}
+            <img style="width:400px; height:400px;" src="{{ post.extended }}" type="image/jpeg" />
+        {% endif %}
+    {% endif %}
+</description>
+  
+            
+  <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+  <link>{{ site.url }}{{ post.url }}</link>
+  <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+</item>
+
+
+		{% endfor %}
+	</channel>
+</rss>

@@ -1,0 +1,2558 @@
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Conspiracy Iceberg</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta http-equiv="Expires" content="600" />
+
+
+<meta name="fediverse:creator" content="@midnightbard@mastodon.social">
+<link href="https://mastodon.social/@midnightbard" rel="me">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Conspiracy Iceberg">
+<meta property="og:site_name" content="midsummer">
+<meta property="og:url" content="http://localhost:4000/conspiracy-iceberg/">
+
+
+  <meta property="og:image" content="https://i.imgur.com/AVwyqn6.png">
+  <meta name="twitter:image" content="https://i.imgur.com/AVwyqn6.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+
+
+  <meta name="description" content="Here’s a visual example of a classic Conspiracy Theory Iceberg — a meme format that arranges theories by obscurity and perceived extremity, with the more widely known at the top and increasingly fringe or bizarre ones deeper down.">
+  <meta property="og:description" content="Here’s a visual example of a classic Conspiracy Theory Iceberg — a meme format that arranges theories by obscurity and perceived extremity, with the more widely known at the top and increasingly fr...">
+
+
+<meta name="author" content="midnightbard">
+<meta property="article:published_time" content="2025-07-29 00:00:00 +0200">
+
+<link rel="canonical" href="http://localhost:4000/conspiracy-iceberg/">
+
+
+<link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard">
+<link rel="alternate" type="application/rss+xml" title="Mastodon Feed" href="https://mastodon.social/@midnightbard.rss">
+<link rel="alternate" type="application/rss+xml" title="Bluesky Feed" href="https://rsshub.app/bsky/profile/midnightbardtarot.bsky.social">
+
+<link rel="manifest" href="/manifest.json">
+<link rel="shortcut icon" href="/icons/logo.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="/icons/logo.png">
+
+
+<link rel="stylesheet" href="/style.css">
+<link href="/styles/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+<style>
+@media screen and (max-width: 900px) {
+  #desktopvisible {
+    visibility: hidden;
+    display: none;
+  }
+}
+@media only screen and (min-width: 900px) {    
+  #mobilevisible {
+    visibility: hidden;
+    display: none;
+  }
+}  
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+  font-size: 1.125rem!important;
+}    
+
+#goTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  color: #800080;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: black;
+}
+
+a {
+  color: #2AA889!important;
+  text-decoration: none!important; 
+}
+
+a:hover {
+  color: #83AE84!important; 
+  text-decoration: none!important; 
+}
+
+blockquote {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 20px;
+  margin: 0;
+  border-left: 10px solid #2AA889;
+  background-color: black;
+}
+blockquote:hover {
+  background-color: #030303;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  .badge-card {
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+}
+
+.badge-image {
+  width: 110px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.badge-image:hover {
+  transform: scale(1.1);
+}
+
+.badge-name {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+</style>
+
+
+<script>
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+  });
+
+  function promptInstall() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    }
+  }
+</script>
+
+<script src="https://kit.fontawesome.com/58eebbf92c.js" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a.toot").forEach(async function (link) {
+        const tootUrl = link.getAttribute("href");
+
+        if (!tootUrl) return;
+
+        
+        const urlParts = new URL(tootUrl);
+        const instance = urlParts.origin; 
+        const pathParts = urlParts.pathname.split('/');
+        const statusId = pathParts[pathParts.length - 1]; 
+
+        try {
+            
+            const apiUrl = `${instance}/api/v1/statuses/${statusId}`;
+            const response = await fetch(apiUrl);
+
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+            const data = await response.json();
+
+            
+            function formatMastodonDate(isoString) {
+                const date = new Date(isoString);
+                return date.toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                });
+            }
+
+            
+            const embedContainer = document.createElement("div");
+            embedContainer.classList.add("mastodon-embed");
+            embedContainer.innerHTML = `
+                <div class="mastodon-card">
+                    <div class="mastodon-header">
+                        <img src="${data.account.avatar}" class="mastodon-avatar" alt="${data.account.username}">
+                        <div>
+                            <strong>${data.account.display_name}</strong>
+                            <a href="${data.account.url}" target="_blank">@${data.account.acct}</a>
+                        </div>
+                    </div>
+                    <div class="mastodon-content">
+                        ${data.content} 
+                    </div>
+                    ${data.media_attachments.length > 0 ? `<img src="${data.media_attachments[0].url}" class="mastodon-image" alt="Attachment">` : ""}
+                    <div class="mastodon-footer">
+                        <span class="mastodon-date">${formatMastodonDate(data.created_at)}</span>
+                        <a href="${tootUrl}" target="_blank"><i class="bi bi-link-45deg"></i> View on Mastodon</a>
+                    </div>
+                </div>
+            `;
+
+            link.replaceWith(embedContainer);
+        } catch (error) {
+            console.error("Error fetching Mastodon post:", error);
+        }
+    });
+});
+</script>
+
+<style>
+  
+
+.mastodon-embed {
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #1d1d26;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+.mastodon-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mastodon-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.mastodon-content {
+    margin: 10px 0;
+    font-size: 12px;
+}
+.mastodon-image {
+    max-width: 50%;
+    border-radius: 8px;
+}
+.mastodon-footer {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 12px;
+    color: #bbb;
+}
+.mastodon-date {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+</style>
+
+
+
+</head>
+    
+    
+<body>
+    
+    <div class="container-fluid">
+ <header>    
+<nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
+  <div class="container-fluid">
+<a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  HOME</i></h3></a>
+<a class="navbar-brand" href="/shop"><h3><i class="bi bi-bag">  Shop</i></h3></a>
+<a class="navbar-brand" href="/activity"><h3><i class="bi bi-book">  Activity</i></h3></a>
+    
+
+    
+    
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        
+  
+        
+      <h2><i class="bi bi-list"></i></h2>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark bg-dark text-light p-3" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   MIDNIGHT BARD</h5>
+        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+<div class="offcanvas-body">
+  
+  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i>LINKS</i></h5>
+    
+  <a href="https://github.com/midnightbard"><i class="bi bi-github"></i> Github</a>  <br/>  
+  <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" rel="me"><i class="bi bi-bluesky"></i> Bluesky</a><br/>
+  <a href="https://www.youtube.com/@MidnightBardTarot" rel="me"><i class="bi bi-youtube"></i> YouTube</a>
+    <br/>  
+  
+  <hr/>
+    
+<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CONTACT</h5>
+
+
+<p>
+    <small>
+<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>     
+      
+   </small>
+</p> 
+    
+<hr/>
+  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MY BLOGS</h5>
+  
+<a href="/"><i class="bi bi-star"></i> Blog</a> - spirituality; main<br/> 
+<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a> - tech and internet<br/>
+<a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a> - hobbies and interests    
+    
+
+      </div>
+    </div>
+</div>
+    
+</nav>
+
+
+
+</header>
+                
+<div class="row">
+                
+<div class="col-sm-7">
+    
+    <div class="card" style="width: 100%;">
+        
+        <div class="card-footer text-muted">            
+            
+            <div class="post-navigation">
+  
+    <span class="previous">
+        <a href="/cats-natures-hidden-healers.md/"><button type="button" class="btn btn-dark">Previous Post</button></a>
+    </span>
+  
+  
+  
+    <span class="next">
+        <a href="/esotericism-explained-the-hidden-thread-connecting-mystical-traditions.md/"><button type="button" class="btn btn-dark">Next Post</button></a>
+    </span>
+  
+</div>
+            
+  </div>
+        
+        <div id="mobilevisible">
+             
+        
+        
+        </div>
+  <div class="card-body">
+      <h2 class="card-title">
+<b>
+   
+    <i class="bi bi-eye"></i>
+</b>  Conspiracy Iceberg</h2>
+      
+      
+    <div class="card-text">
+        
+        
+        
+     
+        
+  <small>July 29, 2025 in 00:00, CET</small> |  Categories: 
+  <small>
+    
+    
+      Conspiracy
+    
+      Theories
+    
+  </small>
+
+            
+     <div style="border-bottom:1px white solid;">  
+         <img src="https://i.imgur.com/AVwyqn6.png" class="img-fluid"/><br/>
+    <b>Here’s a visual example of a classic Conspiracy Theory Iceberg — a meme format that arranges theories by obscurity and perceived extremity, with the more widely known at the top and increasingly fringe or bizarre ones deeper down.</b><br/>
+         
+         
+        
+     </div>   
+        
+<div style="padding-top:5px;">
+<h3 id="what-is-a-conspiracy-theory-iceberg">What Is a Conspiracy Theory Iceberg?</h3>
+
+<p>[[1.1 Conspiracy Iceberg  -Conspiracy Theory Compendium]]</p>
+
+<p>This meme trends as a playful (and sometimes chilling) way to rank conspiracy theories or fringe beliefs:</p>
+
+<ul>
+  <li>
+    <p><strong>Top (Tip)</strong> – Familiar, widely circulated theories (e.g., Moon landing hoax, JFK assassination).</p>
+  </li>
+  <li>
+    <p><strong>Middle layers</strong> – Less mainstream or more speculative ones.</p>
+  </li>
+  <li>
+    <p><strong>Deepest layers (“the depths”)</strong> – Obscure, fringe, or often nonsensical theories known only to niche or bizarre corners of the internet .</p>
+  </li>
+</ul>
+
+<p>The format gained fame through communities like <strong>r/IcebergCharts</strong> on Reddit and later exploded via YouTube with “Iceberg Explained” videos, notably by creators like Wendigoon .</p>
+
+<hr />
+
+<h3 id="example-structure-of-a-conspiracy-iceberg">Example Structure of a Conspiracy Iceberg</h3>
+
+<p>Below is a conceptual breakdown into four tiers:</p>
+
+<h4 id="1-surface-most-familiar"><strong>1. Surface (Most Familiar)</strong></h4>
+
+<ul>
+  <li>
+    <p>Moon landing was fake</p>
+  </li>
+  <li>
+    <p>JFK assassination cover-up</p>
+  </li>
+  <li>
+    <p>Illuminati controlling global events</p>
+  </li>
+  <li>
+    <p>9/11 was an inside job</p>
+  </li>
+</ul>
+
+<h4 id="2-subsurface-somewhat-known-but-more-speculative"><strong>2. Subsurface (Somewhat Known but More Speculative)</strong></h4>
+
+<ul>
+  <li>
+    <p>Chemtrails controlling the weather</p>
+  </li>
+  <li>
+    <p>5G causes COVID-19</p>
+  </li>
+  <li>
+    <p>Reptilian humanoids among us</p>
+  </li>
+  <li>
+    <p>Pharmaceutical elites actively suppressing cures</p>
+  </li>
+</ul>
+
+<h4 id="3-deep-waters-obscure-and-fringe"><strong>3. Deep Waters (Obscure and Fringe)</strong></h4>
+
+<ul>
+  <li>
+    <p>Michael Obama conspiracies</p>
+  </li>
+  <li>
+    <p>Time travelers influencing current events</p>
+  </li>
+  <li>
+    <p>God creating a wife but failing (“Her”) (<a href="https://www.reddit.com/r/IcebergCharts/comments/qsx6vu/ultimate_conspiracy_theory_iceberg/?utm_source=chatgpt.com" title="Ultimate Conspiracy Theory Iceberg : r/IcebergCharts - Reddit">Reddit</a>)</p>
+  </li>
+  <li>
+    <p>Immortality-induced amnesia (dying and re-awakening in another timeline) (<a href="https://www.reddit.com/r/IcebergCharts/comments/qsx6vu/ultimate_conspiracy_theory_iceberg/?utm_source=chatgpt.com" title="Ultimate Conspiracy Theory Iceberg : r/IcebergCharts - Reddit">Reddit</a>)</p>
+  </li>
+</ul>
+
+<h4 id="4-abyss--depths-ultra-obscure-and-esoteric"><strong>4. Abyss / Depths (Ultra-Obscure and Esoteric)</strong></h4>
+
+<ul>
+  <li>
+    <p>“God’s Ego Death” – belief God underwent an ego shift between Old and New Testament (<a href="https://www.reddit.com/r/IcebergCharts/comments/lg5k4l/alright_im_tired_of_all_these_conspiracy_icebergs/?utm_source=chatgpt.com" title="Alright, I'm tired of all these \&quot;conspiracy\&quot; icebergs full of level one ...">Reddit</a>)</p>
+  </li>
+  <li>
+    <p>“God’s Last Wish” – myth that humans are God’s creation in his final spiritual act (<a href="https://www.reddit.com/r/IcebergCharts/comments/lg5k4l/alright_im_tired_of_all_these_conspiracy_icebergs/?utm_source=chatgpt.com" title="Alright, I'm tired of all these \&quot;conspiracy\&quot; icebergs full of level one ...">Reddit</a>)</p>
+  </li>
+  <li>
+    <p>“The Final Understanding” – existential or metaphysical conspiracy within theological lore (<a href="https://www.reddit.com/r/IcebergCharts/comments/lg5k4l/alright_im_tired_of_all_these_conspiracy_icebergs/?utm_source=chatgpt.com" title="Alright, I'm tired of all these \&quot;conspiracy\&quot; icebergs full of level one ...">Reddit</a>)</p>
+  </li>
+  <li>
+    <p><strong>rap.mp3</strong> – a rumored audio sample allegedly hidden in 90s music with subconscious effects (<a href="https://www.reddit.com/r/IcebergCharts/comments/lg5k4l/alright_im_tired_of_all_these_conspiracy_icebergs/?utm_source=chatgpt.com" title="Alright, I'm tired of all these \&quot;conspiracy\&quot; icebergs full of level one ...">Reddit</a>)</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="why-this-matters--what-to-watch-out-for">Why This Matters &amp; What to Watch Out For</h3>
+
+<ul>
+  <li>
+    <p><strong>Iceberg charts are not evidence</strong>—they’re internet lore. Rippled with satirical, hypothetical, or debunked theories.</p>
+  </li>
+  <li>
+    <p>They <em>do</em> reveal how people gravitate toward deeper, stranger ideas and how obscure beliefs find life in niche communities.</p>
+  </li>
+  <li>
+    <p>Some entries are creative fiction, others are harmful misinformation—it’s important to approach these memes with awareness.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="list-of-conspiracy-theories">List of conspiracy theories</h2>
+
+<ul>
+  <li>Big Pharma</li>
+  <li>
+    <p>Atlantis</p>
+  </li>
+  <li>
+    <p>Nostradamus</p>
+  </li>
+  <li>
+    <p>Mandela Effect</p>
+  </li>
+  <li>
+    <p>Malaysian Flight 370</p>
+  </li>
+  <li>
+    <p>GMO Conspiracy</p>
+  </li>
+  <li>
+    <p>Orbs</p>
+  </li>
+  <li>
+    <p>New World Order</p>
+  </li>
+  <li>
+    <p>Nibiru Cataclysm</p>
+  </li>
+  <li>
+    <p>Bilderberg Meetings</p>
+  </li>
+  <li>
+    <p>Transhumanism</p>
+  </li>
+  <li>
+    <p>Black-Eyed Kids</p>
+  </li>
+  <li>
+    <p>Antarctica</p>
+  </li>
+  <li>
+    <p>Basement Tapes</p>
+  </li>
+  <li>
+    <p>Operation Northwoods</p>
+  </li>
+  <li>
+    <p>PSYOPS</p>
+  </li>
+  <li>
+    <p>Vela Incident</p>
+  </li>
+  <li>
+    <p>Giants</p>
+  </li>
+  <li>
+    <p>Padma McCord</p>
+  </li>
+  <li>
+    <p>Elisa Lam Incident</p>
+  </li>
+  <li>
+    <p>Tara Calico Picture</p>
+  </li>
+  <li>
+    <p>Mad Gasser of Mattoon</p>
+  </li>
+  <li>
+    <p>COINTELPRO</p>
+  </li>
+  <li>
+    <p>Mao–Yale Connection</p>
+  </li>
+  <li>
+    <p>I-70 Killer</p>
+  </li>
+  <li>
+    <p>Majestic 12</p>
+  </li>
+  <li>
+    <p>Area 51</p>
+  </li>
+  <li>
+    <p>Red Squads</p>
+  </li>
+  <li>
+    <p>The Secret</p>
+  </li>
+  <li>
+    <p>Acupuncture</p>
+  </li>
+  <li>
+    <p>Max Headroom Incident</p>
+  </li>
+  <li>
+    <p>UN Agenda / Agenda 21</p>
+  </li>
+  <li>
+    <p>Lucid Dreaming</p>
+  </li>
+  <li>
+    <p>MKUltra</p>
+  </li>
+  <li>
+    <p>Hypnosis</p>
+  </li>
+  <li>
+    <p>Fluoride</p>
+  </li>
+  <li>
+    <p>Pineal Gland Calcification</p>
+  </li>
+  <li>
+    <p>Cicada 3301</p>
+  </li>
+  <li>
+    <p>Twitter Bots</p>
+  </li>
+  <li>
+    <p>Stargates</p>
+  </li>
+  <li>
+    <p>Fake Beatles</p>
+  </li>
+  <li>
+    <p>Ted Kaczynski</p>
+  </li>
+  <li>
+    <p>Alien Abductions</p>
+  </li>
+  <li>
+    <p>Faked Deaths</p>
+  </li>
+  <li>
+    <p>Tartaria</p>
+  </li>
+  <li>
+    <p>Cryonics</p>
+  </li>
+  <li>
+    <p>Hollow Earth</p>
+  </li>
+  <li>
+    <p>Stuxnet</p>
+  </li>
+  <li>
+    <p>Tetris Murder</p>
+  </li>
+  <li>
+    <p>Buried Alive</p>
+  </li>
+  <li>
+    <p>Crystal Skulls</p>
+  </li>
+  <li>
+    <p>New Chronology</p>
+  </li>
+  <li>
+    <p>Meth Gators</p>
+  </li>
+  <li>
+    <p>Propaganda Due (P2)</p>
+  </li>
+  <li>
+    <p>Polybius</p>
+  </li>
+  <li>
+    <p>Dendera Light</p>
+  </li>
+  <li>
+    <p>Skull and Bones</p>
+  </li>
+  <li>
+    <p>Smiley Face Killers</p>
+  </li>
+  <li>
+    <p>Denver Airport</p>
+  </li>
+  <li>
+    <p>Suicide Song</p>
+  </li>
+  <li>
+    <p>Flat Earth</p>
+  </li>
+  <li>
+    <p>Cathedral Time Travel</p>
+  </li>
+  <li>
+    <p>Tourette’s Syndrome Conspiracy</p>
+  </li>
+  <li>
+    <p>Pyramids</p>
+  </li>
+  <li>
+    <p>Mongolian Death Worm</p>
+  </li>
+  <li>
+    <p>Codex Alimentarius</p>
+  </li>
+  <li>
+    <p>Paul is Dead</p>
+  </li>
+  <li>
+    <p>Black Knight Satellite</p>
+  </li>
+  <li>
+    <p>Dead Internet Theory</p>
+  </li>
+  <li>
+    <p>Chronovisor</p>
+  </li>
+  <li>
+    <p>Lizard People</p>
+  </li>
+  <li>
+    <p>Georgia Guidestones</p>
+  </li>
+  <li>
+    <p>Tavistock Institute</p>
+  </li>
+  <li>
+    <p>Smurfette Principle</p>
+  </li>
+  <li>
+    <p>Plum Island</p>
+  </li>
+  <li>
+    <p>Men in Black</p>
+  </li>
+  <li>
+    <p>Shaver Mystery</p>
+  </li>
+  <li>
+    <p>Missing 411</p>
+  </li>
+  <li>
+    <p>Lake City Quiet Pills</p>
+  </li>
+  <li>
+    <p>Moon Landing Hoax</p>
+  </li>
+  <li>
+    <p>Philadelphia Experiment</p>
+  </li>
+  <li>
+    <p>Necronomicon</p>
+  </li>
+  <li>
+    <p>Havana Syndrome</p>
+  </li>
+  <li>
+    <p>Goro Adachi</p>
+  </li>
+  <li>
+    <p>Mokele-Mbembe</p>
+  </li>
+  <li>
+    <p>The Nine</p>
+  </li>
+  <li>
+    <p>Free Masons</p>
+  </li>
+  <li>
+    <p>Lead Masks Case</p>
+  </li>
+  <li>
+    <p>Toynbee Tiles</p>
+  </li>
+  <li>
+    <p>Oak Island</p>
+  </li>
+  <li>
+    <p>Babylonian Money Magic</p>
+  </li>
+  <li>
+    <p>Technological Singularity</p>
+  </li>
+  <li>
+    <p>Humanzee</p>
+  </li>
+  <li>
+    <p>Aswang</p>
+  </li>
+  <li>
+    <p>Mayan 2012 Apocalypse</p>
+  </li>
+  <li>
+    <p>Project Blue Beam</p>
+  </li>
+  <li>
+    <p>Olof Palme Assassination</p>
+  </li>
+  <li>
+    <p>The Moon is a Hologram</p>
+  </li>
+  <li>
+    <p>Great Moon Hoax</p>
+  </li>
+  <li>
+    <p>Hollow Moon</p>
+  </li>
+  <li>
+    <p>Satanic Panic</p>
+  </li>
+  <li>
+    <p>Bigfoot</p>
+  </li>
+  <li>
+    <p>Grey Goo</p>
+  </li>
+  <li>
+    <p>Utsuro-bune</p>
+  </li>
+  <li>
+    <p>Backrooms</p>
+  </li>
+  <li>
+    <p>Pindar</p>
+  </li>
+  <li>
+    <p>Men in the Walls</p>
+  </li>
+  <li>
+    <p>Betty and Barney Hill Incident</p>
+  </li>
+  <li>
+    <p>UFOs</p>
+  </li>
+  <li>
+    <p>Black Eyed Peas Time Traveler</p>
+  </li>
+  <li>
+    <p>Electric Universe Theory</p>
+  </li>
+  <li>
+    <p>Breakaway Civilization</p>
+  </li>
+  <li>
+    <p>Roswell</p>
+  </li>
+  <li>
+    <p>Vril</p>
+  </li>
+  <li>
+    <p>Nazi Gold Train</p>
+  </li>
+  <li>
+    <p>Neuschwabenland</p>
+  </li>
+  <li>
+    <p>Die Glocke</p>
+  </li>
+  <li>
+    <p>Kecksburg UFO Incident</p>
+  </li>
+  <li>
+    <p>Ancient Astronauts</p>
+  </li>
+  <li>
+    <p>Nazi UFOs</p>
+  </li>
+  <li>
+    <p>Scalar Weapons</p>
+  </li>
+  <li>
+    <p>Hollow Earth Nazis</p>
+  </li>
+  <li>
+    <p>Nazi Occultism</p>
+  </li>
+  <li>
+    <p>Antarctica Nazis</p>
+  </li>
+  <li>
+    <p>Operation Highjump</p>
+  </li>
+  <li>
+    <p>Operation Paperclip</p>
+  </li>
+  <li>
+    <p>Operation Fishbowl</p>
+  </li>
+  <li>
+    <p>Operation Dominic</p>
+  </li>
+  <li>
+    <p>Operation Argus</p>
+  </li>
+  <li>
+    <p>Operation Gladio</p>
+  </li>
+  <li>
+    <p>Operation Mockingbird</p>
+  </li>
+  <li>
+    <p>Operation CHAOS</p>
+  </li>
+  <li>
+    <p>Project Monarch</p>
+  </li>
+  <li>
+    <p>Project Pegasus</p>
+  </li>
+  <li>
+    <p>Project Serpo</p>
+  </li>
+  <li>
+    <p>Project Montauk</p>
+  </li>
+  <li>
+    <p>Montauk Chair</p>
+  </li>
+  <li>
+    <p>Time Travel Experiments</p>
+  </li>
+  <li>
+    <p>The Gateway Process</p>
+  </li>
+  <li>
+    <p>Stargate Project</p>
+  </li>
+  <li>
+    <p>Remote Viewing</p>
+  </li>
+  <li>
+    <p>Project Looking Glass</p>
+  </li>
+  <li>
+    <p>Simulation Theory</p>
+  </li>
+  <li>
+    <p>Quantum Immortality</p>
+  </li>
+  <li>
+    <p>CERN Conspiracies</p>
+  </li>
+  <li>
+    <p>Mandela Catalogue</p>
+  </li>
+  <li>
+    <p>Dark Matter Conspiracy</p>
+  </li>
+  <li>
+    <p>Black Hole Bomb</p>
+  </li>
+  <li>
+    <p>Dyson Spheres</p>
+  </li>
+  <li>
+    <p>Kardashev Scale Civilizations</p>
+  </li>
+  <li>
+    <p>Fermi Paradox Solutions</p>
+  </li>
+  <li>
+    <p>Zoo Hypothesis</p>
+  </li>
+  <li>
+    <p>Berserker Hypothesis</p>
+  </li>
+  <li>
+    <p>Dark Forest Hypothesis</p>
+  </li>
+  <li>
+    <p>False Vacuum Decay</p>
+  </li>
+  <li>
+    <p>Heat Death of the Universe Conspiracy</p>
+  </li>
+  <li>
+    <p>Boltzmann Brains</p>
+  </li>
+  <li>
+    <p>Simulation Termination Theory</p>
+  </li>
+  <li>
+    <p>Reality Reset</p>
+  </li>
+  <li>
+    <p>Time Cube</p>
+  </li>
+  <li>
+    <p>4th Dimension Creatures</p>
+  </li>
+  <li>
+    <p>5th Dimension</p>
+  </li>
+  <li>
+    <p>Extra-Dimensional Beings</p>
+  </li>
+  <li>
+    <p>Hyperdimensional Entities</p>
+  </li>
+  <li>
+    <p>Interdimensional Travel</p>
+  </li>
+  <li>
+    <p>Tulpas</p>
+  </li>
+  <li>
+    <p>Thoughtforms</p>
+  </li>
+  <li>
+    <p>Egregores</p>
+  </li>
+  <li>
+    <p>Archons</p>
+  </li>
+  <li>
+    <p>Demiurge</p>
+  </li>
+  <li>
+    <p>Gnosticism</p>
+  </li>
+  <li>
+    <p>Yaldabaoth</p>
+  </li>
+  <li>
+    <p>Sophia Mythos</p>
+  </li>
+  <li>
+    <p>Saturn Worship</p>
+  </li>
+  <li>
+    <p>Black Cube of Saturn</p>
+  </li>
+  <li>
+    <p>Saturn–Moon Matrix</p>
+  </li>
+  <li>
+    <p>Rings of Saturn as Data Storage</p>
+  </li>
+  <li>
+    <p>Enceladus Aliens</p>
+  </li>
+  <li>
+    <p>Pan as an Artificial Moon</p>
+  </li>
+  <li>
+    <p>Hyperborea</p>
+  </li>
+  <li>
+    <p>Agartha</p>
+  </li>
+  <li>
+    <p>Shambhala</p>
+  </li>
+  <li>
+    <p>Hollow Earth Civilizations</p>
+  </li>
+  <li>
+    <p>Inner Earth Sun</p>
+  </li>
+  <li>
+    <p>Smoky God</p>
+  </li>
+  <li>
+    <p>Admiral Byrd’s Diary</p>
+  </li>
+  <li>
+    <p>Hollow Earth Mammoths</p>
+  </li>
+  <li>
+    <p>Inner Earth Dinosaurs</p>
+  </li>
+  <li>
+    <p>Hollow Earth Giants</p>
+  </li>
+  <li>
+    <p>Lost World Myths</p>
+  </li>
+  <li>
+    <p>Hollow Earth UFO Bases</p>
+  </li>
+  <li>
+    <p>Hollow Earth Nazis 2.0</p>
+  </li>
+  <li>
+    <p>Inner Earth Cities</p>
+  </li>
+  <li>
+    <p>Agartha Network</p>
+  </li>
+  <li>
+    <p>Inner Earth Crystals</p>
+  </li>
+  <li>
+    <p>Hollow Earth Portals</p>
+  </li>
+  <li>
+    <p>Hollow Earth Access Points</p>
+  </li>
+  <li>
+    <p>Poles Closed Off</p>
+  </li>
+  <li>
+    <p>Hollow Earth Sun Theory</p>
+  </li>
+  <li>
+    <p>Inner Earth Civilizations</p>
+  </li>
+  <li>
+    <p>Inner Earth Aliens</p>
+  </li>
+  <li>
+    <p>Inner Earth Council</p>
+  </li>
+  <li>
+    <p>Hollow Earth Exploration Cover-ups</p>
+  </li>
+  <li>
+    <p>Hollow Earth War</p>
+  </li>
+  <li>
+    <p>Hollow Earth Myths Across Cultures</p>
+  </li>
+  <li>
+    <p>Hollow Earth Conspiracy Literature</p>
+  </li>
+  <li>
+    <p>Reptilian Shapeshifters</p>
+  </li>
+  <li>
+    <p>Draco Reptilians</p>
+  </li>
+  <li>
+    <p>Alpha Draconians</p>
+  </li>
+  <li>
+    <p>Reptilian Bloodlines</p>
+  </li>
+  <li>
+    <p>British Royal Family Reptilians</p>
+  </li>
+  <li>
+    <p>Political Reptilians</p>
+  </li>
+  <li>
+    <p>Celebrity Reptilians</p>
+  </li>
+  <li>
+    <p>Underground Reptilian Bases</p>
+  </li>
+  <li>
+    <p>Reptilian Mind Control</p>
+  </li>
+  <li>
+    <p>Reptilian Agenda</p>
+  </li>
+  <li>
+    <p>Reptilian–Human Hybrids</p>
+  </li>
+  <li>
+    <p>Ancient Reptilian Civilizations</p>
+  </li>
+  <li>
+    <p>Reptilian Gods</p>
+  </li>
+  <li>
+    <p>Reptilian Symbolism</p>
+  </li>
+  <li>
+    <p>Reptilian Media Manipulation</p>
+  </li>
+  <li>
+    <p>Greys</p>
+  </li>
+  <li>
+    <p>Zeta Reticulans</p>
+  </li>
+  <li>
+    <p>Tall Greys</p>
+  </li>
+  <li>
+    <p>Short Greys</p>
+  </li>
+  <li>
+    <p>Grey Abductions</p>
+  </li>
+  <li>
+    <p>Hybridization Programs</p>
+  </li>
+  <li>
+    <p>Grey–Human Hybrids</p>
+  </li>
+  <li>
+    <p>Grey Underground Bases</p>
+  </li>
+  <li>
+    <p>Grey Mind Control</p>
+  </li>
+  <li>
+    <p>Grey Agenda</p>
+  </li>
+  <li>
+    <p>Grey Technology Exchange</p>
+  </li>
+  <li>
+    <p>Grey Disinformation Campaigns</p>
+  </li>
+  <li>
+    <p>Grey Cloning</p>
+  </li>
+  <li>
+    <p>Grey–Reptilian Cooperation</p>
+  </li>
+  <li>
+    <p>Nordic Aliens</p>
+  </li>
+  <li>
+    <p>Pleiadians</p>
+  </li>
+  <li>
+    <p>Arcturians</p>
+  </li>
+  <li>
+    <p>Andromedans</p>
+  </li>
+  <li>
+    <p>Lyrans</p>
+  </li>
+  <li>
+    <p>Blue Avians</p>
+  </li>
+  <li>
+    <p>Tall Whites</p>
+  </li>
+  <li>
+    <p>Mantids</p>
+  </li>
+  <li>
+    <p>Insectoid Aliens</p>
+  </li>
+  <li>
+    <p>Aquatic Aliens</p>
+  </li>
+  <li>
+    <p>Feline Aliens</p>
+  </li>
+  <li>
+    <p>Avian Aliens</p>
+  </li>
+  <li>
+    <p>Ancient Alien Wars</p>
+  </li>
+  <li>
+    <p>Orion Wars</p>
+  </li>
+  <li>
+    <p>Galactic Federation</p>
+  </li>
+  <li>
+    <p>Ashtar Command</p>
+  </li>
+  <li>
+    <p>Solar Warden</p>
+  </li>
+  <li>
+    <p>Secret Space Program</p>
+  </li>
+  <li>
+    <p>Breakaway Civilizations 2.0</p>
+  </li>
+  <li>
+    <p>Mars Colonies</p>
+  </li>
+  <li>
+    <p>Moon Bases</p>
+  </li>
+  <li>
+    <p>Asteroid Bases</p>
+  </li>
+  <li>
+    <p>Interstellar Travel Cover-ups</p>
+  </li>
+  <li>
+    <p>Faster-than-Light Travel Suppression</p>
+  </li>
+  <li>
+    <p>Alien Technology Suppression</p>
+  </li>
+  <li>
+    <p>Alien Agreements</p>
+  </li>
+  <li>
+    <p>Eisenhower Alien Treaty</p>
+  </li>
+  <li>
+    <p>Dulce Base</p>
+  </li>
+  <li>
+    <p>Dulce Wars</p>
+  </li>
+  <li>
+    <p>Cattle Mutilations</p>
+  </li>
+  <li>
+    <p>Human Mutilations</p>
+  </li>
+  <li>
+    <p>Alien Hybrid Children</p>
+  </li>
+  <li>
+    <p>Starseeds</p>
+  </li>
+  <li>
+    <p>Indigo Children</p>
+  </li>
+  <li>
+    <p>Crystal Children</p>
+  </li>
+  <li>
+    <p>Rainbow Children</p>
+  </li>
+  <li>
+    <p>Alien Channeling</p>
+  </li>
+  <li>
+    <p>Alien Prophets</p>
+  </li>
+  <li>
+    <p>Alien Cults</p>
+  </li>
+  <li>
+    <p>Raëlism</p>
+  </li>
+  <li>
+    <p>Heaven’s Gate</p>
+  </li>
+  <li>
+    <p>Unarius Academy of Science</p>
+  </li>
+  <li>
+    <p>Aetherius Society</p>
+  </li>
+  <li>
+    <p>Scientology Alien Beliefs</p>
+  </li>
+  <li>
+    <p>Ancient Civilizations and Aliens</p>
+  </li>
+  <li>
+    <p>Ancient Sumerians and Aliens</p>
+  </li>
+  <li>
+    <p>Ancient Egypt and Aliens</p>
+  </li>
+  <li>
+    <p>Mayans and Aliens</p>
+  </li>
+  <li>
+    <p>Nazca Lines Aliens</p>
+  </li>
+  <li>
+    <p>Puma Punku Aliens</p>
+  </li>
+  <li>
+    <p>Stonehenge Aliens</p>
+  </li>
+  <li>
+    <p>Easter Island Aliens</p>
+  </li>
+  <li>
+    <p>Gobekli Tepe Aliens</p>
+  </li>
+  <li>
+    <p>Ancient Cave Paintings Aliens</p>
+  </li>
+  <li>
+    <p>Ancient Astronaut Theorists</p>
+  </li>
+  <li>
+    <p>Chariots of the Gods Theories</p>
+  </li>
+  <li>
+    <p>Ancient Alien Wars 2.0</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Genetic Manipulation</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Technology Transfer</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Religion Creation</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Pyramid Building</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Civilization Seeding</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Mining Earth</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Hybridization</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Spaceports</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Stargates</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Time Travel</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Weather Control</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Energy Weapons</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Mind Control</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Abductions</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Return Prophecies</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Hidden History</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Archaeological Cover-ups</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Academic Suppression</p>
+  </li>
+  <li>
+    <p>Ancient Aliens Religious Suppression</p>
+  </li>
+  <li>
+    <p>UFO Cover-ups</p>
+  </li>
+  <li>
+    <p>UFO Disinformation</p>
+  </li>
+  <li>
+    <p>UFO Debunking Campaigns</p>
+  </li>
+  <li>
+    <p>UFO Sightings Suppression</p>
+  </li>
+  <li>
+    <p>UFO Crash Retrievals</p>
+  </li>
+  <li>
+    <p>UFO Reverse Engineering</p>
+  </li>
+  <li>
+    <p>UFO Technology Secrecy</p>
+  </li>
+  <li>
+    <p>UFO Witness Intimidation</p>
+  </li>
+  <li>
+    <p>UFO Whistleblower Suppression</p>
+  </li>
+  <li>
+    <p>UFO Secrecy Laws</p>
+  </li>
+  <li>
+    <p>UFO Military Involvement</p>
+  </li>
+  <li>
+    <p>UFO Intelligence Agency Involvement</p>
+  </li>
+  <li>
+    <p>UFO Corporate Involvement</p>
+  </li>
+  <li>
+    <p>UFO Media Manipulation</p>
+  </li>
+  <li>
+    <p>UFO Religious Implications</p>
+  </li>
+  <li>
+    <p>UFO Psychological Operations</p>
+  </li>
+  <li>
+    <p>Government Conspiracies</p>
+  </li>
+  <li>
+    <p>Shadow Government</p>
+  </li>
+  <li>
+    <p>Deep State</p>
+  </li>
+  <li>
+    <p>Cabal</p>
+  </li>
+  <li>
+    <p>Secret Societies</p>
+  </li>
+  <li>
+    <p>Illuminati</p>
+  </li>
+  <li>
+    <p>Freemasons</p>
+  </li>
+  <li>
+    <p>Skull and Bones 2.0</p>
+  </li>
+  <li>
+    <p>Bohemian Grove</p>
+  </li>
+  <li>
+    <p>Council on Foreign Relations</p>
+  </li>
+  <li>
+    <p>Trilateral Commission</p>
+  </li>
+  <li>
+    <p>Club of Rome</p>
+  </li>
+  <li>
+    <p>Bilderberg Group</p>
+  </li>
+  <li>
+    <p>Round Table Groups</p>
+  </li>
+  <li>
+    <p>Committee of 300</p>
+  </li>
+  <li>
+    <p>Black Nobility</p>
+  </li>
+  <li>
+    <p>Jesuits</p>
+  </li>
+  <li>
+    <p>Opus Dei</p>
+  </li>
+  <li>
+    <p>Knights of Malta</p>
+  </li>
+  <li>
+    <p>Priory of Sion</p>
+  </li>
+  <li>
+    <p>Rosicrucians</p>
+  </li>
+  <li>
+    <p>Theosophical Society</p>
+  </li>
+  <li>
+    <p>Anthroposophical Society</p>
+  </li>
+  <li>
+    <p>Ordo Templi Orientis</p>
+  </li>
+  <li>
+    <p>Golden Dawn</p>
+  </li>
+  <li>
+    <p>Thule Society</p>
+  </li>
+  <li>
+    <p>Vril Society</p>
+  </li>
+  <li>
+    <p>Nine Unknown Men</p>
+  </li>
+  <li>
+    <p>Elders of Zion</p>
+  </li>
+  <li>
+    <p>Protocols of the Elders of Zion</p>
+  </li>
+  <li>
+    <p>Rothschild Conspiracy</p>
+  </li>
+  <li>
+    <p>Rockefeller Conspiracy</p>
+  </li>
+  <li>
+    <p>Banking Conspiracies</p>
+  </li>
+  <li>
+    <p>Federal Reserve Conspiracy</p>
+  </li>
+  <li>
+    <p>Central Banking Conspiracy</p>
+  </li>
+  <li>
+    <p>International Monetary Fund Conspiracy</p>
+  </li>
+  <li>
+    <p>World Bank Conspiracy</p>
+  </li>
+  <li>
+    <p>Currency Manipulation Conspiracy</p>
+  </li>
+  <li>
+    <p>Gold Price Manipulation</p>
+  </li>
+  <li>
+    <p>Silver Price Manipulation</p>
+  </li>
+  <li>
+    <p>Commodity Price Manipulation</p>
+  </li>
+  <li>
+    <p>Stock Market Manipulation</p>
+  </li>
+  <li>
+    <p>Insider Trading Conspiracy</p>
+  </li>
+  <li>
+    <p>Corporate Conspiracies</p>
+  </li>
+  <li>
+    <p>Pharmaceutical Industry Conspiracy</p>
+  </li>
+  <li>
+    <p>Medical Industry Conspiracy</p>
+  </li>
+  <li>
+    <p>Cancer Cure Suppression</p>
+  </li>
+  <li>
+    <p>AIDS Cure Suppression</p>
+  </li>
+  <li>
+    <p>Vaccine Conspiracies</p>
+  </li>
+  <li>
+    <p>Anti-Vaccine Movement</p>
+  </li>
+  <li>
+    <p>Chemtrails</p>
+  </li>
+  <li>
+    <p>Weather Control</p>
+  </li>
+  <li>
+    <p>HAARP</p>
+  </li>
+  <li>
+    <p>Earthquake Weapons</p>
+  </li>
+  <li>
+    <p>Volcano Weapons</p>
+  </li>
+  <li>
+    <p>Tsunami Weapons</p>
+  </li>
+  <li>
+    <p>Directed Energy Weapons</p>
+  </li>
+  <li>
+    <p>Mind Control Weapons</p>
+  </li>
+  <li>
+    <p>Electronic Harassment</p>
+  </li>
+  <li>
+    <p>Voice to Skull Technology</p>
+  </li>
+  <li>
+    <p>Gang Stalking</p>
+  </li>
+  <li>
+    <p>Targeted Individuals</p>
+  </li>
+  <li>
+    <p>Neuro-Linguistic Programming</p>
+  </li>
+  <li>
+    <p>Subliminal Messaging</p>
+  </li>
+  <li>
+    <p>Predictive Programming</p>
+  </li>
+  <li>
+    <p>Media Mind Control</p>
+  </li>
+  <li>
+    <p>Education System Indoctrination</p>
+  </li>
+  <li>
+    <p>Cultural Engineering</p>
+  </li>
+  <li>
+    <p>Social Engineering</p>
+  </li>
+  <li>
+    <p>Population Control</p>
+  </li>
+  <li>
+    <p>Eugenics</p>
+  </li>
+  <li>
+    <p>Depopulation Agenda</p>
+  </li>
+  <li>
+    <p>Birth Control Conspiracies</p>
+  </li>
+  <li>
+    <p>Sterilization Programs</p>
+  </li>
+  <li>
+    <p>One Child Policy Conspiracy</p>
+  </li>
+  <li>
+    <p>Abortion Conspiracy</p>
+  </li>
+  <li>
+    <p>Family Planning Conspiracy</p>
+  </li>
+  <li>
+    <p>Feminism Conspiracy</p>
+  </li>
+  <li>
+    <p>Masculinity Destruction Conspiracy</p>
+  </li>
+  <li>
+    <p>Gender Confusion Agenda</p>
+  </li>
+  <li>
+    <p>LGBTQ Agenda Conspiracy</p>
+  </li>
+  <li>
+    <p>Transgender Agenda Conspiracy</p>
+  </li>
+  <li>
+    <p>Pedophilia Normalization</p>
+  </li>
+  <li>
+    <p>Child Trafficking Rings</p>
+  </li>
+  <li>
+    <p>Elite Pedophile Rings</p>
+  </li>
+  <li>
+    <p>Pizzagate</p>
+  </li>
+  <li>
+    <p>Pedogate</p>
+  </li>
+  <li>
+    <p>Adrenochrome Harvesting</p>
+  </li>
+  <li>
+    <p>Satanic Ritual Abuse</p>
+  </li>
+  <li>
+    <p>Occult Rituals</p>
+  </li>
+  <li>
+    <p>Occult Symbolism</p>
+  </li>
+  <li>
+    <p>Occult Holidays</p>
+  </li>
+  <li>
+    <p>Occult Numerology</p>
+  </li>
+  <li>
+    <p>Occult Astrology</p>
+  </li>
+  <li>
+    <p>Blood Sacrifice</p>
+  </li>
+  <li>
+    <p>Cannibalism Conspiracy</p>
+  </li>
+  <li>
+    <p>Organ Harvesting</p>
+  </li>
+  <li>
+    <p>Human Cloning</p>
+  </li>
+  <li>
+    <p>Genetic Engineering</p>
+  </li>
+  <li>
+    <p>Designer Babies</p>
+  </li>
+  <li>
+    <p>Transhumanist Agenda</p>
+  </li>
+  <li>
+    <p>Artificial Intelligence Control</p>
+  </li>
+  <li>
+    <p>Robot Takeover</p>
+  </li>
+  <li>
+    <p>Surveillance State</p>
+  </li>
+  <li>
+    <p>Mass Surveillance</p>
+  </li>
+  <li>
+    <p>Facial Recognition Surveillance</p>
+  </li>
+  <li>
+    <p>Biometric Data Collection</p>
+  </li>
+  <li>
+    <p>Social Credit System</p>
+  </li>
+  <li>
+    <p>Internet Censorship</p>
+  </li>
+  <li>
+    <p>Information Control</p>
+  </li>
+  <li>
+    <p>Thought Crime</p>
+  </li>
+  <li>
+    <p>Pre-Crime</p>
+  </li>
+  <li>
+    <p>Predictive Policing</p>
+  </li>
+  <li>
+    <p>Minority Report Technology</p>
+  </li>
+  <li>
+    <p>Brain-Computer Interfaces</p>
+  </li>
+  <li>
+    <p>Neural Implants</p>
+  </li>
+  <li>
+    <p>Smart Dust</p>
+  </li>
+  <li>
+    <p>Nanotechnology Control</p>
+  </li>
+  <li>
+    <p>Internet of Things Surveillance</p>
+  </li>
+  <li>
+    <p>5G Conspiracy</p>
+  </li>
+  <li>
+    <p>Electromagnetic Frequency Weapons</p>
+  </li>
+  <li>
+    <p>Microwave Weapons</p>
+  </li>
+  <li>
+    <p>Cell Tower Radiation Conspiracy</p>
+  </li>
+  <li>
+    <p>Power Line Radiation Conspiracy</p>
+  </li>
+  <li>
+    <p>Radiation Poisoning Conspiracy</p>
+  </li>
+  <li>
+    <p>Nuclear Power Conspiracy</p>
+  </li>
+  <li>
+    <p>Nuclear Weapons Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Weapons</p>
+  </li>
+  <li>
+    <p>Star Wars Program Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Force Conspiracy</p>
+  </li>
+  <li>
+    <p>Moon Weaponization</p>
+  </li>
+  <li>
+    <p>Mars Weaponization</p>
+  </li>
+  <li>
+    <p>Asteroid Weaponization</p>
+  </li>
+  <li>
+    <p>Planetary Defense Weapons</p>
+  </li>
+  <li>
+    <p>Solar Warden 2.0</p>
+  </li>
+  <li>
+    <p>Secret Space Fleet</p>
+  </li>
+  <li>
+    <p>Space Mining Conspiracy</p>
+  </li>
+  <li>
+    <p>Asteroid Mining Conspiracy</p>
+  </li>
+  <li>
+    <p>Moon Mining Conspiracy</p>
+  </li>
+  <li>
+    <p>Mars Mining Conspiracy</p>
+  </li>
+  <li>
+    <p>Outer Planet Mining Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Colonization Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Habitat Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Station Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Debris Conspiracy</p>
+  </li>
+  <li>
+    <p>Space Junk Weapons</p>
+  </li>
+  <li>
+    <p>Satellite Weapons</p>
+  </li>
+  <li>
+    <p>Satellite Surveillance</p>
+  </li>
+  <li>
+    <p>Satellite Mind Control</p>
+  </li>
+  <li>
+    <p>Satellite Weather Control</p>
+  </li>
+  <li>
+    <p>Solar Radiation Management</p>
+  </li>
+  <li>
+    <p>Geoengineering</p>
+  </li>
+  <li>
+    <p>Climate Change Hoax</p>
+  </li>
+  <li>
+    <p>Global Warming Hoax</p>
+  </li>
+  <li>
+    <p>Ice Age Conspiracy</p>
+  </li>
+  <li>
+    <p>Weather Modification</p>
+  </li>
+  <li>
+    <p>Cloud Seeding Conspiracy</p>
+  </li>
+  <li>
+    <p>Rain Control Conspiracy</p>
+  </li>
+  <li>
+    <p>Drought Creation Conspiracy</p>
+  </li>
+  <li>
+    <p>Hurricane Creation Conspiracy</p>
+  </li>
+  <li>
+    <p>Tornado Creation Conspiracy</p>
+  </li>
+  <li>
+    <p>Storm Steering Conspiracy</p>
+  </li>
+  <li>
+    <p>Jet Stream Manipulation</p>
+  </li>
+  <li>
+    <p>Ocean Current Manipulation</p>
+  </li>
+  <li>
+    <p>Ozone Layer Conspiracy</p>
+  </li>
+  <li>
+    <p>Polar Shift Conspiracy</p>
+  </li>
+  <li>
+    <p>Pole Reversal Conspiracy</p>
+  </li>
+  <li>
+    <p>Crustal Displacement</p>
+  </li>
+  <li>
+    <p>Earth Expansion Theory</p>
+  </li>
+  <li>
+    <p>Hollow Earth Theory 2.0</p>
+  </li>
+  <li>
+    <p>Flat Earth Theory 2.0</p>
+  </li>
+  <li>
+    <p>Concave Earth Theory</p>
+  </li>
+  <li>
+    <p>Infinite Earth Plane</p>
+  </li>
+  <li>
+    <p>Simulation Earth Theory</p>
+  </li>
+  <li>
+    <p>Matrix Theory</p>
+  </li>
+  <li>
+    <p>Holographic Universe Theory</p>
+  </li>
+  <li>
+    <p>Multiverse Theory</p>
+  </li>
+  <li>
+    <p>Parallel Universe Theory</p>
+  </li>
+  <li>
+    <p>Alternate Timeline Theory</p>
+  </li>
+  <li>
+    <p>Mandela Effect</p>
+  </li>
+  <li>
+    <p>Time Travel Conspiracies</p>
+  </li>
+  <li>
+    <p>Time Manipulation Conspiracies</p>
+  </li>
+  <li>
+    <p>Time Loop Theory</p>
+  </li>
+  <li>
+    <p>Time Slip Phenomena</p>
+  </li>
+  <li>
+    <p>Time Dilation Conspiracy</p>
+  </li>
+  <li>
+    <p>Chronological Revisionism</p>
+  </li>
+  <li>
+    <p>Historical Revisionism Conspiracies</p>
+  </li>
+  <li>
+    <p>Fake History Conspiracies</p>
+  </li>
+  <li>
+    <p>Forbidden Archaeology</p>
+  </li>
+  <li>
+    <p>OOPArts</p>
+  </li>
+  <li>
+    <p>Ancient High Technology</p>
+  </li>
+  <li>
+    <p>Lost Civilizations</p>
+  </li>
+  <li>
+    <p>Atlantis</p>
+  </li>
+  <li>
+    <p>Lemuria</p>
+  </li>
+  <li>
+    <p>Mu</p>
+  </li>
+  <li>
+    <p>Kumari Kandam</p>
+  </li>
+  <li>
+    <p>Bimini Road</p>
+  </li>
+  <li>
+    <p>Yonaguni Monument</p>
+  </li>
+  <li>
+    <p>Sunken Cities</p>
+  </li>
+  <li>
+    <p>Great Flood Conspiracy</p>
+  </li>
+  <li>
+    <p>Noah’s Ark Conspiracy</p>
+  </li>
+  <li>
+    <p>Biblical Flood Conspiracy</p>
+  </li>
+  <li>
+    <p>Ancient Nuclear War</p>
+  </li>
+  <li>
+    <p>Ancient Giants</p>
+  </li>
+  <li>
+    <p>Nephilim</p>
+  </li>
+  <li>
+    <p>Anunnaki</p>
+  </li>
+  <li>
+    <p>Watchers</p>
+  </li>
+  <li>
+    <p>Fallen Angels</p>
+  </li>
+  <li>Ancient Genetic Engineering</li>
+</ul>
+
+             
+<div class="giscus-wrapper">
+  
+
+<script src="https://giscus.app/client.js"
+        data-repo="midnightbard/midnightbard.github.io"
+        data-repo-id="R_kgDOPX22yQ"
+        data-category="General"
+        data-category-id="DIC_kwDOPX22yc4CtwJD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark_protanopia"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+        
+        </div>
+
+
+
+              
+</div>      	
+        
+    </div>
+      
+      
+      <div id="mobilevisible">
+      
+      
+       
+      
+        
+      
+      </div>
+      
+      
+
+      
+      
+
+  </div>
+        
+<div class="card-footer text-muted">
+            <center><b>
+                
+    
+   
+    <i class="bi bi-eye"></i>
+                </b> 
+    </center>
+                
+  </div>        
+</div>
+    
+    
+    
+  
+    
+    
+    
+     
+    
+    
+    
+    
+
+</div> 
+                     
+<div class="col-sm-5">
+    
+<style>
+  #myTab {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  #myTabContent {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  
+  .nav-tabs {
+    border-bottom: 1px solid #333;
+  }
+
+  
+  .nav-tabs .nav-link {
+    color: #bbb;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-bottom: none;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  
+  .nav-tabs .nav-link:hover {
+    background-color: #2c2c2c;
+    color: #fff;
+  }
+
+  
+  .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd #0d6efd #121212;
+  }
+
+  
+  .tab-content {
+    border: 1px solid #333;
+    border-top: none;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 0 0 0.5rem 0.5rem;
+    color: #e0e0e0;
+  }
+</style>
+
+<!-- CONSPIRACY -->
+<h3><i class="bi bi-journal-bookmark"></i>  Conspiracy Theories</h3><img src="https://i.imgur.com/MDRCKl6.png" class="img-thumbnail"/>
+Have you ever heard a story that sounds wild, but still makes you wonder, “What if it’s true?” That’s the world of conspiracy theories. They’re ideas that suggest events or situations are secretly controlled by powerful people, hidden groups, or unknown forces.
+
+Some theories are about politics, others involve history, science, or even outer space. They can be exciting to explore because they make us question the “official” version of events. But not all conspiracy theories are harmless — some can spread fear or misinformation.
+
+The important thing is to stay curious but also think critically. Ask questions, look for facts, and keep an open mind without believing everything you hear. Whether you see them as mysteries to solve or stories to enjoy, conspiracy theories will always spark curiosity and debate.
+
+What’s the strangest one you’ve heard?
+<hr/>  
+
+<!--.-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- SELF-DEVELOPMENT -->
+
+<!-- HEALING PRACTICES -->
+
+
+<!-- HEALING AND PERSONAL GROWTH -->
+  
+
+<!---.--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SPIRITUALITY -->
+
+<!-- ESOTERICISM -->
+
+<!-- DIVINATION -->
+
+<!-- SPIRITUAL -->
+
+
+
+
+<div id="desktopvisible" class="card" style="width: 100%;">
+
+   
+    
+    
+    
+      
+    
+    
+       
+</div>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidebar = document.getElementById('sidebar-plus');
+      var totalPosts = document.createElement('p');
+
+      totalPosts.textContent = 'Total posts: ' + 22;
+      sidebar.appendChild(totalPosts);
+    });
+  </script>
+    
+    
+    <b><div id="sidebar-plus"></div></b>
+
+
+<div id="blog-archive">
+    <h4>Archive</h4>
+    <select id="archive-year"></select>
+    <select id="archive-month"></select>
+    <div id="archive-posts"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () { 
+    var archiveYearSelect = document.getElementById('archive-year');
+    var archiveMonthSelect = document.getElementById('archive-month');
+    var archivePostsContainer = document.getElementById('archive-posts');
+    var offset = 0;
+    var limit = 31;
+    var jsonData;
+
+    loadMorePosts();
+
+    function loadMorePosts() {
+        var apiUrl = '/feed.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                jsonData = JSON.parse(data);
+                updateBlogArchive();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+if (media === "conspiracy") return '<i style="color:red;" class="bi bi-eye"></i>';
+if (media === "healing") return '<i style="color:yellow;" class="bi bi-heart-fill"></i>';
+if (media === "spiritual") return '<i style="color:violet;" class="bi bi-star-fill"></i>';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="archive-link">
+                    <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                </div>`;
+    }
+
+    function updateBlogArchive() {
+        if (archiveYearSelect && archiveMonthSelect) {
+            
+            archiveYearSelect.innerHTML = '';
+            archiveMonthSelect.innerHTML = '';
+
+            
+            var years = [...new Set(jsonData.map(post => new Date(post.date).getFullYear()))];
+            var months = [...new Set(jsonData.map(post => new Date(post.date).toLocaleString('default', { month: 'long' })))];
+
+            
+            years.forEach(year => {
+                var option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                archiveYearSelect.appendChild(option);
+            });
+
+            
+            months.forEach(month => {
+                var option = document.createElement('option');
+                option.value = month;
+                option.textContent = month;
+                archiveMonthSelect.appendChild(option);
+            });
+
+            
+            archiveYearSelect.addEventListener('change', updatePostsByYearMonth);
+            archiveMonthSelect.addEventListener('change', updatePostsByYearMonth);
+
+            
+            var currentYear = new Date().getFullYear();
+            archiveYearSelect.value = Math.max(...years, currentYear).toString();
+            archiveMonthSelect.value = new Date().toLocaleString('default', { month: 'long' });
+
+            
+            updatePostsByYearMonth();
+        }
+    }
+
+    function updatePostsByYearMonth() {
+        var selectedYear = archiveYearSelect.value;
+        var selectedMonth = archiveMonthSelect.value;
+
+        var filteredPosts = jsonData.filter(post => {
+            var postYear = new Date(post.date).getFullYear();
+            var postMonth = new Date(post.date).toLocaleString('default', { month: 'long' });
+
+            return (selectedYear === 'All' || postYear.toString() === selectedYear) &&
+                   (selectedMonth === 'All' || postMonth === selectedMonth);
+        });
+
+        var results = filteredPosts.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+        archivePostsContainer.innerHTML = results;
+    }
+});
+
+</script>
+
+
+<hr>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var sidebarBlog = document.getElementById('sidebar-blog2');
+  var totalBlogPosts = document.createElement('p');
+
+  totalBlogPosts.textContent = 'Total Articles: ' + 0;
+  sidebarBlog.appendChild(totalBlogPosts);
+});
+</script>
+
+
+
+     
+ 
+     
+</div>
+</div> 
+</div>
+    
+    <footer>
+        
+        
+       
+        
+   <br/><hr>
+
+<center>
+
+<script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+    
+    </center>
+
+
+
+
+
+<button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+
+<script>
+        
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var btn = document.getElementById("goTopBtn");
+            var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
+
+            if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        }
+
+        
+        function goTop() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        }
+    </script>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var images = document.querySelectorAll('img');
+
+    images.forEach(function (image) {
+      image.addEventListener('click', function (event) {
+        if (!event.target.classList.contains('rounded-image')) {
+          event.preventDefault();
+          console.log('Image click prevented.');
+        }
+      });
+
+      image.addEventListener('contextmenu', function (event) {
+        if (!event.target.classList.contains('rounded-image')) {
+          event.preventDefault();
+          console.log('Context menu prevented.');
+        }
+      });
+    });
+  });
+</script>
+
+
+    </footer>
+    
+
+
+    
+</body>
+</html>

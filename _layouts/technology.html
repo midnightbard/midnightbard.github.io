@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+{% include head.html %}
+</head>
+    
+    
+<body>
+    
+    <div class="container-fluid">
+ <header>    
+{% include header.html %}
+</header>
+                
+<div class="row">
+                
+<div class="col-sm-7">
+    
+    <div class="card" style="width: 100%;">
+        
+        <div class="card-footer text-muted">            
+            
+            <div class="post-navigation">
+  {% if page.previous %}
+    <span class="previous">
+        <a href="{{ page.previous.url }}"><button type="button" class="btn btn-dark">Previous Post</button></a>
+    </span>
+  {% endif %}
+  
+  {% if page.next %}
+    <span class="next">
+        <a href="{{ page.next.url }}"><button type="button" class="btn btn-dark">Next Post</button></a>
+    </span>
+  {% endif %}
+</div>
+            
+  </div>
+        
+        <div id="mobilevisible">
+             
+        
+        
+        </div>
+  <div class="card-body">
+      <h2 class="card-title">
+          <b>{% if page.media contains "instagram" %}<i class="bi bi-instagram"></i>{% else %}{% endif %}
+              {% if page.media contains "journal" %}<i class="bi bi-journal"></i>{% else %}{% endif %}
+              {% if page.media contains "photo" %}<i class="bi bi-image"></i>{% else %}{% endif %}
+              {% if page.media contains "video" %}<i class="bi bi-camera-reels"></i>{% else %}{% endif %}
+              {% if page.media contains "health" %}🫀{% else %}{% endif %}
+              {% if page.media contains "internet" %}🕸️{% else %}{% endif %}
+          </b>  {{page.title}}</h2>
+      
+      
+    <div class="card-text">
+        
+        {% if page.website %}
+  on {{ page.website }}
+{% endif %}
+        
+     {%if page.date%}
+        
+  <small>{{ page.date | date: "%B %d, %Y in %H:%M, CET" }}</small>
+        
+            
+     <div style="border-bottom:1px white solid;">  
+         {% if page.image %}<img src="{{page.image}}" class="img-fluid"/><br/>{% endif %}
+    {% if page.description %}<b>{{page.description}}</b><br/>{% endif %}
+         
+        
+     </div>   {% endif %}
+        
+        <div style="padding-top:5px;">
+        {{ content }}
+            
+             
+      
+    {% if page.comments %}
+            
+{% include disqus.html %}
+            
+           
+            
+            
+<div id="mastodon-toot">
+    <h3><i class="bi bi-mastodon"></i> Status</h3>
+    <div id="toot-content">Loading...</div>
+    <h4><i class="bi bi-reply"></i> Comments</h4>
+    <ul id="toot-comments"></ul>
+</div>
+
+<script>
+    const INSTANCE_URL = "{{ page.mastodon }}";
+    const TOOT_ID = "{{ page.comments }}";
+
+    function getProfileUrl(acct) {
+        const [username, domain] = acct.split('@');
+        return `https://${domain}/@${username}`;
+    }
+
+    async function fetchTootAndReplies() {
+        try {
+           
+            const tootResponse = await fetch(`${INSTANCE_URL}/api/v1/statuses/${TOOT_ID}`);
+            const tootData = await tootResponse.json();
+
+            
+            const mediaContent = tootData.media_attachments.map(media => {
+                if (media.type === "image") {
+                    return `<img src="${media.url}" class="toot-media" alt="media image">`;
+                } else if (media.type === "video") {
+                    return `<video class="toot-media" controls><source src="${media.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                }
+                return "";
+            }).join("");
+
+            
+            document.getElementById("toot-content").innerHTML = `
+                <div class="toot">
+                    <a href="${getProfileUrl(tootData.account.acct)}" target="_blank">
+                        <img src="${tootData.account.avatar}" class="avatar">
+                    </a>
+                    <div class="toot-text">
+                        <p><strong style="color: #7289da;">${tootData.account.display_name}</strong> 
+                        <span class="handle">@${tootData.account.acct}</span></p>
+                        <p>${tootData.content}</p>
+                        ${mediaContent}
+                        <p><a href="${tootData.url}" target="_blank"><i class="bi bi-link-45deg"></i> View on Mastodon</a></p>
+                    </div>
+                </div>
+            `;
+
+            
+            const contextResponse = await fetch(`${INSTANCE_URL}/api/v1/statuses/${TOOT_ID}/context`);
+            const contextData = await contextResponse.json();
+
+            const commentsList = document.getElementById("toot-comments");
+            commentsList.innerHTML = ""; 
+
+            if (contextData.descendants.length === 0) {
+                commentsList.innerHTML = "<li>No comments yet.</li>";
+            } else {
+                contextData.descendants.forEach(reply => {
+                    const replyMediaContent = reply.media_attachments.map(media => {
+                        if (media.type === "image") {
+                            return `<img src="${media.url}" class="comment-media" alt="media image">`;
+                        } else if (media.type === "video") {
+                            return `<video class="comment-media" controls><source src="${media.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                        }
+                        return "";
+                    }).join("");
+
+                    
+                    const commentItem = document.createElement("li");
+                    commentItem.className = "comment";
+                    commentItem.innerHTML = `
+                        <a href="${getProfileUrl(reply.account.acct)}" target="_blank">
+                            <img src="${reply.account.avatar}" class="avatar">
+                        </a>
+                        <div class="comment-text">
+                            <strong style="color: #7289da;">${reply.account.display_name}</strong> 
+                            <span class="handle">@${reply.account.acct}</span>
+                            <p>${reply.content}</p>
+                            ${replyMediaContent}
+                            <p><a href="${reply.url}" target="_blank"><i class="bi bi-link-45deg"></i> View Reply</a></p>
+                        </div>
+                    `;
+                    commentsList.appendChild(commentItem);
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching Mastodon toot:", error);
+            document.getElementById("toot-content").innerHTML = "Failed to load status.";
+        }
+    }
+
+    fetchTootAndReplies();
+</script>
+
+<style>
+    #mastodon-toot {
+        background: #36393f;
+        border-radius: 10px;
+        padding: 15px;
+        max-width: 100%;
+        margin: auto;
+        color: #dcddde;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h3, h4 {
+        color: #ffffff;
+    }
+
+    .toot, .comment {
+        display: flex;
+        align-items: flex-start;
+        background: #2f3136;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    .toot-text, .comment-text {
+        flex: 1;
+    }
+
+    .handle {
+        color: #b9bbbe;
+        font-size: 12px;
+    }
+
+    #toot-comments {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .comment {
+        border-top: 1px solid #202225;
+    }
+
+    .comment p {
+        margin: 5px 0 0;
+    }
+
+    .toot-media, .comment-media {
+        max-width: 50%;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+
+    .toot-media, .comment-media {
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        color: #7289da;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+
+            
+            
+            
+            
+     
+  {% endif %}       
+                 
+         
+  </div>      	
+        
+    </div>
+      
+      
+      <div id="mobilevisible">
+      
+      
+      {% if page.gallery %}
+      <h4>Gallery</h4>
+      <div id="carouselExampleIndicators1" class="carousel slide">
+        <div class="carousel-indicators1">
+          {% for image in page.gallery %}
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
+        <div class="carousel-inner">
+          {% for image in page.gallery %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ image }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    {% endif %} 
+      
+      {% if page.photos %}
+      <h4>Photos</h4>
+      <div id="carouselExampleIndicators4" class="carousel slide">
+        <div class="carousel-indicators4">
+          {% for image in page.photos %}
+            <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
+        <div class="carousel-inner">
+          {% for image in page.photos %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ image }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    {% endif %}  
+      
+      </div>
+      
+      
+
+      
+      
+
+  </div>
+        
+<div class="card-footer text-muted">
+            <center><b>
+                
+    {% if page.media contains "instagram" %}<i class="bi bi-instagram"></i>{% endif %}
+    {% if page.media contains "photo" %}<i class="bi bi-image"></i>{% endif %}  
+    {% if page.media contains "journal" %}<i class="bi bi-journal"></i>{% endif %} 
+    {% if page.media contains "video" %}<i class="bi bi-camera-reels"></i>{% endif %} 
+                </b> 
+    </center>
+                
+  </div>        
+</div>
+    
+    
+    
+  {% if page.category contains "diary" %}
+    
+    
+    
+    
+<div id="posts-loaded"></div>
+<button id="button-load-more">Load More</button>
+<div id="active-feed"></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var postsLoaded = document.getElementById('posts-loaded');
+    var activeFeed = document.getElementById('active-feed');
+    var buttonLoadMore = document.getElementById('button-load-more');
+    var offset = 0;
+    var limit = 10;
+
+    loadMorePosts();
+
+    buttonLoadMore.addEventListener('click', function () {
+        loadMorePosts();
+    });
+
+    function loadMorePosts() {
+        var apiUrl = '/feed-technology.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                var jsonData = JSON.parse(data);
+                var results = jsonData.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+                activeFeed.innerHTML += results;
+                offset += limit;
+                updatePostsLoaded();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+            if (media === "instagram") return '<i class="bi bi-instagram"></i>';
+if (media === "journal") return '<i class="bi bi-journal"></i>';
+if (media === "photo") return '<i class="bi bi-image"></i>';
+if (media === "video") return '<i class="bi bi-camera-reels"></i>';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="active-feed">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <b class="card-title">
+                                <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                            </b><br/>
+                            <span class="card-text">
+                                <span style="padding: 3px; vertical-align: top;">${post.description}</span><br />
+                            </span>
+                        </div>
+                    </div>
+                </div>`;
+    }
+
+    function updatePostsLoaded() {
+        var postsLoadedText = activeFeed.children.length + ' latest posts loaded.';
+        postsLoaded.textContent = postsLoadedText;
+    }
+});
+</script>    
+    
+
+    
+    {% else %}{% endif %}
+    
+    
+    
+     {% if page.category contains "blogy" %}
+    
+
+  <div id="posts-loaded"></div>
+<button id="button-load-more">Load More</button>
+<div id="active-feed"></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var postsLoaded = document.getElementById('posts-loaded');
+    var activeFeed = document.getElementById('active-feed');
+    var buttonLoadMore = document.getElementById('button-load-more');
+    var offset = 0;
+    var limit = 10;
+
+    loadMorePosts();
+
+    buttonLoadMore.addEventListener('click', function () {
+        loadMorePosts();
+    });
+
+    function loadMorePosts() {
+        var apiUrl = '/feed2.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                var jsonData = JSON.parse(data);
+                var results = jsonData.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+                activeFeed.innerHTML += results;
+                offset += limit;
+                updatePostsLoaded();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+            if (media === "internet") return '🕸️';
+            if (media === "health") return '🫀';
+            if (media === "video") return '🎥';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="active-feed">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <b class="card-title">
+                                <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                            </b><br/>
+                            <span class="card-text">
+                                <span style="padding: 3px; vertical-align: top;">${post.description}</span><br />
+                            </span>
+                        </div>
+                    </div>
+                </div>`;
+    }
+
+    
+    function updatePostsLoaded() {
+        var postsLoadedText = activeFeed.children.length + ' latest posts loaded.';
+        postsLoaded.textContent = postsLoadedText;
+    }
+});
+</script>    
+    
+
+    
+    {% else %}{% endif %}
+    
+    
+    
+    
+
+</div> 
+                     
+<div class="col-sm-5">
+    
+{% if page.media contains "instagram" %}{% include sidebar3.html %}{% endif %} 
+{% if page.media contains "journal" %}{% include sidebar3.html %}{% endif %}      
+{% if page.media contains "photo" %}{% include sidebar3.html %}{% endif %} 
+{% if page.media contains "video" %}{% include sidebar3.html %}{% endif %} 
+{% if page.category contains "diary" %}{% include sidebar3.html %}{% endif %}    
+</div>
+</div> 
+</div>
+    
+    <footer>
+        
+        
+       
+        
+   <br/><hr>
+
+<center>
+
+<script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+    
+    </center>
+
+
+
+
+
+<button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+
+<script>
+        
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var btn = document.getElementById("goTopBtn");
+            var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
+
+            if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        }
+
+        
+        function goTop() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        }
+    </script>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var images = document.querySelectorAll('img');
+
+    images.forEach(function (image) {
+      image.addEventListener('click', function (event) {
+        if (!event.target.classList.contains('rounded-image')) {
+          event.preventDefault();
+          console.log('Image click prevented.');
+        }
+      });
+
+      image.addEventListener('contextmenu', function (event) {
+        if (!event.target.classList.contains('rounded-image')) {
+          event.preventDefault();
+          console.log('Context menu prevented.');
+        }
+      });
+    });
+  });
+</script>
+
+
+    </footer>
+    
+
+
+    
+</body>
+</html>

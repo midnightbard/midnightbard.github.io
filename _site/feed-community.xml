@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+>
+	<channel>
+		<title>Community | Midnight Bard</title>
+		<description>RSS</description>		
+		<sy:updatePeriod>daily</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		<link>http://localhost:4000</link>
+		<atom:link href="http://localhost:4000/feed-community.xml" rel="self" type="application/rss+xml" />
+		<lastBuildDate>Sat, 16 Aug 2025 00:00:00 +0200</lastBuildDate>
+		
+   <image>
+  <url>/icons/rss.png</url>
+  <title>Midnight Bard</title>
+  <link>http://localhost:4000</link>
+</image>
+     
+        
+        
+        
+        
+		
+			
+        <item>
+  <title>📑LOST (2004)</title>
+  <dc:creator>midnightbard</dc:creator>
+ <description>
+    
+        <b>nothing much</b><br/>
+                
+
+    
+        
+            <img style="width:400px; height:400px;" src="https://i.imgur.com/jOtBB1e.png" type="image/jpeg" />
+        
+    
+                 
+    <p><em>Mystery, Action &amp; Adventure, Drama</em></p>
+
+<p>Just to give the shortest possible intro - I binged this within a few short weeks, because series is leaving Netflix and I wanted to know how it ends.</p>
+
+<p>I think this would be more fitting to the <em>Opinion</em> category than movies, because I will not ruin your fun by exposing details, so no spoiler alert necessary.</p>
+
+<p><img src="https://i.imgur.com/iQvUAnt.png" class="img-thumbnail" /></p>
+
+<p>In my opinion the first season was great, the rest is a slow-burn torture.</p>
+
+<p>I dislike two of a few main characters, Kate Austen and Jack Shephard so much that I gave them names such as Insect and Parasite, though there were few worse.</p>
+
+<p><img src="https://i.imgur.com/dXaDrlU.png" class="img-thumbnail" /></p>
+
+<p>Just to inform you, this goes on for <strong>118</strong> episodes.</p>
+
+<p>The only characters that gave me any hope and any entertainment were James Sawyer and John Locke, and this has nothing to do with actors.
+<img src="https://i.imgur.com/eUNqOvW.png" class="img-thumbnail" /></p>
+
+<hr />
+
+<p>Immediately after this endless torture was over - thankfully in a record time - I jumped into a few episodes of a new season of Wednesday ( which is pale BTW) and I am also watching Colony - which was cancelled, of course - which is NOT on Netflix, of course - which by the way can’t hold me attention, eyelids up or story arc for dear life… of course.</p>
+<br/>
+
+    
+</description>
+  
+            
+  <pubDate>Sat, 16 Aug 2025 00:00:00 +0200</pubDate>
+  <link>http://localhost:4000/community/lost-2004.md/</link>
+  <guid isPermaLink="true">http://localhost:4000/community/lost-2004.md/</guid>
+</item>
+
+
+		
+	</channel>
+</rss>

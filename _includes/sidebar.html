@@ -1,0 +1,314 @@
+<style>
+  #myTab {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  #myTabContent {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  
+  .nav-tabs {
+    border-bottom: 1px solid #333;
+  }
+
+  
+  .nav-tabs .nav-link {
+    color: #bbb;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-bottom: none;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  
+  .nav-tabs .nav-link:hover {
+    background-color: #2c2c2c;
+    color: #fff;
+  }
+
+  
+  .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd #0d6efd #121212;
+  }
+
+  
+  .tab-content {
+    border: 1px solid #333;
+    border-top: none;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 0 0 0.5rem 0.5rem;
+    color: #e0e0e0;
+  }
+</style>
+
+<!-- CONSPIRACY -->
+{% if page.category contains "conspiracy-theories" %}<h3><i class="bi bi-journal-bookmark"></i>  Conspiracy Theories</h3>{% include conspiracy-theories.html %}{% endif %}  
+
+<!--.-->
+
+
+{% if page.category contains "energy-based-healing" %}<h3><i class="bi bi-bookmark"></i>  Energy-Based Healing</h3>{% include energy-based-healing.html %}{% endif %}
+{% if page.category contains "healing-with-animals" %}<h3><i class="bi bi-bookmark"></i>  Healing with Animals</h3>{% include healing-with-animals.html %}{% endif %}
+{% if page.category contains "nature-therapy" %}<h3><i class="bi bi-bookmark"></i>  Nature Therapy</h3>{% include nature-therapy.html %}{% endif %}
+
+
+{% if page.category contains "mindset-shifts" %}<h3><i class="bi bi-bookmark"></i>  Mindset Shifts</h3>{% include mindset-shifts.html %}{% endif %}
+{% if page.category contains "personal-growth-strategies" %}<h3><i class="bi bi-bookmark"></i>  Personal Growth Strategies</h3>{% include personal-growth-strategies.html %}{% endif %}
+{% if page.category contains "shadow-work-and-journaling" %}<h3><i class="bi bi-bookmark"></i>  Shadow Work and Journaling</h3>{% include shadow-work-and-journaling.html %}{% endif %}
+
+<!-- SELF-DEVELOPMENT -->
+{% if page.category contains "self-development" %}<h3><i class="bi bi-bookmarks"></i>  Self-Development</h3>{% include self-development.html %}{% endif %}
+<!-- HEALING PRACTICES -->
+{% if page.category contains "healing-practices" %}<h3><i class="bi bi-bookmarks"></i>  Healing Practices</h3>{% include healing-practices.html %}{% endif %}
+
+<!-- HEALING AND PERSONAL GROWTH -->
+{% if page.category contains "healing-and-personal-growth" %}<h3><i class="bi bi-journal-bookmark"></i>  Healing and Personal Growth</h3>{% include healing-and-personal-growth.html %}{% endif %}  
+
+<!---.--->
+
+
+{% if page.category contains "oracle-cards" %}<h3><i class="bi bi-bookmark"></i>  Oracle Cards</h3>{% include oracle-cards.html %}{% endif %}
+{% if page.category contains "runes" %}<h3><i class="bi bi-bookmark"></i>  Runes</h3>{% include runes.html %}{% endif %}
+{% if page.category contains "tarot" %}<h3><i class="bi bi-bookmark"></i>  Tarot</h3>{% include tarot.html %}{% endif %}
+{% if page.category contains "tarot-decks" %}<h3>Tarot Decks</h3>{% include tarot-decks.html %}{% endif %}
+{% if page.category contains "tarot-readings" %}<h3>Tarot Readings</h3>{% include tarot-readings.html %}{% endif %}
+{% if page.category contains "tarot-spreads" %}<h3>Tarot Spreads</h3>{% include tarot-spreads.html %}{% endif %}
+{% if page.category contains "tarot-tutorials" %}<h3>Tarot Tutorials</h3>{% include tarot-tutorials.html %}{% endif %}
+
+
+{% if page.category contains "alchemy" %}<h3><i class="bi bi-bookmark"></i>  Alchemy</h3>{% include alchemy.html %}{% endif %}
+{% if page.category contains "ancient-myths-and-archetypes" %}<h3><i class="bi bi-bookmark"></i>  Ancient Myths and Archetypes</h3>{% include ancient-myths-and-archetypes.html %}{% endif %}
+{% if page.category contains "sacred-geometry" %}<h3><i class="bi bi-bookmark"></i>  Sacred Geometry</h3>{% include sacred-geometry.html %}{% endif %}
+{% if page.category contains "symbols" %}<h3><i class="bi bi-bookmark"></i>  Symbols</h3>{% include symbols.html %}{% endif %}
+
+
+{% if page.category contains "astrology" %}<h3><i class="bi bi-bookmark"></i>  Astrology</h3>{% include astrology.html %}{% endif %}
+{% if page.category contains "chakras" %}<h3><i class="bi bi-bookmark"></i>  Chakras</h3>{% include chakras.html %}{% endif %}
+{% if page.category contains "dream-interpretation" %}<h3><i class="bi bi-bookmark"></i>  Dream Interpretation</h3>{% include dream-interpretation.html %}{% endif %}
+{% if page.category contains "energy-healing" %}<h3><i class="bi bi-bookmark"></i>  Energy Healing</h3>{% include energy-healing.html %}{% endif %}
+{% if page.category contains "meditation" %}<h3><i class="bi bi-bookmark"></i>  Meditation</h3>{% include meditation.html %}{% endif %}
+{% if page.category contains "midfulness" %}<h3><i class="bi bi-bookmark"></i>  Mindfulness</h3>{% include midfulness.html %}{% endif %}
+{% if page.category contains "manifestation" %}<h3><i class="bi bi-bookmark"></i>  Manifestation</h3>{% include manifestation.html %}{% endif %}
+{% if page.category contains "mysticism" %}<h3><i class="bi bi-bookmark"></i>  Mysticism</h3>{% include mysticism.html %}{% endif %}
+
+<!-- SPIRITUALITY -->
+{% if page.category contains "spirituality" %}<h3><i class="bi bi-bookmarks"></i>  Spirituality</h3>{% include spirituality.html %}{% endif %}
+<!-- ESOTERICISM -->
+{% if page.category contains "esotericism" %}<h3><i class="bi bi-bookmarks"></i>  Esotericism</h3>{% include esotericism.html %}{% endif %}
+<!-- DIVINATION -->
+{% if page.category contains "divination" %} <h3><i class="bi bi-bookmarks"></i>  Divination</h3>{% include divination.html %}{% endif %}
+<!-- SPIRITUAL -->
+{% if page.category contains "spiritual-and-esoteric-practices" %}<h3><i class="bi bi-journal-bookmark"></i>  Spiritual and Esoteric Practices</h3>{% include spiritual-and-esoteric-practices.html %}{% endif %}
+
+
+
+<div id="desktopvisible" class="card" style="width: 100%;">
+
+   
+  {% if page.gallery %}
+     
+      <div id="carouselExampleIndicators2" class="carousel slide">
+           <h4>Gallery</h4>
+        <div class="carousel-indicators2">
+          {% for image in page.gallery %}
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
+        <div class="carousel-inner">
+          {% for image in page.gallery %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ image }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    {% endif %}  
+    
+    
+    {% if page.photos %}
+    
+      <div id="carouselExampleIndicators3" class="carousel slide">
+          <h4>Photos</h4>
+        <div class="carousel-indicators3">
+          {% for image in page.photos %}
+            <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}">
+            </button>
+          {% endfor %}
+        </div>
+        <div class="carousel-inner">
+          {% for image in page.photos %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ image }}" class="d-block w-100" alt="...">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    {% endif %}  
+    
+    
+       
+</div>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidebar = document.getElementById('sidebar-plus');
+      var totalPosts = document.createElement('p');
+
+      totalPosts.textContent = 'Total posts: ' + {{ site.posts | size }};
+      sidebar.appendChild(totalPosts);
+    });
+  </script>
+    
+    
+    <b><div id="sidebar-plus"></div></b>
+
+
+<div id="blog-archive">
+    <h4>Archive</h4>
+    <select id="archive-year"></select>
+    <select id="archive-month"></select>
+    <div id="archive-posts"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () { 
+    var archiveYearSelect = document.getElementById('archive-year');
+    var archiveMonthSelect = document.getElementById('archive-month');
+    var archivePostsContainer = document.getElementById('archive-posts');
+    var offset = 0;
+    var limit = 31;
+    var jsonData;
+
+    loadMorePosts();
+
+    function loadMorePosts() {
+        var apiUrl = '/feed.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                jsonData = JSON.parse(data);
+                updateBlogArchive();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+if (media === "conspiracy") return '<i style="color:red;" class="bi bi-eye"></i>';
+if (media === "healing") return '<i style="color:yellow;" class="bi bi-heart-fill"></i>';
+if (media === "spiritual") return '<i style="color:violet;" class="bi bi-star-fill"></i>';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="archive-link">
+                    <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                </div>`;
+    }
+
+    function updateBlogArchive() {
+        if (archiveYearSelect && archiveMonthSelect) {
+            
+            archiveYearSelect.innerHTML = '';
+            archiveMonthSelect.innerHTML = '';
+
+            
+            var years = [...new Set(jsonData.map(post => new Date(post.date).getFullYear()))];
+            var months = [...new Set(jsonData.map(post => new Date(post.date).toLocaleString('default', { month: 'long' })))];
+
+            
+            years.forEach(year => {
+                var option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                archiveYearSelect.appendChild(option);
+            });
+
+            
+            months.forEach(month => {
+                var option = document.createElement('option');
+                option.value = month;
+                option.textContent = month;
+                archiveMonthSelect.appendChild(option);
+            });
+
+            
+            archiveYearSelect.addEventListener('change', updatePostsByYearMonth);
+            archiveMonthSelect.addEventListener('change', updatePostsByYearMonth);
+
+            
+            var currentYear = new Date().getFullYear();
+            archiveYearSelect.value = Math.max(...years, currentYear).toString();
+            archiveMonthSelect.value = new Date().toLocaleString('default', { month: 'long' });
+
+            
+            updatePostsByYearMonth();
+        }
+    }
+
+    function updatePostsByYearMonth() {
+        var selectedYear = archiveYearSelect.value;
+        var selectedMonth = archiveMonthSelect.value;
+
+        var filteredPosts = jsonData.filter(post => {
+            var postYear = new Date(post.date).getFullYear();
+            var postMonth = new Date(post.date).toLocaleString('default', { month: 'long' });
+
+            return (selectedYear === 'All' || postYear.toString() === selectedYear) &&
+                   (selectedMonth === 'All' || postMonth === selectedMonth);
+        });
+
+        var results = filteredPosts.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+        archivePostsContainer.innerHTML = results;
+    }
+});
+
+</script>
+
+
+<hr>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var sidebarBlog = document.getElementById('sidebar-blog2');
+  var totalBlogPosts = document.createElement('p');
+
+  totalBlogPosts.textContent = 'Total Articles: ' + {{ site.blogs | size }};
+  sidebarBlog.appendChild(totalBlogPosts);
+});
+</script>
+
+
+

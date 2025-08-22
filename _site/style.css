@@ -1,0 +1,151 @@
+body {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+footer  {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+p {
+  color: #c8cfd5; 
+font-family: 'Roboto', sans-serif;
+}
+
+small {
+    
+    color: #777;
+}
+
+.bi {
+    
+    color: #E2E8F0;
+}
+
+.fa  {
+    
+    color: #E2E8F0;
+}
+
+.container-fluid {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.card  {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.card-body {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.card-title {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.card-text {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+
+.card-footer {
+    background-color: #2D3748!important;
+    color: #E2E8F0!important;
+}
+
+.text-muted {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.post-navigation
+{
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.me-auto{
+        color: red;
+    }
+
+#goTopBtn {
+    color: #E2E8F0;
+    background: black;
+}
+
+.modal-content {
+   background-color: #1A202C;
+    color: #E2E8F0;
+}
+.modal-header {
+   background-color: #1A202C;
+    color: #E2E8F0;
+}
+.modal-body {
+   background-color: #1A202C;
+    color: #E2E8F0;
+}
+.modal-footer {
+    background-color: #2D3748!important;
+    color: #E2E8F0!important;
+}
+
+.carousel {
+   background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.slide {
+   background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+h4 {
+    background-color: #2D3748!important;
+    color: #E2E8F0!important;
+}
+
+.desktopvisible {
+    background-color: #2D3748!important;
+    color: #E2E8F0!important;
+}
+
+.card-img-top {
+   background-color: #1A202C;
+}
+
+.post-navigation  {
+   background-color: #2D3748!important;
+}
+
+a {
+  color: #B2956C!important;
+  text-decoration: none; 
+}
+
+a:hover {
+  color: #83AE84!important; 
+  text-decoration: none; 
+}
+
+.toast {
+   background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+.toast-body {
+   background-color: #303641;
+    color: #E2E8F0;
+}
+
+.toast-header {
+    background-color: #2D3748!important;
+    color: #E2E8F0!important;
+}
+

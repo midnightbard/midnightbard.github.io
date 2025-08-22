@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <title>{{page.title}}</title>
+{% include head.html %}
+</head>
+    
+    
+<body>
+    
+    <div class="container-fluid">
+ <header>    
+{% include header.html %}
+</header>
+                
+<div class="row">
+                
+<div class="col-sm-12">
+    
+    <div class="card" style="width: 100%;">
+        
+        <div class="card-footer text-muted">            
+            <div class="post-navigation">
+              {% if page.previous %}
+                <span class="previous">
+                    <a href="{{ page.previous.url }}"><button type="button" class="btn btn-dark">Previous Post</button></a>
+                </span>
+              {% endif %}
+              
+              {% if page.next %}
+                <span class="next">
+                    <a href="{{ page.next.url }}"><button type="button" class="btn btn-dark">Next Post</button></a>
+                </span>
+              {% endif %}
+            </div>
+        </div>
+        
+        <div id="mobilevisible"></div>
+        
+        <div class="card-body">
+            <h2 class="card-title">
+              {{page.title}}
+            </h2>
+      
+            <div class="card-text">
+                {% if page.website %}
+                  on {{ page.website }}
+                {% endif %}
+                
+                {% if page.date %}
+                  <small>{{ page.date | date: "%B %d, %Y in %H:%M, CET" }}</small>
+                  <div style="border-bottom:1px white solid;">  
+                      {% if page.image %}<img src="{{page.image}}" class="img-fluid"/><br/>{% endif %}
+                      {% if page.description %}<b>{{page.description}}</b><br/>{% endif %}
+                  </div>
+                {% endif %}
+                
+                <div style="padding-top:5px;">
+                    {{ content }}
+                  {% if page.comments %}
+                  {% include disqus.html %}
+                    {% endif %}
+                </div>                 
+            </div>      	
+        </div>
+      
+        
+      
+        <div class="card-footer text-muted">
+        </div>        
+    </div>
+</div> 
+</div>
+    
+    <footer>
+        <br/><hr>
+        <center>
+          <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+          </script>
+        </center>
+        
+        <button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+        
+        <script>
+            window.onscroll = function() { scrollFunction(); };
+            function scrollFunction() {
+                var btn = document.getElementById("goTopBtn");
+                var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
+                if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            }
+            function goTop() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+        
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var images = document.querySelectorAll('img');
+            images.forEach(function (image) {
+              image.addEventListener('click', function (event) {
+                if (!event.target.classList.contains('rounded-image')) {
+                  event.preventDefault();
+                  console.log('Image click prevented.');
+                }
+              });
+              image.addEventListener('contextmenu', function (event) {
+                if (!event.target.classList.contains('rounded-image')) {
+                  event.preventDefault();
+                  console.log('Context menu prevented.');
+                }
+              });
+            });
+          });
+        </script>
+    </footer>
+    
+{% include crisp.html %}
+    
+</body>
+</html>

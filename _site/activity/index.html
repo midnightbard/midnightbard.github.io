@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <title>Activity</title>
+<meta charset="utf-8">
+<title>Activity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta http-equiv="Expires" content="600" />
+
+
+<meta name="fediverse:creator" content="@midnightbard@mastodon.social">
+<link href="https://mastodon.social/@midnightbard" rel="me">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activity">
+<meta property="og:site_name" content="midsummer">
+<meta property="og:url" content="http://localhost:4000/activity/">
+
+
+
+
+
+<meta name="author" content="midnightbard">
+<meta property="article:published_time" content="">
+
+<link rel="canonical" href="http://localhost:4000/activity/">
+
+
+<link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard">
+<link rel="alternate" type="application/rss+xml" title="Mastodon Feed" href="https://mastodon.social/@midnightbard.rss">
+<link rel="alternate" type="application/rss+xml" title="Bluesky Feed" href="https://rsshub.app/bsky/profile/midnightbardtarot.bsky.social">
+
+<link rel="manifest" href="/manifest.json">
+<link rel="shortcut icon" href="/icons/logo.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="/icons/logo.png">
+
+
+<link rel="stylesheet" href="/style.css">
+<link href="/styles/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+<style>
+@media screen and (max-width: 900px) {
+  #desktopvisible {
+    visibility: hidden;
+    display: none;
+  }
+}
+@media only screen and (min-width: 900px) {    
+  #mobilevisible {
+    visibility: hidden;
+    display: none;
+  }
+}  
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+  font-size: 1.125rem!important;
+}    
+
+#goTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  color: #800080;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: black;
+}
+
+a {
+  color: #2AA889!important;
+  text-decoration: none!important; 
+}
+
+a:hover {
+  color: #83AE84!important; 
+  text-decoration: none!important; 
+}
+
+blockquote {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 20px;
+  margin: 0;
+  border-left: 10px solid #2AA889;
+  background-color: black;
+}
+blockquote:hover {
+  background-color: #030303;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  .badge-card {
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+}
+
+.badge-image {
+  width: 110px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.badge-image:hover {
+  transform: scale(1.1);
+}
+
+.badge-name {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+</style>
+
+
+<script>
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+  });
+
+  function promptInstall() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    }
+  }
+</script>
+
+<script src="https://kit.fontawesome.com/58eebbf92c.js" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a.toot").forEach(async function (link) {
+        const tootUrl = link.getAttribute("href");
+
+        if (!tootUrl) return;
+
+        
+        const urlParts = new URL(tootUrl);
+        const instance = urlParts.origin; 
+        const pathParts = urlParts.pathname.split('/');
+        const statusId = pathParts[pathParts.length - 1]; 
+
+        try {
+            
+            const apiUrl = `${instance}/api/v1/statuses/${statusId}`;
+            const response = await fetch(apiUrl);
+
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+            const data = await response.json();
+
+            
+            function formatMastodonDate(isoString) {
+                const date = new Date(isoString);
+                return date.toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                });
+            }
+
+            
+            const embedContainer = document.createElement("div");
+            embedContainer.classList.add("mastodon-embed");
+            embedContainer.innerHTML = `
+                <div class="mastodon-card">
+                    <div class="mastodon-header">
+                        <img src="${data.account.avatar}" class="mastodon-avatar" alt="${data.account.username}">
+                        <div>
+                            <strong>${data.account.display_name}</strong>
+                            <a href="${data.account.url}" target="_blank">@${data.account.acct}</a>
+                        </div>
+                    </div>
+                    <div class="mastodon-content">
+                        ${data.content} 
+                    </div>
+                    ${data.media_attachments.length > 0 ? `<img src="${data.media_attachments[0].url}" class="mastodon-image" alt="Attachment">` : ""}
+                    <div class="mastodon-footer">
+                        <span class="mastodon-date">${formatMastodonDate(data.created_at)}</span>
+                        <a href="${tootUrl}" target="_blank"><i class="bi bi-link-45deg"></i> View on Mastodon</a>
+                    </div>
+                </div>
+            `;
+
+            link.replaceWith(embedContainer);
+        } catch (error) {
+            console.error("Error fetching Mastodon post:", error);
+        }
+    });
+});
+</script>
+
+<style>
+  
+
+.mastodon-embed {
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #1d1d26;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+.mastodon-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mastodon-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.mastodon-content {
+    margin: 10px 0;
+    font-size: 12px;
+}
+.mastodon-image {
+    max-width: 50%;
+    border-radius: 8px;
+}
+.mastodon-footer {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 12px;
+    color: #bbb;
+}
+.mastodon-date {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+</style>
+
+
+
+</head>
+    
+    
+<body>
+    
+    <div class="container-fluid">
+ <header>    
+<nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
+  <div class="container-fluid">
+<a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  HOME</i></h3></a>
+<a class="navbar-brand" href="/shop"><h3><i class="bi bi-bag">  Shop</i></h3></a>
+<a class="navbar-brand" href="/activity"><h3><i class="bi bi-book">  Activity</i></h3></a>
+    
+
+    
+    
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        
+  
+        
+      <h2><i class="bi bi-list"></i></h2>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark bg-dark text-light p-3" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   MIDNIGHT BARD</h5>
+        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+<div class="offcanvas-body">
+  
+  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i>LINKS</i></h5>
+    
+  <a href="https://github.com/midnightbard"><i class="bi bi-github"></i> Github</a>  <br/>  
+  <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" rel="me"><i class="bi bi-bluesky"></i> Bluesky</a><br/>
+  <a href="https://www.youtube.com/@MidnightBardTarot" rel="me"><i class="bi bi-youtube"></i> YouTube</a>
+    <br/>  
+  
+  <hr/>
+    
+<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CONTACT</h5>
+
+
+<p>
+    <small>
+<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>     
+      
+   </small>
+</p> 
+    
+<hr/>
+  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MY BLOGS</h5>
+  
+<a href="/"><i class="bi bi-star"></i> Blog</a> - spirituality; main<br/> 
+<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a> - tech and internet<br/>
+<a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a> - hobbies and interests    
+    
+
+      </div>
+    </div>
+</div>
+    
+</nav>
+
+
+
+</header>
+                
+<div class="row">
+                
+<div class="col-sm-12">
+    
+    <div class="card" style="width: 100%;">
+        
+        <div class="card-footer text-muted">            
+            <div class="post-navigation">
+              
+              
+              
+            </div>
+        </div>
+        
+        <div id="mobilevisible"></div>
+        
+        <div class="card-body">
+            <h2 class="card-title">
+              Activity
+            </h2>
+      
+            <div class="card-text">
+                
+                
+                
+                
+                <div style="padding-top:5px;">
+                    <p>Share your thoughts. 
+Warnings or notifications will be displayed above activity feed.</p>
+
+<style>
+/* Container styling */
+.giscus-wrapper {
+  background: linear-gradient(145deg, #1a1a1a, #222);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  margin-top: 4rem;
+  color: #eaeaea;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.giscus-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
+}
+
+/* Title styling */
+.comments-title {
+  font-size: 2rem;
+  color: #00bcd4;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Responsive iframe container */
+.giscus-wrapper iframe {
+  width: 100% !important;
+  border: none !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for iframe (WebKit only) */
+.giscus-wrapper iframe::-webkit-scrollbar {
+  width: 8px;
+}
+.giscus-wrapper iframe::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
+.giscus-wrapper iframe::-webkit-scrollbar-thumb {
+  background-color: #00bcd4;
+  border-radius: 10px;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.giscus-wrapper {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .giscus-wrapper {
+    padding: 1.5rem;
+  }
+
+  .comments-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+</style>
+
+
+                  
+                  <div class="giscus-wrapper">
+  
+
+<script src="https://giscus.app/client.js"
+        data-repo="midnightbard/midnightbard.github.io"
+        data-repo-id="R_kgDOPX22yQ"
+        data-category="General"
+        data-category-id="DIC_kwDOPX22yc4CtwJD"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark_protanopia"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+        
+        </div>
+
+
+
+
+                    
+                </div>                 
+            </div>      	
+        </div>
+      
+        
+      
+        <div class="card-footer text-muted">
+        </div>        
+    </div>
+</div> 
+</div>
+    
+    <footer>
+        <br/><hr>
+        <center>
+          <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+          </script>
+        </center>
+        
+        <button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+        
+        <script>
+            window.onscroll = function() { scrollFunction(); };
+            function scrollFunction() {
+                var btn = document.getElementById("goTopBtn");
+                var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
+                if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            }
+            function goTop() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+        
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var images = document.querySelectorAll('img');
+            images.forEach(function (image) {
+              image.addEventListener('click', function (event) {
+                if (!event.target.classList.contains('rounded-image')) {
+                  event.preventDefault();
+                  console.log('Image click prevented.');
+                }
+              });
+              image.addEventListener('contextmenu', function (event) {
+                if (!event.target.classList.contains('rounded-image')) {
+                  event.preventDefault();
+                  console.log('Context menu prevented.');
+                }
+              });
+            });
+          });
+        </script>
+    </footer>
+    
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="83de79f1-1180-4cbd-a605-394ac7bb8c34";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    
+</body>
+</html>
