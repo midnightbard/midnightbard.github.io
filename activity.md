@@ -9,7 +9,7 @@ comments: true
 Share your thoughts. 
 Warnings or notifications will be displayed above activity feed. 
 
-<style>
+<!---<style>
 /* Container styling */
 .giscus-wrapper {
   background: linear-gradient(145deg, #1a1a1a, #222);
@@ -87,4 +87,4 @@ Warnings or notifications will be displayed above activity feed.
 
 
 
-</style>
+</style>-->
