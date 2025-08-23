@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Activity">
-<meta property="og:site_name" content="midsummer">
+<meta property="og:site_name" content="midnightbard">
 <meta property="og:url" content="http://localhost:4000/activity/">
 
 
@@ -279,13 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
  <header>    
 <nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
   <div class="container-fluid">
-<a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  HOME</i></h3></a>
-<a class="navbar-brand" href="/shop"><h3><i class="bi bi-bag">  Shop</i></h3></a>
-<a class="navbar-brand" href="/activity"><h3><i class="bi bi-book">  Activity</i></h3></a>
-<a class="navbar-brand" href="/lives"><h3><i class="bi bi-youtube">  Lives</i></h3></a>
     
-
-    
+<a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  MIDNIGHT BARD</i></h3></a>   
     
     
 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -296,12 +291,21 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="offcanvas offcanvas-end text-bg-dark bg-dark text-light p-3" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   MIDNIGHT BARD</h5>
-        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
 <div class="offcanvas-body">
+    
+
+<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a><br/>
+<a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a>  <br/>
+<a href="/shop"><i class="bi bi-bag">  </i>Shop</a><br/>
+<a href="/activity"><i class="bi bi-book">  </i>Activity</a><br/>
+<a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/>
+
+    <hr/>
   
-  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i>LINKS</i></h5>
+  <h5 class="offcanvas-title"><i>LINKS</i></h5>
     
   <a href="https://github.com/midnightbard"><i class="bi bi-github"></i> Github</a>  <br/>  
   <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" rel="me"><i class="bi bi-bluesky"></i> Bluesky</a><br/>
@@ -310,23 +314,18 @@ document.addEventListener("DOMContentLoaded", function () {
   
   <hr/>
     
-<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CONTACT</h5>
+<h5 class="offcanvas-title">CONTACT</h5>
 
 
 <p>
     <small>
-<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>     
+<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>  
+<i class="bi bi-envelope"></i>  midnightbard@proton.me<br/>  
       
    </small>
 </p> 
     
 <hr/>
-  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MY BLOGS</h5>
-  
-<a href="/"><i class="bi bi-star"></i> Blog</a> - spirituality; main<br/> 
-<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a> - tech and internet<br/>
-<a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a> - hobbies and interests    
-    
 
       </div>
     </div>
@@ -339,151 +338,20 @@ document.addEventListener("DOMContentLoaded", function () {
 </header>
                 
 <div class="row">
-                
-<div class="col-sm-12">
-    
-    <div class="card" style="width: 100%;">
-        
-        <div class="card-footer text-muted">            
-            <div class="post-navigation">
-              
-              
-              
-            </div>
-        </div>
-        
-        <div id="mobilevisible"></div>
-        
-        <div class="card-body">
-            <h2 class="card-title">
-              Activity
-            </h2>
-      
-            <div class="card-text">
-                
-                
-                
-                
-                <div style="padding-top:5px;">
-                    <p>Share your thoughts. 
+  
+  <p>Share your thoughts. 
 Warnings or notifications will be displayed above activity feed.</p>
 
-<!---<style>
-/* Container styling */
-.giscus-wrapper {
-  background: linear-gradient(145deg, #1a1a1a, #222);
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-  margin-top: 4rem;
-  color: #eaeaea;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.giscus-wrapper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
-}
-
-/* Title styling */
-.comments-title {
-  font-size: 2rem;
-  color: #00bcd4;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #00bcd4;
-  padding-bottom: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* Responsive iframe container */
-.giscus-wrapper iframe {
-  width: 100% !important;
-  border: none !important;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Custom scrollbar for iframe (WebKit only) */
-.giscus-wrapper iframe::-webkit-scrollbar {
-  width: 8px;
-}
-.giscus-wrapper iframe::-webkit-scrollbar-track {
-  background: #2c2c2c;
-}
-.giscus-wrapper iframe::-webkit-scrollbar-thumb {
-  background-color: #00bcd4;
-  border-radius: 10px;
-}
-
-/* Fade-in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.giscus-wrapper {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .giscus-wrapper {
-    padding: 1.5rem;
-  }
-
-  .comments-title {
-    font-size: 1.5rem;
-  }
-}
-
-
-
-</style>-->
-
-                  
-                  <div class="giscus-wrapper">
+<div class="giscus-wrapper">
   
 
-<script src="https://giscus.app/client.js"
-        data-repo="midnightbard/midnightbard.github.io"
-        data-repo-id="R_kgDOPX22yQ"
-        data-category="General"
-        data-category-id="DIC_kwDOPX22yc4CtwJD"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="dark_protanopia"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
+<script src="https://giscus.app/client.js" data-repo="midnightbard/midnightbard.github.io" data-repo-id="R_kgDOPX22yQ" data-category="General" data-category-id="DIC_kwDOPX22yc4CtwJD" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark_protanopia" data-lang="en" crossorigin="anonymous" async="">
 </script>
         
         </div>
 
 
-
-
-                    
-                </div>                 
-            </div>      	
-        </div>
-      
-        
-      
-        <div class="card-footer text-muted">
-        </div>        
-    </div>
-</div> 
+                
 </div>
     
     <footer>
@@ -495,7 +363,7 @@ Warnings or notifications will be displayed above activity feed.</p>
           </script>
         </center>
         
-        <button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+<button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
         
         <script>
             window.onscroll = function() { scrollFunction(); };

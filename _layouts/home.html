@@ -3,6 +3,8 @@
 <html lang="en" data-bs-theme="dark">
 <head>
 {% include head.html %}
+    
+
 </head>
     
     
@@ -10,7 +12,9 @@
     
     <div class="container-fluid">
  <header>    
-{% include header.html %}
+
+<div class="header-mobile">{% include header-live.html %}</div>
+
 </header>
                 
 <div class="row">
@@ -331,7 +335,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
 {% if page.media contains "conspiracy" %}{% include sidebar.html %}{% endif %}     
 {% if page.media contains "spiritual" %}{% include sidebar.html %}{% endif %} 
-{% if page.media contains "healing" %}{% include sidebar.html %}{% endif %}     
+{% if page.media contains "healing" %}{% include sidebar.html %}{% endif %} 
+    {% if page.media contains "frontpage" %}{% include sidebar.html %}{% endif %} 
 </div>
 </div> 
 </div>

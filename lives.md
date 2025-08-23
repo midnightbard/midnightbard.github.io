@@ -94,7 +94,7 @@ comments: true
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
         <i class="bi bi-list" style="font-size: 1.5rem;"></i>
     </button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
         View Pricing
     </button>
     
@@ -109,7 +109,7 @@ comments: true
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="quickLinksLabel">Quick Links</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <a href="/" class="d-block mb-2"><i class="bi bi-cloud-moon"></i> Home</a>
@@ -126,7 +126,7 @@ comments: true
     <div class="modal-content pricing-content-moonlight">
       <div class="modal-header pricing-header-moonlight">
         <h5 class="modal-title" id="pricingModalLabelMoonlight">Service Pricing</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
         <p class="pricing-text-moonlight">
@@ -151,22 +151,17 @@ comments: true
     const CHANNEL_ID = "UC56rhF2RMN78IpN9KIFSQUg";
 
     async function fetchUpcomingStreams() {
-        // Get upcoming videos
         const searchUrl = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&eventType=upcoming&type=video&order=date&maxResults=10`;
         const searchRes = await fetch(searchUrl);
         const searchData = await searchRes.json();
 
         if (!searchData.items) return [];
 
-        // Extract video IDs
-        const videoIds = searchData.items.map(item => item.id.videoId).join(',');
 
-        // Get scheduledStartTime for correct ordering
+        const videoIds = searchData.items.map(item => item.id.videoId).join(',');
         const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${videoIds}&part=liveStreamingDetails`;
         const detailsRes = await fetch(detailsUrl);
         const detailsData = await detailsRes.json();
-
-        // Sort by scheduledStartTime (earliest first)
         const videos = detailsData.items
             .map(item => ({
                 id: item.id,

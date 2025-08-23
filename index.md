@@ -1,10 +1,10 @@
 --- 
-title: Midnight Bard
+title: 
 layout: home
 image: 
 description:  
 category: diary
-media: spiritual
+media: frontpage
 ---
 
 <div class="profile-container">
