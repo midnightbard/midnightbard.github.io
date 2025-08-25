@@ -212,3 +212,4 @@ layout: live-template
     window.onload = initPage;
 </script>
 
+{% include crisp.html %}
