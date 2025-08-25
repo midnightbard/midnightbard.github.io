@@ -19,7 +19,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="How Energy Healing Works — and Why Science is Catching Up">
 <meta property="og:site_name" content="midnightbard">
-<meta property="og:url" content="http://localhost:4000/how-energy-healing-works-and-why-science-is-catching-up.md/">
+<meta property="og:url" content="http://localhost:4000/how-energy-healing-works-and-why-science-is-catching-up">
 
 
   <meta property="og:image" content="https://i.imgur.com/I0uhiSC.png">
@@ -35,7 +35,7 @@
 <meta name="author" content="midnightbard">
 <meta property="article:published_time" content="2025-07-26 00:00:00 +0200">
 
-<link rel="canonical" href="http://localhost:4000/how-energy-healing-works-and-why-science-is-catching-up.md/">
+<link rel="canonical" href="http://localhost:4000/how-energy-healing-works-and-why-science-is-catching-up">
 
 
 <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard">
@@ -1077,54 +1077,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 </script>
 
-<style>
-.ipa {
-  display: none; 
-}
-</style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
-
-  fetch(apiUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      const countryCode = data.countryCode;
-      if (countryCode) {
-        const allowedCountries = ['US', 'CA', 'NZ', 'AU', 'MC', 'LI', 'LU', 'IE', 'CH', 'NO', 'IS', 'DK', 'NL', 'SM', 'SE', 'AT', 'BE', 'DE', 'AD', 'FI', 'FR', 'GB', 'IT', 'ES', 'PL', 'HR'];
-        if (allowedCountries.includes(countryCode)) {
-          const elementsToShow = document.querySelectorAll('.ipa');
-          elementsToShow.forEach(element => {
-            element.style.display = 'block';
-          });
-        }
-      }
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-});
-    
-    </script>
-
-
-<script>
-document.addEventListener('contextmenu', event => event.preventDefault()); 
-document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 's' || event.key === 'S')) {
-    event.preventDefault();
-  }
-  if (event.ctrlKey && event.shiftKey && (event.key === 'i' || event.key === 'I')) {
-    event.preventDefault();
-  }
-});
-</script>
     </footer>
     
 

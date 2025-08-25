@@ -7,6 +7,7 @@ comments: true
 image: https://i.imgur.com/I0uhiSC.png
 title: How Energy Healing Works — and Why Science is Catching Up
 date: 2025-07-26
+permalink: how-energy-healing-works-and-why-science-is-catching-up
 ---
 
 

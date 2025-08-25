@@ -96,34 +96,7 @@ layout: live-template
     <script src="https://gumroad.com/js/gumroad.js"></script>
 <!-- BUTTONS --->
     
-<div data-country-code="US" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="CA" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="NZ" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="AU" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="MC" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="LI" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="LU" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="IE" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="CH" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="NO" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="IS" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="DK" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="NL" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="SM" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="SE" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="AT" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="BE" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="DE" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="AD" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="FI" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="FR" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="GB" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="IT" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="MT" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="LT" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="ES" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="PL" class="gisted">{% include buttons.html %}</div>
-<div data-country-code="HR" class="gisted">{% include buttons.html %}</div>
+{% include buttons.html %}
   
 <!-- BUTTONS --->
     
@@ -239,37 +212,3 @@ layout: live-template
     window.onload = initPage;
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
-
-    fetch(apiUrl)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const countryCode = data.countryCode;
-        if (countryCode) {
-          const elementToShow = document.querySelector(`[data-country-code="${countryCode}"]`);
-          if (elementToShow) {
-            elementToShow.style.display = 'block';
-          }
-
-          const allowedCountries = ['US','CA','NZ','AU','MC','LI','LU','IE','CH','NO','IS','DK','NL','SM','SE','AT','BE','DE','AD','FI','FR','GB','IT','ES','PL','HR'];
-
-          if (allowedCountries.includes(countryCode)) {
-            const crispScript = document.createElement("script");
-            crispScript.type = "text/javascript";
-            crispScript.innerHTML = 'window.$crisp=[];window.CRISP_WEBSITE_ID="83de79f1-1180-4cbd-a605-394ac7bb8c34";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();';
-            document.head.appendChild(crispScript);
-          }
-        }
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  });
-</script>

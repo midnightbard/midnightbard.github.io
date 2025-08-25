@@ -3,7 +3,7 @@ titlerss: Midnight Bard
 description: backup
 descriptionrss: RSS
 author: midnightbard
-url: 
+url: https://midnightbard.com
 
 logo: /icons/rss.png
 image: /icons/rss.png
@@ -12,21 +12,35 @@ locale: en_US
 
 feed_items: 1000
 feed_update_period: daily
-feed_update_frequency: 1  
+feed_update_frequency: 1
 
 layouts_dir: _layouts
 
 collections:
-  blogs:
-    output: true 
-    permalink: /blogs/:title/
   community:
     output: true
-    permalink: /community/:title/
+    permalink: /:title/
   technology:
     output: true
-    permalink: /technology/:title/
+    permalink: /:title/
 
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /:title/
+  - scope:
+      path: ""
+      type: community
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: technology
+    values:
+      layout: post
 
 permalink: /:title/
 
@@ -40,15 +54,13 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-plugins:  
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
 
-
 exclude:
   - Gemfile
   - exclude/
-  
 
 future: false
