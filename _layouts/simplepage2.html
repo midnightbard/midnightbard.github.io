@@ -28,24 +28,7 @@
           </script>
         </center>
         
-<button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
-        
-        <script>
-            window.onscroll = function() { scrollFunction(); };
-            function scrollFunction() {
-                var btn = document.getElementById("goTopBtn");
-                var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
-                if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
-                    btn.style.display = "block";
-                } else {
-                    btn.style.display = "none";
-                }
-            }
-            function goTop() {
-                document.body.scrollTop = 0; 
-                document.documentElement.scrollTop = 0; 
-            }
-        </script>
+
         
         <script>
           document.addEventListener('DOMContentLoaded', function () {
@@ -66,9 +49,10 @@
             });
           });
         </script>
+      
+      {% include footerf.html %}
     </footer>
     
-{% include crisp.html %}
     
 </body>
 </html>

@@ -32,6 +32,8 @@
 
 
 <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard">
+<link href="/feed-community.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard Diary">
+<link href="/feed-technology.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard Updates Tech">
 <link rel="alternate" type="application/rss+xml" title="Mastodon Feed" href="https://mastodon.social/@midnightbard.rss">
 <link rel="alternate" type="application/rss+xml" title="Bluesky Feed" href="https://rsshub.app/bsky/profile/midnightbardtarot.bsky.social">
 
@@ -282,13 +284,15 @@ document.addEventListener("DOMContentLoaded", function () {
     
 <a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  MIDNIGHT BARD</i></h3></a>   
     
-    
-<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+  <span class="ipa">  
+<button class="navbar-toggler"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         
   
         
       <h2><i class="bi bi-list"></i></h2>
-    </button>
+    </button> </span>
+    
+    
     <div class="offcanvas offcanvas-end text-bg-dark bg-dark text-light p-3" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   </h5>
@@ -299,9 +303,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <a href="/updates"><i class="bi bi-wrench">  </i>Updates</a><br/>
 <a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a>  <br/>
-<a href="/shop"><i class="bi bi-bag">  </i>Shop</a><br/>
-<a href="/activity"><i class="bi bi-book">  </i>Activity</a><br/>
-<a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/>
+<span class="ipa"><a href="/shop"><i class="bi bi-bag">  </i>Shop</a><br/></span>
+<span class="ipa"><a href="/activity"><i class="bi bi-book">  </i>Activity</a><br/></span>
+<span class="ipa"><a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/></span>
 
     <hr/>
   
@@ -335,6 +339,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
 </header>
                 
 <div class="row">
@@ -344,9 +351,11 @@ Warnings or notifications will be displayed above activity feed.</p>
 
 <div class="giscus-wrapper">
   
+        <span class="ipa">
 
 <script src="https://giscus.app/client.js" data-repo="midnightbard/midnightbard.github.io" data-repo-id="R_kgDOPX22yQ" data-category="General" data-category-id="DIC_kwDOPX22yc4CtwJD" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark_protanopia" data-lang="en" crossorigin="anonymous" async="">
 </script>
+</span>
         
         </div>
 
@@ -363,24 +372,7 @@ Warnings or notifications will be displayed above activity feed.</p>
           </script>
         </center>
         
-<button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
-        
-        <script>
-            window.onscroll = function() { scrollFunction(); };
-            function scrollFunction() {
-                var btn = document.getElementById("goTopBtn");
-                var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
-                if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
-                    btn.style.display = "block";
-                } else {
-                    btn.style.display = "none";
-                }
-            }
-            function goTop() {
-                document.body.scrollTop = 0; 
-                document.documentElement.scrollTop = 0; 
-            }
-        </script>
+
         
         <script>
           document.addEventListener('DOMContentLoaded', function () {
@@ -401,9 +393,57 @@ Warnings or notifications will be displayed above activity feed.</p>
             });
           });
         </script>
+      
+      <style>
+.ipa {
+  display: none; 
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
+
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const countryCode = data.countryCode;
+      if (countryCode) {
+        const allowedCountries = ['US', 'CA', 'NZ', 'AU', 'MC', 'LI', 'LU', 'IE', 'CH', 'NO', 'IS', 'DK', 'NL', 'SM', 'SE', 'AT', 'BE', 'DE', 'AD', 'FI', 'FR', 'GB', 'IT', 'ES', 'PL', 'HR'];
+        if (allowedCountries.includes(countryCode)) {
+          const elementsToShow = document.querySelectorAll('.ipa');
+          elementsToShow.forEach(element => {
+            element.style.display = 'block';
+          });
+        }
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+});
+    
+    </script>
+
+
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault()); // disable right click
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 's' || event.key === 'S')) {
+    event.preventDefault();
+  }
+  if (event.ctrlKey && event.shiftKey && (event.key === 'i' || event.key === 'I')) {
+    event.preventDefault();
+  }
+});
+</script>
     </footer>
     
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="83de79f1-1180-4cbd-a605-394ac7bb8c34";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     
 </body>
 </html>

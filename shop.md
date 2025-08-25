@@ -15,7 +15,7 @@ a:hover { color: black!important; }
 <div class="container py-12">
 
 
-
+<span class="ipa">
 <div class="row g-4">
 <!-- LIVE STREAM TIPS -->
 <div class="col-12 col-md-6 col-lg-4">
@@ -101,4 +101,4 @@ Tarot and oracle reading about your favorite celebrity, public person or a compa
 </article>
 </div>
 </div>
-</div>
+    </span>

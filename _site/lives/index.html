@@ -32,6 +32,8 @@
 
 
 <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard">
+<link href="/feed-community.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard Diary">
+<link href="/feed-technology.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard Updates Tech">
 <link rel="alternate" type="application/rss+xml" title="Mastodon Feed" href="https://mastodon.social/@midnightbard.rss">
 <link rel="alternate" type="application/rss+xml" title="Bluesky Feed" href="https://rsshub.app/bsky/profile/midnightbardtarot.bsky.social">
 
@@ -273,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </head>
     
     
-<body>
+<body class="ipa">
  <style>
     body {
         font-family: Arial, sans-serif;
@@ -321,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     #upcoming-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 20px;
     }
 
@@ -354,23 +356,274 @@ document.addEventListener("DOMContentLoaded", function () {
             padding-bottom: 177.78%;
         }
     }
+    
+    .gisted {
+      display: none;
+    }
 </style>
 
 <div class="container">
     <div id="main-player-container"></div>
+    <div id="main-video-title"></div>
     
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+<!-- BUTTONS --->
+    
+<div data-country-code="US" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
         <i class="bi bi-list" style="font-size: 1.5rem;"></i>
     </button>
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
-        View Pricing
+        Info
     </button>
     
-    <script src="https://gumroad.com/js/gumroad.js"></script>
-    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a>
-        
-    <div id="main-video-title"></div>
-
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="CA" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="NZ" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="AU" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="MC" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="LI" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="LU" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="IE" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="CH" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="NO" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="IS" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="DK" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="NL" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="SM" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="SE" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="AT" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="BE" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="DE" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="AD" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="FI" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="FR" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="GB" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="IT" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="MT" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="LT" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="ES" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="PL" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+<div data-country-code="HR" class="gisted"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quickLinksModal">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        Info
+    </button>
+    
+    
+    <a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a></div>
+  
+<!-- BUTTONS --->
+    
 <!-- Quick Links Modal -->
 <div class="modal fade" id="quickLinksModal" tabindex="-1" aria-labelledby="quickLinksLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -393,16 +646,36 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="modal-dialog modal-sm">
     <div class="modal-content pricing-content-moonlight">
       <div class="modal-header pricing-header-moonlight">
-        <h5 class="modal-title" id="pricingModalLabelMoonlight">Service Pricing</h5>
+        <h5 class="modal-title" id="pricingModalLabelMoonlight">INFO</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
-        <p class="pricing-text-moonlight">
-          Click on <b>Configure</b> during checkout to choose from options below<br />
-          <small>$5 – one question</small><br />
-          <small>$10 – two questions</small><br />
-          <small>$20 – general reading</small><br />
-        </p>
+          <ul class="nav nav-tabs" id="tarotTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Tarot Readings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pricing-tab" data-bs-toggle="tab" data-bs-target="#pricing" type="button" role="tab" aria-controls="pricing" aria-selected="false">Pricing</button>
+    </li>
+  </ul>
+          
+          <div class="tab-content" id="tarotTabsContent">
+    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+      <div class="p-3">
+        Tarot readings are happening here; always ask before paying anything. You have access to a private chat to talk with the reader and a tip button to choose your desired option. Your live reading will begin once you've selected a service, and your chat messages will be invisible to others. 
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
+      <div class="p-3">
+        Click on <b>Configure</b> during checkout to choose from options below<hr />
+        <small>$5 – one question</small><br />
+        <small>$10 – two questions + oracle cards and free energy reading.</small><br />
+        <small>$20 – general reading up to 30 minutes</small><hr />
+          Click Continue Shopping to come back on a page. <hr />
+          Your purchase privacy and security are fully protected by the Gumroad platform. 
+      </div>
+    </div>
+  </div>
       </div>
     </div>
   </div>
@@ -410,35 +683,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <h2>Incoming live streams</h2> 
 <hr />
-<b>Click to see time of a live stream.</b>
+<b>Click to see time of a live stream and subscribe to notification. <i class="bi bi-bell-fill"></i></b>
+<hr />
 <div id="upcoming-container"></div>
 </div>
 
 <script>
-    const API_KEY = "AIzaSyCNfUp8j1ZawWbnW2Urdd2CiNmOgDxfW7M";
-    const CHANNEL_ID = "UC56rhF2RMN78IpN9KIFSQUg";
-
-    async function fetchUpcomingStreams() {
-        const searchUrl = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&eventType=upcoming&type=video&order=date&maxResults=10`;
-        const searchRes = await fetch(searchUrl);
-        const searchData = await searchRes.json();
-
-        if (!searchData.items) return [];
-
-
-        const videoIds = searchData.items.map(item => item.id.videoId).join(',');
-        const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${videoIds}&part=liveStreamingDetails`;
-        const detailsRes = await fetch(detailsUrl);
-        const detailsData = await detailsRes.json();
-        const videos = detailsData.items
-            .map(item => ({
-                id: item.id,
-                scheduledTime: item.liveStreamingDetails?.scheduledStartTime || ''
-            }))
-            .sort((a, b) => new Date(a.scheduledTime) - new Date(b.scheduledTime));
-
-        return videos;
-    }
+    const videos = [
+        { id: 'BXJmB5fww28' },
+        { id: 'X5M-u0HMHH4' },
+        { id: 'GioQXrd2Cc8' }
+    ];
 
     function loadMainPlayer(videoId) {
         document.getElementById('main-player-container').innerHTML = `
@@ -465,9 +720,7 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(div);
     }
 
-    async function initPage() {
-        const videos = await fetchUpcomingStreams();
-
+    function initPage() {
         if (videos.length === 0) {
             document.getElementById('main-player-container').innerHTML = `<p style="text-align:center; padding: 50px;">No upcoming videos.</p>`;
             return;
@@ -481,6 +734,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.onload = initPage;
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const countryCode = data.countryCode;
+        if (countryCode) {
+          const elementToShow = document.querySelector(`[data-country-code="${countryCode}"]`);
+          if (elementToShow) {
+            elementToShow.style.display = 'block';
+          }
+
+          const allowedCountries = ['US','CA','NZ','AU','MC','LI','LU','IE','CH','NO','IS','DK','NL','SM','SE','AT','BE','DE','AD','FI','FR','GB','IT','ES','PL','HR'];
+
+          if (allowedCountries.includes(countryCode)) {
+            const crispScript = document.createElement("script");
+            crispScript.type = "text/javascript";
+            crispScript.innerHTML = 'window.$crisp=[];window.CRISP_WEBSITE_ID="83de79f1-1180-4cbd-a605-394ac7bb8c34";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();';
+            document.head.appendChild(crispScript);
+          }
+        }
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  });
 </script>
 
 
@@ -510,7 +798,54 @@ document.addEventListener("DOMContentLoaded", function () {
         </script>
     
     
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="83de79f1-1180-4cbd-a605-394ac7bb8c34";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+    <style>
+.ipa {
+  display: none; 
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
+
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const countryCode = data.countryCode;
+      if (countryCode) {
+        const allowedCountries = ['US', 'CA', 'NZ', 'AU', 'MC', 'LI', 'LU', 'IE', 'CH', 'NO', 'IS', 'DK', 'NL', 'SM', 'SE', 'AT', 'BE', 'DE', 'AD', 'FI', 'FR', 'GB', 'IT', 'ES', 'PL', 'HR'];
+        if (allowedCountries.includes(countryCode)) {
+          const elementsToShow = document.querySelectorAll('.ipa');
+          elementsToShow.forEach(element => {
+            element.style.display = 'block';
+          });
+        }
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+});
     
+    </script>
+
+
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault()); // disable right click
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 's' || event.key === 'S')) {
+    event.preventDefault();
+  }
+  if (event.ctrlKey && event.shiftKey && (event.key === 'i' || event.key === 'I')) {
+    event.preventDefault();
+  }
+});
+</script>
 </body>
 </html>
