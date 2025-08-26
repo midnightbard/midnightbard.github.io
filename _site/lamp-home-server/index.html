@@ -279,8 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    
-
 </head>
     
     
@@ -378,10 +376,13 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
   <div class="card-body">
       <h2 class="card-title">
-<b>
-   
-    
-</b>  LAMP home server and other things</h2>
+          <b>
+              <i class="bi bi-journal"></i>
+              
+              
+              
+              
+          </b>  LAMP home server and other things</h2>
       
       
     <div class="card-text">
@@ -390,18 +391,18 @@ document.addEventListener("DOMContentLoaded", function () {
         
      
         
-  <small>August 26, 2025 in 00:00, CET</small> | 
+  <small>August 26, 2025 in 00:00, CET</small>
+        
             
      <div style="border-bottom:1px white solid;">  
          <img src="https://i.imgur.com/JfaKi81.png" class="img-fluid"/><br/>
     <b>A few stuff about home server, intranet and social media scheduler</b><br/>
          
-         
         
      </div>   
         
-<div style="padding-top:5px;">
-<p>I revamped a discarded PC and installed LAMP on it. It is a home server, which means no hosting online due to the nature of my connection ( mobile) but I can build it into anything for personal use.</p>
+        <div style="padding-top:5px;">
+        <p>I revamped a discarded PC and installed LAMP on it. It is a home server, which means no hosting online due to the nature of my connection ( mobile) but I can build it into anything for personal use.</p>
 
 <blockquote>
   <p>A LAMP server is a popular open-source web development platform that combines four key components: <strong>L</strong>inux, <strong>A</strong>pache, <strong>M</strong>ySQL, and <strong>P</strong>HP. It provides a complete and reliable environment for hosting websites and web applications. The four components work together to deliver web content: Linux as the operating system, Apache as the web server, MySQL for database management, and PHP for server-side scripting.</p>
@@ -456,7 +457,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>I will make sure that all this works smoothly, and then additionally probably some time next month I will upgrade it for TikTok and Pinterest.</p>
 
 <hr />
+
+            
              
+      
+    
+            
 
 <div class="giscus-wrapper" >
   
@@ -483,8 +489,192 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-              
-</div>      	
+
+            
+           
+            
+            
+<div id="mastodon-toot">
+    <h3><i class="bi bi-mastodon"></i> Status</h3>
+    <div id="toot-content">Loading...</div>
+    <h4><i class="bi bi-reply"></i> Comments</h4>
+    <ul id="toot-comments"></ul>
+</div>
+
+<script>
+    const INSTANCE_URL = "";
+    const TOOT_ID = "true";
+
+    function getProfileUrl(acct) {
+        const [username, domain] = acct.split('@');
+        return `https://${domain}/@${username}`;
+    }
+
+    async function fetchTootAndReplies() {
+        try {
+           
+            const tootResponse = await fetch(`${INSTANCE_URL}/api/v1/statuses/${TOOT_ID}`);
+            const tootData = await tootResponse.json();
+
+            
+            const mediaContent = tootData.media_attachments.map(media => {
+                if (media.type === "image") {
+                    return `<img src="${media.url}" class="toot-media" alt="media image">`;
+                } else if (media.type === "video") {
+                    return `<video class="toot-media" controls><source src="${media.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                }
+                return "";
+            }).join("");
+
+            
+            document.getElementById("toot-content").innerHTML = `
+                <div class="toot">
+                    <a href="${getProfileUrl(tootData.account.acct)}" target="_blank">
+                        <img src="${tootData.account.avatar}" class="avatar">
+                    </a>
+                    <div class="toot-text">
+                        <p><strong style="color: #7289da;">${tootData.account.display_name}</strong> 
+                        <span class="handle">@${tootData.account.acct}</span></p>
+                        <p>${tootData.content}</p>
+                        ${mediaContent}
+                        <p><a href="${tootData.url}" target="_blank"><i class="bi bi-link-45deg"></i> View on Mastodon</a></p>
+                    </div>
+                </div>
+            `;
+
+            
+            const contextResponse = await fetch(`${INSTANCE_URL}/api/v1/statuses/${TOOT_ID}/context`);
+            const contextData = await contextResponse.json();
+
+            const commentsList = document.getElementById("toot-comments");
+            commentsList.innerHTML = ""; 
+
+            if (contextData.descendants.length === 0) {
+                commentsList.innerHTML = "<li>No comments yet.</li>";
+            } else {
+                contextData.descendants.forEach(reply => {
+                    const replyMediaContent = reply.media_attachments.map(media => {
+                        if (media.type === "image") {
+                            return `<img src="${media.url}" class="comment-media" alt="media image">`;
+                        } else if (media.type === "video") {
+                            return `<video class="comment-media" controls><source src="${media.url}" type="video/mp4">Your browser does not support the video tag.</video>`;
+                        }
+                        return "";
+                    }).join("");
+
+                    
+                    const commentItem = document.createElement("li");
+                    commentItem.className = "comment";
+                    commentItem.innerHTML = `
+                        <a href="${getProfileUrl(reply.account.acct)}" target="_blank">
+                            <img src="${reply.account.avatar}" class="avatar">
+                        </a>
+                        <div class="comment-text">
+                            <strong style="color: #7289da;">${reply.account.display_name}</strong> 
+                            <span class="handle">@${reply.account.acct}</span>
+                            <p>${reply.content}</p>
+                            ${replyMediaContent}
+                            <p><a href="${reply.url}" target="_blank"><i class="bi bi-link-45deg"></i> View Reply</a></p>
+                        </div>
+                    `;
+                    commentsList.appendChild(commentItem);
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching Mastodon toot:", error);
+            document.getElementById("toot-content").innerHTML = "Failed to load status.";
+        }
+    }
+
+    fetchTootAndReplies();
+</script>
+
+<style>
+    #mastodon-toot {
+        background: #36393f;
+        border-radius: 10px;
+        padding: 15px;
+        max-width: 100%;
+        margin: auto;
+        color: #dcddde;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h3, h4 {
+        color: #ffffff;
+    }
+
+    .toot, .comment {
+        display: flex;
+        align-items: flex-start;
+        background: #2f3136;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    .toot-text, .comment-text {
+        flex: 1;
+    }
+
+    .handle {
+        color: #b9bbbe;
+        font-size: 12px;
+    }
+
+    #toot-comments {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .comment {
+        border-top: 1px solid #202225;
+    }
+
+    .comment p {
+        margin: 5px 0 0;
+    }
+
+    .toot-media, .comment-media {
+        max-width: 50%;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+
+    .toot-media, .comment-media {
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        color: #7289da;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+
+            
+            
+            
+            
+     
+         
+                 
+         
+  </div>      	
         
     </div>
       
@@ -509,8 +699,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <center><b>
                 
     
-   
-    
+      
+    <i class="bi bi-journal"></i> 
+     
                 </b> 
     </center>
                 
@@ -533,10 +724,194 @@ document.addEventListener("DOMContentLoaded", function () {
                      
 <div class="col-sm-5">
     
-     
+ 
+<div id="desktopvisible" class="card" style="width: 100%;">
+
+   
+    
+    
+    
+      
+    
+    
+       
+</div>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidebar = document.getElementById('sidebar-plus');
+      var totalPosts = document.createElement('p');
+
+      totalPosts.textContent = 'Total posts: ' + 1;
+      sidebar.appendChild(totalPosts);
+    });
+  </script>
+    
+    
+    <b><div id="sidebar-plus"></div></b>
+
+
+<div id="blog-archive">
+    <h4>Updates</h4>
+    <select id="archive-year"></select>
+    <select id="archive-month"></select>
+    <div id="archive-posts"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () { 
+    var archiveYearSelect = document.getElementById('archive-year');
+    var archiveMonthSelect = document.getElementById('archive-month');
+    var archivePostsContainer = document.getElementById('archive-posts');
+    var offset = 0;
+    var limit = 31;
+    var jsonData;
+
+    loadMorePosts();
+
+    function loadMorePosts() {
+        var apiUrl = '/feed-technology.json';
+
+        fetch(apiUrl)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Raw JSON data:', data);
+                jsonData = JSON.parse(data);
+                updateBlogArchive();
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }
+
+    function renderResult(post) {
+        function getIcon(media) {
+            if (media === "instagram") return '<i class="bi bi-instagram"></i>';
+            if (media === "journal") return '<i class="bi bi-journal"></i>';
+            if (media === "photo") return '<i class="bi bi-image"></i>';
+            if (media === "video") return '<i class="bi bi-camera-reels"></i>';
+            return ''; 
+        }
+
+        var iconHtml = getIcon(post.media);
+
+        return `<div class="archive-link">
+                    <a href="${post.url}">${iconHtml}  ${post.title}</a>
+                </div>`;
+    }
+
+    function updateBlogArchive() {
+        if (archiveYearSelect && archiveMonthSelect) {
+            
+            archiveYearSelect.innerHTML = '';
+            archiveMonthSelect.innerHTML = '';
+
+            
+            var years = [...new Set(jsonData.map(post => new Date(post.date).getFullYear()))];
+            var months = [...new Set(jsonData.map(post => new Date(post.date).toLocaleString('default', { month: 'long' })))];
+
+            
+            years.forEach(year => {
+                var option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                archiveYearSelect.appendChild(option);
+            });
+
+            
+            months.forEach(month => {
+                var option = document.createElement('option');
+                option.value = month;
+                option.textContent = month;
+                archiveMonthSelect.appendChild(option);
+            });
+
+            
+            archiveYearSelect.addEventListener('change', updatePostsByYearMonth);
+            archiveMonthSelect.addEventListener('change', updatePostsByYearMonth);
+
+            
+            var currentYear = new Date().getFullYear();
+            archiveYearSelect.value = Math.max(...years, currentYear).toString();
+            archiveMonthSelect.value = new Date().toLocaleString('default', { month: 'long' });
+
+            
+            updatePostsByYearMonth();
+        }
+    }
+
+    function updatePostsByYearMonth() {
+        var selectedYear = archiveYearSelect.value;
+        var selectedMonth = archiveMonthSelect.value;
+
+        var filteredPosts = jsonData.filter(post => {
+            var postYear = new Date(post.date).getFullYear();
+            var postMonth = new Date(post.date).toLocaleString('default', { month: 'long' });
+
+            return (selectedYear === 'All' || postYear.toString() === selectedYear) &&
+                   (selectedMonth === 'All' || postMonth === selectedMonth);
+        });
+
+        var results = filteredPosts.slice(offset, offset + limit).map(post => renderResult(post)).join('');
+        archivePostsContainer.innerHTML = results;
+    }
+});
+
+</script>
+
+
+<hr>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var sidebarBlog = document.getElementById('sidebar-blog2');
+  var totalBlogPosts = document.createElement('p');
+
+  totalBlogPosts.textContent = 'Total Articles: ' + 0;
+  sidebarBlog.appendChild(totalBlogPosts);
+});
+</script>
+
+
+
+
+<style>
+  .github-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .github-stats img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .github-stats {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<div class="github-stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=midnightbard&theme=gotham&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&custom_title" alt="GitHub Stats">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=midnightbard&&show_icons=true&locale=en&theme=gotham" alt="ovi" />
+<img src="https://github-profile-trophy.vercel.app/?username=midnightbard&column=4&title=-Stars,-Followers,-PullRequest,-Reviews&theme=darkhub" />
+</div>
+<br/><br/>
+
+
+      
  
  
-     
+    
 </div>
 </div> 
 </div>

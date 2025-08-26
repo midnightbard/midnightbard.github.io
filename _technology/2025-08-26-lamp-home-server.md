@@ -1,6 +1,6 @@
 ---
-layout: home
-media: 
+layout: technology
+media: journal
 description: A few stuff about home server, intranet and social media scheduler 
 comments: true
 image: https://i.imgur.com/JfaKi81.png
