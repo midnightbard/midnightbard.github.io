@@ -92,8 +92,8 @@ layout: live-template
         }
     }
     
-    .gisted {
-      display: none;
+    .modal {
+      max-width: 100%;
     }
 </style>
 
@@ -110,7 +110,7 @@ layout: live-template
     
 <!-- Quick Links Modal -->
 <div class="modal fade" id="quickLinksModal" tabindex="-1" aria-labelledby="quickLinksLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="quickLinksLabel">Quick Links</h5>
@@ -126,40 +126,20 @@ layout: live-template
 </div>
 
 <!-- Pricing Modal -->
-<div class="modal fade pricing-modal-moonlight" id="pricingModalMoonlight" tabindex="-1" aria-labelledby="pricingModalLabelMoonlight" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+<div class="modal fade" id="pricingModalMoonlight" tabindex="-1" aria-labelledby="pricingModalLabelMoonlight" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content pricing-content-moonlight">
       <div class="modal-header pricing-header-moonlight">
         <h5 class="modal-title" id="pricingModalLabelMoonlight">INFO</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
-          <ul class="nav nav-tabs" id="tarotTabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Tarot Readings</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pricing-tab" data-bs-toggle="tab" data-bs-target="#pricing" type="button" role="tab" aria-controls="pricing" aria-selected="false">Pricing</button>
-    </li>
-  </ul>
-          
-          <div class="tab-content" id="tarotTabsContent">
-    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
-      <div class="p-3">
-        Tarot readings are happening here; always ask before paying anything. You have access to a private chat to talk with the reader and a tip button to choose your desired option. Your live reading will begin once you've selected a service, and your chat messages will be invisible to others. 
-      </div>
-    </div>
-    <div class="tab-pane fade" id="pricing" role="tabpanel" aria-labelledby="pricing-tab">
-      <div class="p-3">
-        Click on <b>Configure</b> during checkout to choose from options below<hr/>
-        <small>$5 – one question</small><br>
-        <small>$10 – two questions + oracle cards and free energy reading.</small><br>
-        <small>$20 – general reading up to 30 minutes</small><hr/>
-          Click Continue Shopping to come back on a page. <hr/>
-          Your purchase privacy and security are fully protected by the Gumroad platform. 
-      </div>
-    </div>
-  </div>
+          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. If Gumroad doesn't work for you, use Paypal. </p>
+          <sub>Random tip amount - ??</sub><br>
+          <sub>$5 – one question, yes/no</sub><br>
+          <sub>$10 – two questions, more in depth + oracle cards and free energy reading.</sub><br>
+          <sub>$20 – general reading up to 30 minutes, for ex. what lies in front of me, my future, next month, love situation and similar</sub>
+        
       </div>
     </div>
   </div>
