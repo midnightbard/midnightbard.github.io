@@ -134,7 +134,7 @@ layout: live-template
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
-          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. If Gumroad doesn't work for you, use Paypal. </p>
+          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. If Gumroad doesn't work for you, use Paypal.</p>
           <sub>Random tip amount - ??</sub><br>
           <sub>$5 – one question, yes/no</sub><br>
           <sub>$10 – two questions, more in depth + oracle cards and free energy reading.</sub><br>
@@ -147,7 +147,7 @@ layout: live-template
 
 <h2>Incoming live streams</h2> 
 <hr/>
-<b>Click to see time of a live stream and subscribe to notification. <i class="bi bi-bell-fill"></i></b>
+<sub><b>Click to see time of a live stream and subscribe to notification. <i class="bi bi-bell-fill"></i>. If you don't see a notify button, rotate phone. </b></sub>
 <hr/>
 <div id="upcoming-container"></div>
 </div>
