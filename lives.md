@@ -50,14 +50,14 @@ layout: live-template
 
     #upcoming-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 20px;
 }
 
 /* For screens up to 767px wide (typical mobile landscape and below) */
 @media (max-width: 767px) {
     #upcoming-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
         /* You can adjust the 200px value to whatever looks best on your site. */
     }
 }
