@@ -152,7 +152,7 @@ layout: live-template
 <div id="upcoming-container"></div>
     
     <hr/>
-<sup><i style="color:red!important;" class="bi bi-bell-fill"></i>  <b>Click to see time of a live stream and subscribe to notification. If you don't see a notify button, rotate phone. </b></sup>
+<sup><i style="color:red!important;" class="bi bi-bell-fill"></i> <b>Click on frame to see time of a live stream, click on title to go on YouTube and subscribe to notification.</b></sup>
 </div>
 
 <script>

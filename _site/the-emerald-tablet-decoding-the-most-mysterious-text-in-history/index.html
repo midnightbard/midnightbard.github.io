@@ -57,6 +57,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 <style>
 @media screen and (max-width: 900px) {
@@ -740,6 +742,135 @@ document.addEventListener("DOMContentLoaded", function () {
     border-radius: 0 0 0.5rem 0.5rem;
     color: #e0e0e0;
   }
+</style>
+
+<style>
+    /*
+    * This CSS block is simplified to only include essential styling
+    * that may not be covered by Bootstrap and to target the Gumroad form.
+    */
+    #gumroad-follow-form-embed {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 0.75rem;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #gumroad-follow-form-embed-button {
+        /*
+        * Keep only the Gumroad-specific styling for the button hover effect
+        * which isn't part of standard Bootstrap buttons.
+        */
+        transition-timing-function: ease-out;
+        transition-duration: 0.14s;
+        transition-property: transform;
+        color: black !important; /* Ensure the text is black */
+    }
+
+    #gumroad-follow-form-embed-button:hover {
+        transform: translate(-0.25rem, -0.25rem);
+        box-shadow: .25rem .25rem 0rem rgb(0, 0, 0);
+        background-color: #ff90e8; /* Gumroad pink on hover */
+    }
+
+    #gumroad-follow-form-embed-input:focus-within {
+        outline: 0.125rem solid #ff90e8;
+    }
+</style>
+
+<form class="input-with-button" action="https://gumroad.com/follow_from_embed_form" method="post" id="gumroad-follow-form-embed">
+    <input type="hidden" name="seller_id" value="3304738702667"/>
+    <div class="input-group">
+        <input id="gumroad-follow-form-embed-input" type="email" class="form-control" placeholder="Your email address" name="email" value=""/>
+        <button class="btn btn-primary" type="submit" id="gumroad-follow-form-embed-button">Subscribe</button>
+    </div>
+</form>
+
+<br/>
+
+
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+
+  <div class="social-buttons-row">
+      
+      <a href="https://www.youtube.com/@MidnightBardTarot" class="social-btn btn" style="background-color:#ff0202;" target="_blank" rel="noopener noreferrer" title="Subscribe on YouTube">
+      <i class="fa-brands fa-youtube text-white"></i>
+    </a>
+      
+<a href="https://bsky.app/profile/midnightbardtarot.bsky.social" class="social-btn btn" style="background-color:#0886fe;" target="_blank" rel="noopener noreferrer" title="Follow me on Bluesky">
+      <i class="bi bi-bluesky text-white"></i>
+    </a>
+      
+    <a href="https://mastodon.social/@midnightbardtarot" class="social-btn btn" style="background-color:#6263fc;" target="_blank" rel="me noopener noreferrer" title="Follow me on Mastodon">
+      <i class="fa-brands fa-mastodon text-white"></i>
+    </a>
+      
+    <a href="https://www.threads.net/@midnightbardtarot" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on Threads">
+      <i class="fa-brands fa-threads text-white"></i>
+    </a>
+      
+    
+      
+  </div>
+
+  <div class="social-buttons-row">
+      
+       <a href="https://github.com/midnightbard" class="social-btn btn"  style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on GitHub">
+      <i class="fa-brands fa-github text-white"></i>
+    </a>
+      
+<a href="https://midnight-bard.tumblr.com" class="social-btn btn btn-tumblr" target="_blank" rel="noopener noreferrer" title="Follow me on Tumblr">
+      <i class="fa-brands fa-tumblr text-white"></i>
+    </a>
+      
+    <a href="https://www.pinterest.com/midnightbardtarot/" class="social-btn btn" style="background-color:#ff0202;" target="_blank" rel="noopener noreferrer" title="Follow me on Pinterest">
+      <i class="fa-brands fa-pinterest text-white"></i>
+    </a>
+      
+    <a href="https://www.tiktok.com/@midnightbardtarot" class="social-btn btn"  style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on TikTok">
+      <i class="fa-brands fa-tiktok text-white"></i>
+    </a>
+      
+      
+  </div>
+
+</div>
+
+<style>
+
+.social-buttons-row {
+  display: flex;
+  justify-content: center; 
+  gap: 5px; 
+}
+
+
+.social-btn {
+  width: 50px;  
+  height: 50px; 
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+}
+
+
+.social-buttons-row i {
+  font-size: 1.5rem; 
+}
+
+
+.btn-tumblr {
+  background-color: #35465c;
+  border-color: #35465c;
+}
+
+.btn-tumblr:hover {
+  background-color: #273444;
+  border-color: #273444;
+}
 </style>
 
 <!-- CONSPIRACY -->
