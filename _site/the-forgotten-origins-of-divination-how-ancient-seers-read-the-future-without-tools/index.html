@@ -280,34 +280,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
-
-    fetch(apiUrl)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const countryCode = data.countryCode;
-
-        const blockedCountries = ['HR', 'RU', 'CN']; 
-
-        if (blockedCountries.includes(countryCode)) {
-          const elementsToHide = document.querySelectorAll('.aiss');
-          elementsToHide.forEach(el => {
-            el.style.display = 'none';
-          });
-        }
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  });
-</script>
 
 
 
@@ -1249,7 +1221,34 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const apiUrl = 'http://ip-api.com/json/?fields=countryCode';
 
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const countryCode = data.countryCode;
+
+        const blockedCountries = ['HR', 'RU', 'CN']; 
+
+        if (blockedCountries.includes(countryCode)) {
+          const elementsToHide = document.querySelectorAll('.aiss');
+          elementsToHide.forEach(el => {
+            el.style.display = 'none';
+          });
+        }
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  });
+</script>
     </footer>
     
 
