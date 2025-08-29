@@ -1216,6 +1216,18 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     </div>
-    
+    <script>
+  fetch('http://ip-api.com/json/')
+    .then(response => response.json())
+    .then(data => {
+      const blockedCountries = [
+  'CN', 'IN', 'BD', 'PK', 'LK', 'NP', 'MV', 'BT', 'AF', 'AL', 'DZ', 'AZ', 'BH', 'BA', 'BN', 'BF', 'TD', 'KM', 'DJ', 'EG', 'GA', 'GM', 'GN', 'GW', 'ID', 'IR', 'IQ', 'JO', 'XK', 'KW', 'KG', 'LB', 'LY', 'MY', 'ML', 'MR', 'MA', 'NE', 'NG', 'OM', 'PS', 'QA', 'SA', 'SN', 'SL', 'SO', 'SD', 'SY', 'TJ', 'TN', 'TR', 'TM', 'AE', 'UZ', 'YE', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 'SR', 'UY', 'VE', 'AO', 'BJ', 'BW', 'BI', 'CM', 'CV', 'CF', 'CG', 'CD', 'CI', 'GQ', 'ER', 'ET', 'GH', 'KE', 'LS', 'LR', 'MG', 'MW', 'MU', 'MZ', 'NA', 'RW', 'ST', 'SC', 'ZA', 'SS', 'SZ', 'TZ', 'TG', 'UG', 'EH', 'ZM', 'ZW'
+];
+      if (blockedCountries.includes(data.countryCode)) {
+        window.location.href = 'https://midnightbard.gumroad.com/affiliates'; 
+      }
+    })
+    .catch(error => console.error('Error fetching GeoIP:', error));
+</script>
 </body>
 </html>
