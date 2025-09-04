@@ -158,7 +158,7 @@ layout: live-template
 <script>
     const videos = [
 
-        { id: 'GioQXrd2Cc8' }
+        { id: '6KBoNKcGoUE' }
     ];
 
     function loadMainPlayer(videoId) {
