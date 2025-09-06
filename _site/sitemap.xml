@@ -100,6 +100,9 @@
 <loc>http://localhost:4000/activity/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/shop/celebrity-tarot/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/diary/</loc>
 </url>
 <url>
@@ -109,10 +112,16 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/shop/live-stream-tips/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/lives/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/shop/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/shop/sidereal-natal/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/updates/</loc>

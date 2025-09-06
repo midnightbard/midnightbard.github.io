@@ -287,7 +287,14 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="header-mobile"><nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
   <div class="container-fluid">
     
-<a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  MIDNIGHT BARD</i></h3></a>   
+<a class="navbar-brand" href="/">
+  <h3>
+    <i class="bi bi-cloud-moon"></i> MIDNIGHT BARD   
+  </h3>
+</a>
+    
+    
+    
     
   <span class="ipa">  
 <button class="navbar-toggler"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -303,6 +310,34 @@ document.addEventListener("DOMContentLoaded", function () {
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      
+  
+     <h2 id="flag-container">👋 </h2>
+    <script>
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country_code.toLowerCase();
+          const countryName = data.country_name;
+        
+          const flagImg = document.createElement('img');
+          flagImg.src = `https://flagcdn.com/40x30/${countryCode}.png`;
+          flagImg.alt = `${countryName} flag`;
+          flagImg.style.verticalAlign = 'middle';
+          flagImg.style.marginLeft = '8px';
+          
+          const countryText = document.createElement('span');
+          countryText.textContent = countryName;
+          countryText.style.verticalAlign = 'middle';
+          countryText.style.marginLeft = '6px';
+          countryText.style.fontSize = '0.9em'; 
+          
+          const container = document.getElementById('flag-container');
+          container.appendChild(flagImg);
+          container.appendChild(countryText);
+        })
+        .catch(error => console.error('Error fetching country data:', error));
+    </script>
 <div class="offcanvas-body">
     
 

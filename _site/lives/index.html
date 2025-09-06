@@ -381,7 +381,21 @@ document.addEventListener("DOMContentLoaded", function () {
     <script src="https://gumroad.com/js/gumroad.js"></script>
 <!-- BUTTONS --->
     
+<style>
 
+    
+    .custom-btn {
+    color: #ffffff !important; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active {
+    color: #ffffff !important; /* Ensure white text on hover, focus, and active states */
+}
+
+</style>
 
 
 
@@ -397,9 +411,9 @@ document.addEventListener("DOMContentLoaded", function () {
         'TJ', 'TN', 'TR', 'TM', 'AE', 'UZ', 'YE', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 
         'SR', 'UY', 'VE', 'AO', 'BJ', 'BW', 'BI', 'CM', 'CV', 'CF', 'CG', 'CD', 'CI', 'GQ', 'ER', 'ET', 
         'GH', 'KE', 'LS', 'LR', 'MG', 'MW', 'MU', 'MZ', 'NA', 'RW', 'ST', 'SC', 'ZA', 'SS', 'SZ', 'TZ', 
-        'TG', 'UG', 'EH', 'ZM', 'ZW'
+        'TG', 'UG', 'EH', 'ZM', 'ZW','HT', 'KI', 'SB', 'TL', 'TV'
       ];
-      const euCountries = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'HR', 'SK', 'SI', 'ES', 'SE', 'GB']; // EU
+      const euCountries = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'HR', 'SK', 'SI', 'ES', 'SE', 'MC']; // EU
 
       const tipButton = document.getElementById('tipButton');
       const affiliateTipButton = document.getElementById('affiliateTipButton');
@@ -441,6 +455,23 @@ document.addEventListener("DOMContentLoaded", function () {
     <button id="euTipButton" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#euPricingModal" style="display: none;">
         <i class="bi bi-currency-euro"></i> Tips 
     </button>
+    
+    <span id="flag-container"></span>
+    <script>
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country_code.toLowerCase();
+          const flagImg = document.createElement('img');
+          flagImg.src = `https://flagcdn.com/40x30/${countryCode}.png`;
+          flagImg.alt = `${data.country_name} flag`;
+          flagImg.style.verticalAlign = 'middle'; 
+          flagImg.style.marginLeft = '8px'; 
+          document.getElementById('flag-container').appendChild(flagImg);
+        })
+        .catch(error => console.error('Error fetching country flag:', error));
+    </script>
+    
 </div>
 
 <!-- Pay Modal for extra Countries -->
@@ -479,9 +510,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!--<a style="color: black !important; text-decoration: none; padding: 10px 2px; font-size: 12px;" class="gumroad-button btn btn-secondary" href="https://midnightbard.gumroad.com/affiliates" data-gumroad-overlay-checkout="true">
-                    Affiliate Program
-                </a>-->
+                <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
             </div>
         </div>
     </div>
@@ -492,7 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="euPricingModalLabel"><i class="bi bi-currency-euro"></i>  Tips - <img src="https://flagcdn.com/24x18/eu.png" alt="European Union" />  <img src="https://flagcdn.com/24x18/gb.png" alt="Great Britain" /></h5>
+                <h5 class="modal-title" id="euPricingModalLabel"><i class="bi bi-currency-euro"></i>  Tips - <img src="https://flagcdn.com/24x18/eu.png" alt="European Union" />  </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -531,9 +562,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!--<a style="color: black !important; text-decoration: none; padding: 10px 2px; font-size: 12px;" class="gumroad-button btn btn-secondary" href="https://midnightbard.gumroad.com/affiliates" data-gumroad-overlay-checkout="true">
-                    Affiliate Program
-                </a>-->
+                <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
             </div>
         </div>
     </div>
@@ -564,7 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="modal-dialog modal-lg">
     <div class="modal-content pricing-content-moonlight">
       <div class="modal-header pricing-header-moonlight">
-        <h5 class="modal-title" id="pricingModalLabelMoonlight"><i class="bi bi-globe"></i> <i class="bi bi-currency-dollar"></i> Tips - International <img src="https://flagcdn.com/24x18/us.png" alt="United States" />  <img src="https://flagcdn.com/24x18/ca.png" alt="Canada" /> </h5>
+        <h5 class="modal-title" id="pricingModalLabelMoonlight"><i class="bi bi-globe"></i> <i class="bi bi-currency-dollar"></i> Tips - International <img src="https://flagcdn.com/24x18/us.png" alt="United States" />   </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
@@ -605,7 +636,9 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
          <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!--<button id="affiliateLink" type="button" class="btn btn-primary">Join Affiliate Program</button>-->
+               <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
             </div>
     </div>
   </div>

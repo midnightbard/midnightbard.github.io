@@ -14,10 +14,6 @@ media: frontpage
   <div class="profile-image">
     <img src="/pictures/mb.png" alt="Profile Image">
     
-    
-    
-    
-    
   </div>
 </div>
 
@@ -83,6 +79,7 @@ media: frontpage
 <h4><i class="bi bi-bell"></i>    
  <a class="btn btn-white btn-outline-secondary float-end" data-bs-toggle="modal" data-bs-target="#duckModal"><i class="bi bi-bookmarks"></i></a>
 </h4>
+
 
 {{page.description}}
 

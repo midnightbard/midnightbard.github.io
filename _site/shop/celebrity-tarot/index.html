@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
-  <title>Activity</title>
+  <title>Celebrity tarot</title>
 <meta charset="utf-8">
-<title>Activity</title>
+<title>Celebrity tarot</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="HandheldFriendly" content="True">
@@ -17,9 +17,9 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Activity">
+<meta property="og:title" content="Celebrity tarot">
 <meta property="og:site_name" content="midnightbard">
-<meta property="og:url" content="http://localhost:4000/activity/">
+<meta property="og:url" content="http://localhost:4000/shop/celebrity-tarot/">
 
 
 
@@ -28,7 +28,7 @@
 <meta name="author" content="midnightbard">
 <meta property="article:published_time" content="">
 
-<link rel="canonical" href="http://localhost:4000/activity/">
+<link rel="canonical" href="http://localhost:4000/shop/celebrity-tarot/">
 
 
 <link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Midnight Bard">
@@ -279,11 +279,14 @@ document.addEventListener("DOMContentLoaded", function () {
 </head>
     
     
-<body>
+<body class="aiss">
     
     <div class="container-fluid">
- <header>    
-<nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
+      
+     
+ <header>   
+   
+<div class="header-mobile"><nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
   <div class="container-fluid">
     
 <a class="navbar-brand" href="/">
@@ -380,19 +383,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+</div>
+  
 </header>
                 
 <div class="row">
-  
-  <p>Share your thoughts. 
-Warnings or notifications will be displayed above activity feed.</p>
-
-<script src="https://giscus.app/client.js" data-repo="midnightbard/midnightbard.github.io" data-repo-id="R_kgDOOUeZdw" data-category="General" data-category-id="DIC_kwDOOUeZd84CuzD7" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark_tritanopia" data-lang="en" crossorigin="anonymous" async="">
-</script>
-
-
                 
+<div class="col-sm-12">
+    
+    <div class="card" style="width: 100%;">
+        
+        <div class="card-footer text-muted">            
+            <div class="post-navigation">
+              
+              
+              
+            </div>
+        </div>
+        
+        <div id="mobilevisible"></div>
+        
+        <div class="card-body">
+            <h2 class="card-title">
+              Celebrity tarot
+            </h2>
+      
+            <div class="card-text">
+                
+                
+                
+                
+                <div style="padding-top:5px;">
+                    <p>Tarot and oracle reading about your favorite celebrity, public person or a company.</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="4L2Q66GMRHHMJ" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="What are you buying?" />
+        What are you buying?
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select name="os0">
+          <option value="15 minutes simple">
+            15 minutes simple $20.00 USD
+          </option>
+          <option value="30 min general in-depth">
+            30 min general in-depth $30.00 USD
+          </option>
+          <option value="40 min + list of questions">
+            40 min + list of questions $40.00 USD
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on1" value="Name of a celebrity?" />
+        Name of a celebrity?
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os1" maxlength="200" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on2" value="Specific Questions - only for 40 minutes reading" />
+        Specific Questions - only for 40 minutes reading
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os2" maxlength="200" />
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+
+                  
+                </div>                 
+            </div>      	
+        </div>
+      
+        
+      
+        <div class="card-footer text-muted">
+        </div>        
+    </div>
+</div> 
 </div>
     
     <footer>
@@ -404,7 +490,24 @@ Warnings or notifications will be displayed above activity feed.</p>
           </script>
         </center>
         
-
+        <button id="goTopBtn" onclick="goTop()"><h2><i class="bi bi-arrow-up-short"></i></h2></button>
+        
+        <script>
+            window.onscroll = function() { scrollFunction(); };
+            function scrollFunction() {
+                var btn = document.getElementById("goTopBtn");
+                var scrollPercentage = (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight * 100;
+                if (scrollPercentage > 30 && document.body.clientHeight > window.innerHeight) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            }
+            function goTop() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
         
         <script>
           document.addEventListener('DOMContentLoaded', function () {
@@ -426,21 +529,10 @@ Warnings or notifications will be displayed above activity feed.</p>
           });
         </script>
       
-      <script>
-  fetch('http://ip-api.com/json/')
-    .then(response => response.json())
-    .then(data => {
-      const blockedCountries = [
-  'CN', 'IN', 'BD', 'PK', 'LK', 'NP', 'MV', 'BT', 'AF', 'AL', 'DZ', 'AZ', 'BH', 'BA', 'BN', 'BF', 'TD', 'KM', 'DJ', 'EG', 'GA', 'GM', 'GN', 'GW', 'ID', 'IR', 'IQ', 'JO', 'XK', 'KW', 'KG', 'LB', 'LY', 'MY', 'ML', 'MR', 'MA', 'NE', 'NG', 'OM', 'PS', 'QA', 'SA', 'SN', 'SL', 'SO', 'SD', 'SY', 'TJ', 'TN', 'TR', 'TM', 'AE', 'UZ', 'YE', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 'SR', 'UY', 'VE', 'AO', 'BJ', 'BW', 'BI', 'CM', 'CV', 'CF', 'CG', 'CD', 'CI', 'GQ', 'ER', 'ET', 'GH', 'KE', 'LS', 'LR', 'MG', 'MW', 'MU', 'MZ', 'NA', 'RW', 'ST', 'SC', 'ZA', 'SS', 'SZ', 'TZ', 'TG', 'UG', 'EH', 'ZM', 'ZW'
-];
-      if (blockedCountries.includes(data.countryCode)) {
-        window.location.href = 'https://midnightbard.gumroad.com/affiliates'; 
-      }
-    })
-    .catch(error => console.error('Error fetching GeoIP:', error));
-</script>
+     
     </footer>
     
+
     
 </body>
 </html>

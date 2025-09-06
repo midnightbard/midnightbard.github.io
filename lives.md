@@ -130,7 +130,7 @@ layout: live-template
   <div class="modal-dialog modal-lg">
     <div class="modal-content pricing-content-moonlight">
       <div class="modal-header pricing-header-moonlight">
-        <h5 class="modal-title" id="pricingModalLabelMoonlight"><i class="bi bi-globe"></i> <i class="bi bi-currency-dollar"></i> Tips - International <img src="https://flagcdn.com/24x18/us.png" alt="United States">  <img src="https://flagcdn.com/24x18/ca.png" alt="Canada"> </h5>
+        <h5 class="modal-title" id="pricingModalLabelMoonlight"><i class="bi bi-globe"></i> <i class="bi bi-currency-dollar"></i> Tips - International <img src="https://flagcdn.com/24x18/us.png" alt="United States">   </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
@@ -171,7 +171,9 @@ layout: live-template
       </div>
          <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!--<button id="affiliateLink" type="button" class="btn btn-primary">Join Affiliate Program</button>-->
+               <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
             </div>
     </div>
   </div>

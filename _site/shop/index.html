@@ -289,7 +289,14 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="header-mobile"><nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
   <div class="container-fluid">
     
-<a class="navbar-brand" href="/"><h3><i class="bi bi-cloud-moon">  MIDNIGHT BARD</i></h3></a>   
+<a class="navbar-brand" href="/">
+  <h3>
+    <i class="bi bi-cloud-moon"></i> MIDNIGHT BARD   
+  </h3>
+</a>
+    
+    
+    
     
   <span class="ipa">  
 <button class="navbar-toggler"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -305,6 +312,34 @@ document.addEventListener("DOMContentLoaded", function () {
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-moon"></i>   </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      
+  
+     <h2 id="flag-container">👋 </h2>
+    <script>
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country_code.toLowerCase();
+          const countryName = data.country_name;
+        
+          const flagImg = document.createElement('img');
+          flagImg.src = `https://flagcdn.com/40x30/${countryCode}.png`;
+          flagImg.alt = `${countryName} flag`;
+          flagImg.style.verticalAlign = 'middle';
+          flagImg.style.marginLeft = '8px';
+          
+          const countryText = document.createElement('span');
+          countryText.textContent = countryName;
+          countryText.style.verticalAlign = 'middle';
+          countryText.style.marginLeft = '6px';
+          countryText.style.fontSize = '0.9em'; 
+          
+          const container = document.getElementById('flag-container');
+          container.appendChild(flagImg);
+          container.appendChild(countryText);
+        })
+        .catch(error => console.error('Error fetching country data:', error));
+    </script>
 <div class="offcanvas-body">
     
 
@@ -381,7 +416,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div style="padding-top:5px;">
                     <style>
 
-a:hover { color: black!important; }
+    
+    .custom-btn {
+    color: #ffffff !important; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active {
+    color: #ffffff !important; /* Ensure white text on hover, focus, and active states */
+}
 
 </style>
 
@@ -405,10 +450,11 @@ a:hover { color: black!important; }
 </p>
     
 </div>
-<div class="card-footer border-0 pt-0">
+<div class="card-footer border-1 pt-0">
 <div class="d-flex align-items-center justify-content-between">
 <script src="https://gumroad.com/js/gumroad.js"></script>
 <!--<a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/youtube-tarot" data-gumroad-overlay-checkout="true">Tip</a>-->
+    <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips" role="button">Check</a>
 </div>
 </div>
 </article>
@@ -431,58 +477,12 @@ Full natal chart analyses/comparative analyses for two people. Full time, date a
 </div>
 <div class="card-footer border-0 pt-0">
 <div class="d-flex align-items-center justify-content-between">
+    <a class="btn btn-primary custom-btn" href="/shop/sidereal-natal" role="button">Check</a>
 
 <!--<a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/sidereal" data-gumroad-overlay-checkout="true">Buy</a>-->
     
     
- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_s-xclick" />
-  <input type="hidden" name="hosted_button_id" value="46MNPJWHENSQA" />
-  <table>
-    <tr>
-      <td>
-        <input type="hidden" name="on0" value="What do you want to buy? " />
-        What do you want to buy? 
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <select name="os0">
-          <option value="Natal chart">
-            Natal chart $20.00 USD
-          </option>
-          <option value="Comparative + comparison">
-            Comparative + comparison $30.00 USD
-          </option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="hidden" name="on1" value="Specific questions?" />
-        Specific questions?
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="os1" maxlength="200" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="hidden" name="on2" value="Your data? " />
-        Your data? 
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="os2" maxlength="200" />
-      </td>
-    </tr>
-  </table>
-  <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-</form>
+ 
     
 </div>
 </div>
@@ -508,60 +508,11 @@ Tarot and oracle reading about your favorite celebrity, public person or a compa
 </div>
 <div class="card-footer border-0 pt-0">
 <div class="d-flex align-items-center justify-content-between">
+    <a class="btn btn-primary custom-btn" href="/shop/celebrity-tarot" role="button">Check</a>
 <!--<a style="color:black!important; text-decoration:none;" class="gumroad-button" href="https://midnightbard.gumroad.com/l/celebrity-tarot" data-gumroad-overlay-checkout="true">Buy</a>-->
     
     
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_s-xclick" />
-  <input type="hidden" name="hosted_button_id" value="4L2Q66GMRHHMJ" />
-  <table>
-    <tr>
-      <td>
-        <input type="hidden" name="on0" value="What are you buying?" />
-        What are you buying?
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <select name="os0">
-          <option value="15 minutes simple">
-            15 minutes simple $20.00 USD
-          </option>
-          <option value="30 min general in-depth">
-            30 min general in-depth $30.00 USD
-          </option>
-          <option value="40 min + list of questions">
-            40 min + list of questions $40.00 USD
-          </option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="hidden" name="on1" value="Name of a celebrity?" />
-        Name of a celebrity?
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="os1" maxlength="200" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="hidden" name="on2" value="Specific Questions - only for 40 minutes reading" />
-        Specific Questions - only for 40 minutes reading
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="text" name="os2" maxlength="200" />
-      </td>
-    </tr>
-  </table>
-  <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-</form>
+    
 </div>
 </div>
 </article>
