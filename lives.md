@@ -130,17 +130,49 @@ layout: live-template
   <div class="modal-dialog modal-lg">
     <div class="modal-content pricing-content-moonlight">
       <div class="modal-header pricing-header-moonlight">
-        <h5 class="modal-title" id="pricingModalLabelMoonlight">INFO</h5>
+        <h5 class="modal-title" id="pricingModalLabelMoonlight"><i class="bi bi-globe"></i> <i class="bi bi-currency-dollar"></i> Tips - International <img src="https://flagcdn.com/24x18/us.png" alt="United States">  <img src="https://flagcdn.com/24x18/ca.png" alt="Canada"> </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
-          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. If Gumroad doesn't work for you, use Paypal.</p>
-          <sub>Random tip amount - ??</sub><br>
-          <sub>$5 – one question, yes/no</sub><br>
-          <sub>$10 – two questions, more in depth + oracle cards and free energy reading.</sub><br>
-          <sub>$20 – general reading up to 30 minutes, for ex. what lies in front of me, my future, next month, love situation and similar</sub>
+          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. </p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="94EFKHDSXWJ26" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="What are you buying?"/>
+        What are you buying?
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select name="os0">
+          <option value="One Question ">
+            One Question  $5.00 USD
+          </option>
+          <option value="Two question + energy reading">
+            Two question + energy reading $10.00 USD
+          </option>
+          <option value="General - multiple ">
+            General - multiple  $20.00 USD
+          </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+          
+          
+          
         
       </div>
+         <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!--<button id="affiliateLink" type="button" class="btn btn-primary">Join Affiliate Program</button>-->
+            </div>
     </div>
   </div>
 </div>
@@ -158,7 +190,7 @@ layout: live-template
 <script>
     const videos = [
 
-        { id: '3QA4dZYZuQY' }
+        { id: '' }
     ];
 
     function loadMainPlayer(videoId) {
