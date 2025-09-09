@@ -192,7 +192,7 @@ layout: live-template
 <script>
     const videos = [
 
-        { id: '' }
+        { id: 'sQLCqd5U5WM' }
     ];
 
     function loadMainPlayer(videoId) {
