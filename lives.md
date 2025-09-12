@@ -240,3 +240,16 @@ layout: live-template
 </script>
 
 {% include crisp.html %}
+
+
+<p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
+
+<p>1. Broadcast - pre-recorded small video that will repeat, you can send Superchat/paypal together with your question to receive a reading in comments ( Mon-Fri)</p>
+
+<p>2. Storytelling - longer video with some sort of a story , to entertain you - you can use chat, talk and have fun, and you can also leave a request for a reading with a superchat/paypal ( Saturday, which means you will need to wait a bit longer for a reading to be done)</p>
+
+<p>3. Live stream on camera - this is a classic tarot reading on camera ( Sunday, or some other time when I am available)</p>
+
+<p>4. Séance free tarot reading text only, no camera, audio maybe  - 1 card only  -  you pay with a good will and positive vibrations,  but only 1 card per person, no more, so that I don't spend too much of your good mojo ( occasionally, random surprise appearance )</p>
+
+<p>I hope that this - with planned videos and podcasts - will cover all your interests. </p>
