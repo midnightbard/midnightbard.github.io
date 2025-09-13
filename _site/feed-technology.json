@@ -7,6 +7,15 @@
       "image": "https://i.imgur.com/JfaKi81.png",
       "media": "journal",
       "date": "2025-08-26T00:00:00+02:00"
+    },
+  
+    {
+      "title": "YouTube streaming from home server",
+      "url": "http://localhost:4000/youtube-streaming-from-home-server/",
+      "description": "A few words about broadcast, a prerecorded live stream for YouTube",
+      "image": "https://i.imgur.com/Sic4yV7.png",
+      "media": "journal",
+      "date": "2025-09-09T00:00:00+02:00"
     }
   
 ]

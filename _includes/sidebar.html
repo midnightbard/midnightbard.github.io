@@ -314,3 +314,124 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+{% if page.media contains "frontpage" %}
+
+<h4>Upcoming live streams</h4>
+Watch it on <a href="/lives/">LIVES</a> or on our <a href="https://www.youtube.com/@MidnightBardTarot">YouTube</a>. 
+<div id="upcoming-container"></div>
+
+
+
+
+<script>
+    // =============================
+    // Upcoming live streams (videos)
+    // =============================
+    const upcomingVideos = [
+        { id: 'rxNGazailtI' },
+        { id: 'Swvf1E6_v0o' }
+    ];
+
+    function createUpcomingEmbed(video) {
+        const container = document.getElementById('upcoming-container');
+        const div = document.createElement('div');
+        div.className = 'upcoming-video';
+
+        div.innerHTML = `
+            <iframe src="https://www.youtube.com/embed/${video.id}?enablejsapi=1&rel=0&modestbranding=1" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        `;
+
+        container.appendChild(div);
+    }
+
+    function initUpcoming() {
+        if (upcomingVideos.length === 0) {
+            document.getElementById('upcoming-container').innerHTML = 
+                `<p style="text-align:center; padding: 50px;">No upcoming videos.</p>`;
+        } else {
+            upcomingVideos.forEach(video => createUpcomingEmbed(video));
+        }
+    }
+
+    // ============================
+    // Celebrity playlists
+    // ============================
+    const celebrityPlaylists = [
+        { list: 'PLqKK84wzPF9Z0ocwjMbCeP_oTWFWImapn' }, 
+        { list: 'PLqKK84wzPF9bJ65pOI3dr07hYqOMXJ46y' },
+      { list: 'PLqKK84wzPF9ZmEmI2BtuquH04nbJyN6ol' }
+    ];
+
+    function createCelebrityEmbed(playlist) {
+        const container = document.getElementById('celebrity-container');
+        const div = document.createElement('div');
+        div.className = 'celebrity-video';
+
+        div.innerHTML = `
+            <iframe src="https://www.youtube.com/embed/videoseries?list=${playlist.list}&rel=0&modestbranding=1" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        `;
+
+        container.appendChild(div);
+    }
+
+    function initCelebrity() {
+        if (celebrityPlaylists.length === 0) {
+            document.getElementById('celebrity-container').innerHTML = 
+                `<p style="text-align:center; padding: 50px;">No celebrity playlists.</p>`;
+        } else {
+            celebrityPlaylists.forEach(pl => createCelebrityEmbed(pl));
+        }
+    }
+
+    // ============================
+    // Init both sections
+    // ============================
+    window.onload = () => {
+        initUpcoming();
+        initCelebrity();
+    };
+</script>
+
+<style>
+.upcoming-video iframe,
+.celebrity-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+</style>
+
+
+
+
+<hr/>
+
+<p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
+
+<p>1. Broadcast - pre-recorded videos, you can send Superchat/paypal together with your question to receive a reading in comments ( Mon-Fri)</p>
+
+<p>2. Storytelling - longer video with some sort of a story , to entertain you - you can use chat, talk and have fun, and you can also leave a request for a reading with a superchat/paypal ( Saturday, which means you will need to wait a bit longer for a reading to be done)</p>
+
+<p>3. Live stream on camera - this is a classic tarot reading on camera ( Sunday, or some other time when I am available)</p>
+
+<p>4. Séance free tarot reading text only, no camera, audio maybe  - 1 card only  -  you pay with a good will and positive vibrations,  but only 1 card per person, no more, so that I don't spend too much of your good mojo ( occasionally, random surprise appearance )</p>
+
+<p>I hope that this - with planned videos and podcasts - will cover all your interests. </p>
+
+<hr>
+
+<h4>Celebrity videos</h4>
+
+Celebrity readings include Henry Cavill, Keanu Reeves,Johnny Depp, Jungkook, Lady Gaga, Chris Hemsworth and many others. 
+<div id="celebrity-container"></div>
+
+{% endif %}  
+

@@ -160,6 +160,28 @@ layout: live-template
         </select>
       </td>
     </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on1" value="Message - questions"/>
+        Message - questions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os1" maxLength="200" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on2" value="Where to send - email, YouTube ????"/>
+        Where to send - email, YouTube ????
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os2" maxLength="200" />
+      </td>
+    </tr>
   </table>
   <input type="hidden" name="currency_code" value="USD" />
   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
@@ -240,10 +262,11 @@ layout: live-template
 
 {% include crisp.html %}
 
+<hr/>
 
 <p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
 
-<p>1. Broadcast - pre-recorded small video that will repeat, you can send Superchat/paypal together with your question to receive a reading in comments ( Mon-Fri)</p>
+<p>1. Broadcast - pre-recorded videos, you can send Superchat/paypal together with your question to receive a reading in comments ( Mon-Fri)</p>
 
 <p>2. Storytelling - longer video with some sort of a story , to entertain you - you can use chat, talk and have fun, and you can also leave a request for a reading with a superchat/paypal ( Saturday, which means you will need to wait a bit longer for a reading to be done)</p>
 

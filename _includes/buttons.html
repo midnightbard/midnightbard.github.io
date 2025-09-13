@@ -102,28 +102,56 @@
             <div class="modal-body">
                 
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick" />
-                    <input type="hidden" name="hosted_button_id" value="FWH5ENQYZB5XS" />
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="hidden" name="on0" value="Tips"/>
-                                Tips
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select name="os0">
-                                    <option value="Small reading">Small reading $1.00 USD</option>
-                                    <option value="2 questions + Energy">2 questions + Energy $2.00 USD</option>
-                                    <option value="General, multiple">General, multiple $5.00 USD</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-                </form>
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="FWH5ENQYZB5XS" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="Tips"/>
+        Tips
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select name="os0">
+          <option value="Small reading">
+            Small reading $1.00 USD
+          </option>
+          <option value="2 questions + Energy">
+            2 questions + Energy $2.00 USD
+          </option>
+          <option value="General, multiple">
+            General, multiple $5.00 USD
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on1" value="Message - questions"/>
+        Message - questions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os1" maxLength="200" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on2" value="Where to send - email, YouTube ????"/>
+        Where to send - email, YouTube ????
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os2" maxLength="200" />
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -171,6 +199,28 @@
         </select>
       </td>
     </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on1" value="Message - questions"/>
+        Message - questions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os1" maxLength="200" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on2" value="Where to send - email, YouTube ????"/>
+        Where to send - email, YouTube ????
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os2" maxLength="200" />
+      </td>
+    </tr>
   </table>
   <input type="hidden" name="currency_code" value="EUR" />
   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
@@ -203,12 +253,12 @@
             </div>
             <div class="modal-body pricing-body-moonlight">
                 <p>When I am not live, you can still order your reading the same way you would on a livestream. Please send me a clear question. If your reading involves more than one question or needs more detail, use the chat to describe what you want.</p>
-                <p>I will definitely receive all your messages. Since the chat doesn't require a login, please leave an email or social media account so I can reach you with your reading.
+                <p>I will definitely receive all your messages. Since the chat doesn't require a login, please leave an email or social media account so I can reach you in case that you need additional info.
                 </p>
                 <p>
                 You can also read more about payments and discounts which I included for specific countries. 
                 </p>
-                <p>During broadcasts/prerecorded live streams follow instructions - your reading will be delivered either to an email associated with your Paypal account or in comments if you send YouTube Superchat. </p>
+                <p>During broadcasts/prerecorded live streams follow instructions - your reading will be delivered either to an email associated with your Paypal account, an email that you specify or if you use YouTube in comments under that braodcast or live stream. You will receive notification once your YouTube reading is done.  </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
