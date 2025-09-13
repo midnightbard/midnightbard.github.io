@@ -149,13 +149,10 @@ layout: live-template
       <td>
         <select name="os0">
           <option value="One Question ">
-            One Question  $5.00 USD
+            One Question  $10.00 USD
           </option>
           <option value="Two question + energy reading">
-            Two question + energy reading $10.00 USD
-          </option>
-          <option value="General - multiple ">
-            General - multiple  $20.00 USD
+            Two question + energy reading $20.00 USD
           </option>
         </select>
       </td>
