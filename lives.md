@@ -192,7 +192,6 @@ layout: live-template
 <script>
     const videos = [
 
-        { id: 'EVjqrBOnNxc' },
          { id: 'rxNGazailtI' },
          { id: 'Swvf1E6_v0o' }
         
