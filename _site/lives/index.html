@@ -115,7 +115,7 @@ blockquote:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-  .badge-card {
+.badge-card {
   display: inline-block;
   text-align: center;
   margin: 5px;
@@ -378,7 +378,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 <div class="container">
-    <div id="main-player-container"></div>
+    <!--<div id="main-player-container"></div>-->
+    
+    <div style="color:red;">In preparation...</div>
     <div id="main-video-title"></div>
     
     <script src="https://gumroad.com/js/gumroad.js"></script>
@@ -751,7 +753,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <hr />
 <h3>Incoming live streams</h3> 
 
-<div id="upcoming-container"></div>
+<!--<div id="upcoming-container"></div>-->
+    
     
     <hr />
 <sup><i style="color:red!important;" class="bi bi-bell-fill"></i> <b>Click on frame to see time of a live stream, click on title to go on YouTube and subscribe to notification.</b></sup>
@@ -760,8 +763,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
     const videos = [
 
-         { id: 'rxNGazailtI' },
-         { id: 'Swvf1E6_v0o' }
+         { id: '' },
+         
         
     ];
 
@@ -848,19 +851,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </script>
     
     
-
-    <script>
-  fetch('http://ip-api.com/json/')
-    .then(response => response.json())
-    .then(data => {
-      const blockedCountries = [
-  'CN', 'IN', 'BD', 'PK', 'LK', 'NP', 'MV', 'BT', 'AF', 'AL', 'DZ', 'AZ', 'BH', 'BA', 'BN', 'BF', 'TD', 'KM', 'DJ', 'EG', 'GA', 'GM', 'GN', 'GW', 'ID', 'IR', 'IQ', 'JO', 'XK', 'KW', 'KG', 'LB', 'LY', 'MY', 'ML', 'MR', 'MA', 'NE', 'NG', 'OM', 'PS', 'QA', 'SA', 'SN', 'SL', 'SO', 'SD', 'SY', 'TJ', 'TN', 'TR', 'TM', 'AE', 'UZ', 'YE', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 'SR', 'UY', 'VE', 'AO', 'BJ', 'BW', 'BI', 'CM', 'CV', 'CF', 'CG', 'CD', 'CI', 'GQ', 'ER', 'ET', 'GH', 'KE', 'LS', 'LR', 'MG', 'MW', 'MU', 'MZ', 'NA', 'RW', 'ST', 'SC', 'ZA', 'SS', 'SZ', 'TZ', 'TG', 'UG', 'EH', 'ZM', 'ZW'
-];
-      if (blockedCountries.includes(data.countryCode)) {
-        window.location.href = 'https://midnightbard.gumroad.com/affiliates'; 
-      }
-    })
-    .catch(error => console.error('Error fetching GeoIP:', error));
-</script>
+  <center><a href="/about-us">About Us</a> | <a href="/contact-us">Contact Us</a> | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-and-conditions">Terms and Conditions</a></center>
+    
 </body>
 </html>

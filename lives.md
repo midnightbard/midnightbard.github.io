@@ -98,7 +98,9 @@ layout: live-template
 </style>
 
 <div class="container">
-    <div id="main-player-container"></div>
+    <!--<div id="main-player-container"></div>-->
+    
+    <div style="color:red;">In preparation...</div>
     <div id="main-video-title"></div>
     
     <script src="https://gumroad.com/js/gumroad.js"></script>
@@ -202,7 +204,8 @@ layout: live-template
     <hr/>
 <h3>Incoming live streams</h3> 
 
-<div id="upcoming-container"></div>
+<!--<div id="upcoming-container"></div>-->
+    
     
     <hr/>
 <sup><i style="color:red!important;" class="bi bi-bell-fill"></i> <b>Click on frame to see time of a live stream, click on title to go on YouTube and subscribe to notification.</b></sup>
@@ -211,8 +214,8 @@ layout: live-template
 <script>
     const videos = [
 
-         { id: 'rxNGazailtI' },
-         { id: 'Swvf1E6_v0o' }
+         { id: '' },
+         
         
     ];
 

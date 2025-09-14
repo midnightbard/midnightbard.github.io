@@ -115,7 +115,7 @@ blockquote:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-  .badge-card {
+.badge-card {
   display: inline-block;
   text-align: center;
   margin: 5px;
@@ -294,9 +294,9 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="container-fluid">
     
 <a class="navbar-brand" href="/">
-  <h3>
-    <i class="bi bi-cloud-moon"></i> MIDNIGHT BARD   
-  </h3>
+  <h1>
+    <i class="bi bi-cloud-moon"></i>    
+  </h1>
 </a>
     
     
@@ -671,7 +671,7 @@ document.addEventListener("DOMContentLoaded", function () {
           highlightSearchTerm(contentDiv, query);
 
           listItem.appendChild(link);
-          listItem.appendChild(contentDiv);
+         
           searchResults.appendChild(listItem);
         });
       } else {
@@ -1222,8 +1222,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <h4>Upcoming live streams</h4>
 Watch it on <a href="/lives/">LIVES</a> or on our <a href="https://www.youtube.com/@MidnightBardTarot">YouTube</a>. 
-<div id="upcoming-container"></div>
-
+<!--<div id="upcoming-container"></div>-->
+<div style="color:red;">In preparation...</div>
 
 
 
@@ -1232,8 +1232,8 @@ Watch it on <a href="/lives/">LIVES</a> or on our <a href="https://www.youtube.c
     // Upcoming live streams (videos)
     // =============================
     const upcomingVideos = [
-        { id: 'rxNGazailtI' },
-        { id: 'Swvf1E6_v0o' }
+        { id: '' },
+        { id: '' }
     ];
 
     function createUpcomingEmbed(video) {
@@ -1414,7 +1414,7 @@ Celebrity readings include Henry Cavill, Keanu Reeves,Johnny Depp, Jungkook, Lad
   });
 </script>
 
-
+  <center><a href="/about-us">About Us</a> | <a href="/contact-us">Contact Us</a> | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-and-conditions">Terms and Conditions</a></center>
     </footer>
     
 

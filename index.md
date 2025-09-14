@@ -255,7 +255,7 @@ media: frontpage
           highlightSearchTerm(contentDiv, query);
 
           listItem.appendChild(link);
-          listItem.appendChild(contentDiv);
+         
           searchResults.appendChild(listItem);
         });
       } else {
