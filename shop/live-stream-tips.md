@@ -9,7 +9,7 @@ category: diary
 
 
 This is a quick checkout for tarot and oracle reading during our live stream. 
-You can purchase on <a href="/lives">lives,</a> during live streams, or receive via email if you requested so. 
+You can purchase a personalized tarot reading on <a href="/lives">lives,</a> and receive tarot reading on YouTube Community tab, or receive via email if you requested so. 
 
 *** 
 
@@ -35,9 +35,9 @@ Here is a map for easier orientation.
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-vd1_oZcZbeKJYRngxV2iDHkCLJS6ztrg8ZkpJlZB3QEDAsXxARnUTrbRixEo8Kc7Rs4tOP9M_Yze/pubchart?oid=1406723520&amp;format=interactive"></iframe>
 
 
-🔴 Discount based on PPP, readings start from $1<br/>
-🔵 European Union EUR, readings start from €3<br/>
-🟢 International USD, readings start from $5<br/>
+🔴 Discount based on PPP, readings start from $2<br/>
+🔵 European Union EUR, readings start from €8<br/>
+🟢 International USD, readings start from $10<br/>
 🟡 No price or international <br/><br/>
 
 ### <i class="bi bi-currency-dollar"></i> International with US
@@ -46,12 +46,11 @@ Here is a map for easier orientation.
 
 This is a default mode for all countries outside other two big groups. 
 
-5-20 USD
+10 and 20 USD
 
 Options are: 
-  - 5 - one question, simple reading
-  - 10 - two questions with energy check
-  - 20 - general reading, with multiple tarot and oracle decks, and multiple questions
+  - 10 - one question, simple reading
+  - 20 - two questions with energy check
 
 
 <img src="https://flagcdn.com/24x18/ad.png" alt="Andorra">
@@ -172,7 +171,7 @@ This is a default mode for countries in European Union that use EUR.
 
 
 
-3-15 EUR
+8 and 15 EUR
 
 <img src="https://flagcdn.com/24x18/at.png" alt="Austria">
 <img src="https://flagcdn.com/24x18/be.png" alt="Belgium">
@@ -214,7 +213,7 @@ These countries have a discount based of PPP, or payment power parity.
 
 
 
-1-5 USD 
+2 and 5 USD 
 
 
 <img src="https://flagcdn.com/24x18/cn.png" alt="China">

@@ -378,9 +378,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 <div class="container">
-    <!--<div id="main-player-container"></div>-->
+    <div id="main-player-container"></div>
     
-    <div style="color:red;">In preparation...</div>
+    <!--<div style="color:red;">In preparation...</div>-->
     <div id="main-video-title"></div>
     
     <script src="https://gumroad.com/js/gumroad.js"></script>
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'TJ', 'TN', 'TR', 'TM', 'AE', 'UZ', 'YE', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 
         'SR', 'UY', 'VE', 'AO', 'BJ', 'BW', 'BI', 'CM', 'CV', 'CF', 'CG', 'CD', 'CI', 'GQ', 'ER', 'ET', 
         'GH', 'KE', 'LS', 'LR', 'MG', 'MW', 'MU', 'MZ', 'NA', 'RW', 'ST', 'SC', 'ZA', 'SS', 'SZ', 'TZ', 
-        'TG', 'UG', 'EH', 'ZM', 'ZW','HT', 'KI', 'SB', 'TL', 'TV'
+        'TG', 'UG', 'EH', 'ZM', 'ZW','HT', 'KI', 'SB', 'TL', 'TV', 
       ];
       const euCountries = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'HR', 'SK', 'SI', 'ES', 'SE', 'MC']; // EU
 
@@ -450,15 +450,15 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     
     <button id="tipButton" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
-        <i class="bi bi-currency-dollar"></i> Tips 
+        <i class="bi bi-currency-dollar"></i> Tarot 
     </button>
 
     <button id="affiliateTipButton" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#affiliatePricingModal" style="display: none;">
-        <i class="bi bi-globe"></i> Tips 
+        <i class="bi bi-globe"></i> Tarot 
     </button>
 
     <button id="euTipButton" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#euPricingModal" style="display: none;">
-        <i class="bi bi-currency-euro"></i> Tips 
+        <i class="bi bi-currency-euro"></i> Tarot
     </button>
     
     <span id="flag-container"></span>
@@ -489,13 +489,13 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="modal-body">
                 
-                <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="FWH5ENQYZB5XS" />
   <table>
     <tr>
       <td>
-        <input type="hidden" name="on0" value="Tips"/>
+        <input type="hidden" name="on0" value="Tips" />
         Tips
       </td>
     </tr>
@@ -516,30 +516,30 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>
     <tr>
       <td>
-        <input type="hidden" name="on1" value="Message - questions"/>
+        <input type="hidden" name="on1" value="Message - questions" />
         Message - questions
       </td>
     </tr>
     <tr>
       <td>
-        <input type="text" name="os1" maxLength="200" />
+        <input type="text" name="os1" maxlength="200" />
       </td>
     </tr>
     <tr>
       <td>
-        <input type="hidden" name="on2" value="Where to send - email, YouTube ????"/>
+        <input type="hidden" name="on2" value="Where to send - email, YouTube ????" />
         Where to send - email, YouTube ????
       </td>
     </tr>
     <tr>
       <td>
-        <input type="text" name="os2" maxLength="200" />
+        <input type="text" name="os2" maxlength="200" />
       </td>
     </tr>
   </table>
   <input type="hidden" name="currency_code" value="USD" />
   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-</form>-->
+</form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -614,7 +614,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+               <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
                     Details
                 </a>
             </div>
@@ -685,7 +685,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
-          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. </p>
+          <p>Tip and receive your personal reading via email or on YouTube Community tab within 24H.  </p>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="94EFKHDSXWJ26" />
@@ -753,7 +753,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <hr />
 <h3>Incoming live streams</h3> 
 
-<!--<div id="upcoming-container"></div>-->
+<div id="upcoming-container"></div>
     
     
     <hr />
@@ -763,7 +763,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
     const videos = [
 
-         { id: '' },
+         { id: 'ST3xhFq1pVo' },
+        { id: 'iNyszN_Sc6I' }
          
         
     ];
@@ -813,7 +814,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <hr />
 
-<p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
+<!--<p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
 
 <p>1. Broadcast - pre-recorded videos, you can send Superchat/paypal together with your question to receive a reading in comments ( Mon-Fri)</p>
 
@@ -823,7 +824,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <p>4. Séance free tarot reading text only, no camera, audio maybe  - 1 card only  -  you pay with a good will and positive vibrations,  but only 1 card per person, no more, so that I don't spend too much of your good mojo ( occasionally, random surprise appearance )</p>
 
-<p>I hope that this - with planned videos and podcasts - will cover all your interests. </p>
+<p>I hope that this - with planned videos and podcasts - will cover all your interests. </p>-->
 
 
     

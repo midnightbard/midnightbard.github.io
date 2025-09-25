@@ -98,9 +98,9 @@ layout: live-template
 </style>
 
 <div class="container">
-    <!--<div id="main-player-container"></div>-->
+    <div id="main-player-container"></div>
     
-    <div style="color:red;">In preparation...</div>
+    <!--<div style="color:red;">In preparation...</div>-->
     <div id="main-video-title"></div>
     
     <script src="https://gumroad.com/js/gumroad.js"></script>
@@ -136,7 +136,7 @@ layout: live-template
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pricing-body-moonlight">
-          <p>Use private chat to ask. Your live reading starts after tip, and your messages stay private.The higher the tip, the deeper and more detailed your reading will be. </p>
+          <p>Tip and receive your personal reading via email or on YouTube Community tab within 24H.  </p>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="94EFKHDSXWJ26" />
@@ -204,7 +204,7 @@ layout: live-template
     <hr/>
 <h3>Incoming live streams</h3> 
 
-<!--<div id="upcoming-container"></div>-->
+<div id="upcoming-container"></div>
     
     
     <hr/>
@@ -214,7 +214,8 @@ layout: live-template
 <script>
     const videos = [
 
-         { id: '' },
+         { id: 'ST3xhFq1pVo' },
+        { id: 'iNyszN_Sc6I' }
          
         
     ];
@@ -264,7 +265,7 @@ layout: live-template
 
 <hr/>
 
-<p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
+<!--<p>Dear audience we will have a few different types of live streams to make things more interesting: </p>
 
 <p>1. Broadcast - pre-recorded videos, you can send Superchat/paypal together with your question to receive a reading in comments ( Mon-Fri)</p>
 
@@ -274,4 +275,4 @@ layout: live-template
 
 <p>4. Séance free tarot reading text only, no camera, audio maybe  - 1 card only  -  you pay with a good will and positive vibrations,  but only 1 card per person, no more, so that I don't spend too much of your good mojo ( occasionally, random surprise appearance )</p>
 
-<p>I hope that this - with planned videos and podcasts - will cover all your interests. </p>
+<p>I hope that this - with planned videos and podcasts - will cover all your interests. </p>-->
