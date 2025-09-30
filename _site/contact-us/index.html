@@ -292,11 +292,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="header-mobile"><nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
   <div class="container-fluid">
     
-<a class="navbar-brand" href="/">
-  <h1>
-    <i class="bi bi-cloud-moon"></i>    
-  </h1>
-</a>
+<a class="navbar-brand" href="/"><h1><i class="bi bi-cloud-moon"></i></h1></a>
+<a class="navbar-brand" href="/shop"><h1><i class="bi bi-bag"></i></h1></a>
+<a class="navbar-brand" href="/updates"><h1><i class="bi bi-journal"></i></h1></a>
+<a class="navbar-brand" href="/contact-us/"><h1><i class="bi bi-envelope-at"></i></h1></a>
     
     
     
@@ -317,64 +316,17 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       
   
-     <h2 id="flag-container">👋 </h2>
-    <script>
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          const countryCode = data.country_code.toLowerCase();
-          const countryName = data.country_name;
-        
-          const flagImg = document.createElement('img');
-          flagImg.src = `https://flagcdn.com/40x30/${countryCode}.png`;
-          flagImg.alt = `${countryName} flag`;
-          flagImg.style.verticalAlign = 'middle';
-          flagImg.style.marginLeft = '8px';
-          
-          const countryText = document.createElement('span');
-          countryText.textContent = countryName;
-          countryText.style.verticalAlign = 'middle';
-          countryText.style.marginLeft = '6px';
-          countryText.style.fontSize = '0.9em'; 
-          
-          const container = document.getElementById('flag-container');
-          container.appendChild(flagImg);
-          container.appendChild(countryText);
-        })
-        .catch(error => console.error('Error fetching country data:', error));
-    </script>
+     
 <div class="offcanvas-body">
     
 
-<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a><br/>
 <a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a>  <br/>
-<span class="ipa"><a href="/shop"><i class="bi bi-bag">  </i>Shop</a><br/></span>
-<span class="ipa"><a href="/activity"><i class="bi bi-book">  </i>Activity</a><br/></span>
-<span class="ipa"><a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/></span>
+
+<a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/>
 
     <hr/>
   
-  <h5 class="offcanvas-title"><i>LINKS</i></h5>
-    
-  <a href="https://github.com/midnightbard"><i class="bi bi-github"></i> Github</a>  <br/>  
-  <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" rel="me"><i class="bi bi-bluesky"></i> Bluesky</a><br/>
-  <a href="https://www.youtube.com/@MidnightBardTarot" rel="me"><i class="bi bi-youtube"></i> YouTube</a>
-    <br/>  
   
-  <hr/>
-    
-<h5 class="offcanvas-title">CONTACT</h5>
-
-
-<p>
-    <small>
-<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>  
-<i class="bi bi-envelope"></i>  midnightbard@proton.me<br/>  
-      
-   </small>
-</p> 
-    
-<hr/>
 
       </div>
     </div>
@@ -417,18 +369,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 
                 <div style="padding-top:5px;">
-                    <p>We’d love to hear from you! Whether you have questions about our tarot readings, workshops, products, or just want to share your mystical experiences, the Midnight Bard Tarot team is here to help. Reach out to us through the options below, and we’ll get back to you as soon as possible.</p>
+                    <p>For general inquiries, you can contact me on Ko-Fi.</p>
 
-<h2 id="email-us">Email Us</h2>
-
-<p>General Support: support@midnightbard.com</p>
-
-<p>Alternative Contact: midnightbard@proton.me</p>
-
-<p>Follow us and connect on our social media channels for updates, tips, and community discussions. Links are available in the footer of our website or on the homepage.</p>
-
-<p>For urgent inquiries, please include “URGENT” in your email subject line. We aim to respond within 24-48 hours during business days.
-Midnight Bard Tarot – Let’s weave your story together.</p>
+<p>Email support: support@midnightbard.com</p>
 
                   
                 </div>                 

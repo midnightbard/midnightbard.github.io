@@ -300,11 +300,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="header-mobile"><nav class="navbar bg-tertiary" data-bs-theme="dark" fixed-top>
   <div class="container-fluid">
     
-<a class="navbar-brand" href="/">
-  <h1>
-    <i class="bi bi-cloud-moon"></i>    
-  </h1>
-</a>
+<a class="navbar-brand" href="/"><h1><i class="bi bi-cloud-moon"></i></h1></a>
+<a class="navbar-brand" href="/shop"><h1><i class="bi bi-bag"></i></h1></a>
+<a class="navbar-brand" href="/updates"><h1><i class="bi bi-journal"></i></h1></a>
+<a class="navbar-brand" href="/contact-us/"><h1><i class="bi bi-envelope-at"></i></h1></a>
     
     
     
@@ -325,64 +324,17 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       
   
-     <h2 id="flag-container">👋 </h2>
-    <script>
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          const countryCode = data.country_code.toLowerCase();
-          const countryName = data.country_name;
-        
-          const flagImg = document.createElement('img');
-          flagImg.src = `https://flagcdn.com/40x30/${countryCode}.png`;
-          flagImg.alt = `${countryName} flag`;
-          flagImg.style.verticalAlign = 'middle';
-          flagImg.style.marginLeft = '8px';
-          
-          const countryText = document.createElement('span');
-          countryText.textContent = countryName;
-          countryText.style.verticalAlign = 'middle';
-          countryText.style.marginLeft = '6px';
-          countryText.style.fontSize = '0.9em'; 
-          
-          const container = document.getElementById('flag-container');
-          container.appendChild(flagImg);
-          container.appendChild(countryText);
-        })
-        .catch(error => console.error('Error fetching country data:', error));
-    </script>
+     
 <div class="offcanvas-body">
     
 
-<a href="/updates"><i class="bi bi-wrench">  </i>Updates</a><br/>
 <a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a>  <br/>
-<span class="ipa"><a href="/shop"><i class="bi bi-bag">  </i>Shop</a><br/></span>
-<span class="ipa"><a href="/activity"><i class="bi bi-book">  </i>Activity</a><br/></span>
-<span class="ipa"><a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/></span>
+
+<a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/>
 
     <hr/>
   
-  <h5 class="offcanvas-title"><i>LINKS</i></h5>
-    
-  <a href="https://github.com/midnightbard"><i class="bi bi-github"></i> Github</a>  <br/>  
-  <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" rel="me"><i class="bi bi-bluesky"></i> Bluesky</a><br/>
-  <a href="https://www.youtube.com/@MidnightBardTarot" rel="me"><i class="bi bi-youtube"></i> YouTube</a>
-    <br/>  
   
-  <hr/>
-    
-<h5 class="offcanvas-title">CONTACT</h5>
-
-
-<p>
-    <small>
-<i class="bi bi-envelope"></i>  support@midnightbard.com<br/>  
-<i class="bi bi-envelope"></i>  midnightbard@proton.me<br/>  
-      
-   </small>
-</p> 
-    
-<hr/>
 
       </div>
     </div>
@@ -689,7 +641,7 @@ Before leaving, thank the place — silently or aloud — for holding you.</p>
 
 <p>And perhaps, when you leave, you carry a little bit of that forest stillness back into the rush of daily life.</p>
              
-<script src="https://giscus.app/client.js"
+<!--<script src="https://giscus.app/client.js"
         data-repo="midnightbard/midnightbard.github.io"
         data-repo-id="R_kgDOOUeZdw"
         data-category="General"
@@ -703,7 +655,7 @@ Before leaving, thank the place — silently or aloud — for holding you.</p>
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script>              
+</script>-->              
 </div>      	
         
     </div>
@@ -805,54 +757,6 @@ Before leaving, thank the place — silently or aloud — for holding you.</p>
   }
 </style>
 
-<style>
-    /*
-    * This CSS block is simplified to only include essential styling
-    * that may not be covered by Bootstrap and to target the Gumroad form.
-    */
-    #gumroad-follow-form-embed {
-        display: grid;
-        grid-auto-flow: column;
-        gap: 0.75rem;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    #gumroad-follow-form-embed-button {
-        /*
-        * Keep only the Gumroad-specific styling for the button hover effect
-        * which isn't part of standard Bootstrap buttons.
-        */
-        transition-timing-function: ease-out;
-        transition-duration: 0.14s;
-        transition-property: transform;
-        color: black !important; /* Ensure the text is black */
-    }
-
-    #gumroad-follow-form-embed-button:hover {
-        transform: translate(-0.25rem, -0.25rem);
-        box-shadow: .25rem .25rem 0rem rgb(0, 0, 0);
-        background-color: #ff90e8; /* Gumroad pink on hover */
-    }
-
-    #gumroad-follow-form-embed-input:focus-within {
-        outline: 0.125rem solid #ff90e8;
-    }
-</style>
-
-<form class="input-with-button" action="https://gumroad.com/follow_from_embed_form" method="post" id="gumroad-follow-form-embed">
-    <input type="hidden" name="seller_id" value="3304738702667"/>
-    <div class="input-group">
-        <input id="gumroad-follow-form-embed-input" type="email" class="form-control" placeholder="Your email address" name="email" value=""/>
-        <button class="btn btn-primary" type="submit" id="gumroad-follow-form-embed-button">Subscribe</button>
-    </div>
-</form>
-
-<br/>
-
-
-
 <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
 
   <div class="social-buttons-row">
@@ -860,42 +764,22 @@ Before leaving, thank the place — silently or aloud — for holding you.</p>
       <a href="https://www.youtube.com/@MidnightBardTarot" class="social-btn btn" style="background-color:#ff0202;" target="_blank" rel="noopener noreferrer" title="Subscribe on YouTube">
       <i class="fa-brands fa-youtube text-white"></i>
     </a>
-      
-<a href="https://bsky.app/profile/midnightbardtarot.bsky.social" class="social-btn btn" style="background-color:#0886fe;" target="_blank" rel="noopener noreferrer" title="Follow me on Bluesky">
-      <i class="bi bi-bluesky text-white"></i>
+    
+    
+    <a href="https://ko-fi.com/midnightbard" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="KoFi">
+      <i class="fa fa-shopping-bag text-white"></i>
     </a>
-      
-    <a href="https://mastodon.social/@midnightbardtarot" class="social-btn btn" style="background-color:#6263fc;" target="_blank" rel="me noopener noreferrer" title="Follow me on Mastodon">
-      <i class="fa-brands fa-mastodon text-white"></i>
-    </a>
+
       
     <a href="https://www.threads.net/@midnightbardtarot" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on Threads">
       <i class="fa-brands fa-threads text-white"></i>
     </a>
       
-    
-      
-  </div>
-
-  <div class="social-buttons-row">
-      
-       <a href="https://github.com/midnightbard" class="social-btn btn"  style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on GitHub">
-      <i class="fa-brands fa-github text-white"></i>
-    </a>
-      
-<a href="https://midnight-bard.tumblr.com" class="social-btn btn btn-tumblr" target="_blank" rel="noopener noreferrer" title="Follow me on Tumblr">
-      <i class="fa-brands fa-tumblr text-white"></i>
-    </a>
-      
-    <a href="https://www.pinterest.com/midnightbardtarot/" class="social-btn btn" style="background-color:#ff0202;" target="_blank" rel="noopener noreferrer" title="Follow me on Pinterest">
-      <i class="fa-brands fa-pinterest text-white"></i>
-    </a>
-      
-    <a href="https://www.tiktok.com/@midnightbardtarot" class="social-btn btn"  style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on TikTok">
+  <a href="https://www.tiktok.com/@midnightbardtarot" class="social-btn btn"  style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on TikTok">
       <i class="fa-brands fa-tiktok text-white"></i>
-    </a>
+    </a>  
       
-      
+
   </div>
 
 </div>
