@@ -15,6 +15,127 @@ media: frontpage
     <img src="/pictures/mb.png" alt="Profile Image">
     
   </div>
+  
+  <span style="float: right;">
+   
+      <button id="tipButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricingModalMoonlight">
+        <i class="bi bi-currency-dollar"></i> Tarot Reading
+    </button>
+    
+    
+    
+    <!-- Pricing Modal -->
+<div class="modal fade" id="pricingModalMoonlight" tabindex="-1" aria-labelledby="pricingModalLabelMoonlight" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content pricing-content-moonlight">
+      <div class="modal-header pricing-header-moonlight">
+        <h5 class="modal-title" id="pricingModalLabelMoonlight"><i class="bi bi-globe"></i> <i class="bi bi-currency-dollar"></i> Tips - International <img src="https://flagcdn.com/24x18/us.png" alt="United States">   </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pricing-body-moonlight">
+          <p>Tip and receive your personal reading via email or on YouTube Community tab within 24H.  </p>
+          
+        <a href="https://ko-fi.com/c/428197384e">Commission</a> or 
+          
+          <iframe id='kofiframe' src='https://ko-fi.com/midnightbard/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='midnightbard'></iframe>
+        
+      </div>
+         <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
+            </div>
+    </div>
+  </div>
+</div>
+      
+      
+    
+    <button id="euTipButton" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#euPricingModal" style="display: none;">
+        <i class="bi bi-currency-euro"></i> Tarot Reading
+    </button>
+    
+    <!-- EU Modal  -->
+<div class="modal fade" id="euPricingModal" tabindex="-1" aria-labelledby="euPricingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="euPricingModalLabel"><i class="bi bi-currency-euro"></i>  Tips - <img src="https://flagcdn.com/24x18/eu.png" alt="European Union">  </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                Based upon frivolous actions, you can get one free, or sponsor us: 
+              <a href="https://ko-fi.com/midnightbard">Sponsor</a><iframe id='kofiframe' src='https://ko-fi.com/midnightbard/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='612' title='midnightbard'></iframe>
+                <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="LBDUXS3VUCVZJ" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="What do you want to buy? "/>
+        What do you want to buy? 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select name="os0">
+          <option value="One question">
+            One question €8.50 EUR
+          </option>
+          <option value="Two question + energy reading">
+            Two question + energy reading €17.00 EUR
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on1" value="Message - questions"/>
+        Message - questions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os1" maxLength="200" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on2" value="Where to send - email, YouTube ????"/>
+        Where to send - email, YouTube ????
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os2" maxLength="200" />
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="EUR" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>-->
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+    
+    
+<button id="affiliateTipButton" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#affiliatePricingModal" style="display: none;">
+        <i class="bi bi-globe"></i> <img src="https://flagcdn.com/24x18/in.png" alt="India">  <img src="https://flagpedia.net/data/org/w1160/au.webp" style="width:24px;height:18px;" alt="Africa Union"> Tarot Reading 
+    </button></span>
 </div>
 
 

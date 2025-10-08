@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <a href="/diary"><i class="bi bi-journal-richtext">  </i>Diary</a>  <br/>
 
-<a href="/lives"><i class="bi bi-youtube">  </i>Lives</a><br/>
+
 
     <hr/>
   
@@ -341,7 +341,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
     
 </nav>
-
 
 
 
@@ -828,7 +827,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="social-buttons-row">
       
-      <a href="https://www.youtube.com/@MidnightBardTarot" class="social-btn btn" style="background-color:#ff0202;" target="_blank" rel="noopener noreferrer" title="Subscribe on YouTube">
+      <a href="https://www.youtube.com/@MidnightBardTarot" class="social-btn btn" style="background-color:#000;" target="_blank" rel="noopener noreferrer" title="Subscribe on YouTube">
       <i class="fa-brands fa-youtube text-white"></i>
     </a>
     
@@ -837,18 +836,50 @@ document.addEventListener("DOMContentLoaded", function () {
       <i class="fa fa-shopping-bag text-white"></i>
     </a>
 
-      
-    <a href="https://www.threads.net/@midnightbardtarot" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on Threads">
-      <i class="fa-brands fa-threads text-white"></i>
-    </a>
+     
       
   <a href="https://www.tiktok.com/@midnightbardtarot" class="social-btn btn"  style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on TikTok">
       <i class="fa-brands fa-tiktok text-white"></i>
     </a>  
+    
+    <a href="https://www.instagram.com/midnightbardtarot/" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on">
+      <i class="fa-brands fa-instagram text-white"></i>
+    </a>
+    
+    <a href="https://www.threads.net/@midnightbardtarot" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on Threads">
+      <i class="fa-brands fa-threads text-white"></i>
+    </a>
+   </div> 
+    
+  
       
 
-  </div>
+<div class="social-buttons-row">
+  
 
+  
+  <a href="https://www.reddit.com/user/midnightbard_/" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on">
+      <i class="fa-brands fa-reddit text-white"></i>
+    </a>
+  
+  <a href="https://www.quora.com/profile/Midnight-Bard" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on">
+      <i class="fa-brands fa-quora text-white"></i>
+    </a>
+  
+  <a href="https://www.linkedin.com/in/midnight-bard/" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on">
+      <i class="fa-brands fa-linkedin text-white"></i>
+    </a>
+  
+   <a href="https://bsky.app/profile/midnightbardtarot.bsky.social" class="social-btn btn" style="background-color:#000;" target="_blank" rel="noopener noreferrer" title="Follow me on Bluesky">
+      <i class="bi bi-bluesky text-white"></i>
+    </a>
+  
+  <a href="https://peakd.com/@moonlitenite" class="social-btn btn" style="background-color:#000000;" target="_blank" rel="noopener noreferrer" title="Follow me on">
+      <i class="fa-brands fa-hive text-white"></i>
+    </a>
+
+</div>
+  
 </div>
 
 <style>
@@ -883,6 +914,140 @@ document.addEventListener("DOMContentLoaded", function () {
   background-color: #273444;
   border-color: #273444;
 }
+</style>
+
+
+<script>
+  fetch('http://ip-api.com/json/')
+    .then(response => response.json())
+    .then(data => {
+      const blockedCountries = [
+        'CN', 'IN', 'BD', 'PK', 'LK', 'NP', 'MV', 'BT', 'AF', 'AL', 'DZ', 'AZ', 'BH', 'BA', 'BN', 'BF', 
+        'TD', 'KM', 'DJ', 'EG', 'GA', 'GM', 'GN', 'GW', 'ID', 'IR', 'IQ', 'JO', 'XK', 'KW', 'KG', 'LB', 
+        'LY', 'MY', 'ML', 'MR', 'MA', 'NE', 'NG', 'OM', 'PS', 'QA', 'SA', 'SN', 'SL', 'SO', 'SD', 'SY', 
+        'TJ', 'TN', 'TR', 'TM', 'AE', 'UZ', 'YE', 'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 
+        'SR', 'UY', 'VE', 'AO', 'BJ', 'BW', 'BI', 'CM', 'CV', 'CF', 'CG', 'CD', 'CI', 'GQ', 'ER', 'ET', 
+        'GH', 'KE', 'LS', 'LR', 'MG', 'MW', 'MU', 'MZ', 'NA', 'RW', 'ST', 'SC', 'ZA', 'SS', 'SZ', 'TZ', 
+        'TG', 'UG', 'EH', 'ZM', 'ZW','HT', 'KI', 'SB', 'TL', 'TV', 
+      ];
+      const euCountries = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'HR', 'MC']; // EU
+
+      const tipButton = document.getElementById('tipButton');
+      const affiliateTipButton = document.getElementById('affiliateTipButton');
+      const euTipButton = document.getElementById('euTipButton');
+
+      if (blockedCountries.includes(data.countryCode)) {
+        // Show affiliate button for blocked countries
+        if (tipButton) tipButton.style.display = 'none';
+        if (euTipButton) euTipButton.style.display = 'none';
+        if (affiliateTipButton) affiliateTipButton.style.display = 'inline-block';
+      } else if (euCountries.includes(data.countryCode)) {
+        // Show EU button for Croatia
+        if (tipButton) tipButton.style.display = 'none';
+        if (affiliateTipButton) affiliateTipButton.style.display = 'none';
+        if (euTipButton) euTipButton.style.display = 'inline-block';
+      } else {
+        // Show regular tip button for other countries
+        if (affiliateTipButton) affiliateTipButton.style.display = 'none';
+        if (euTipButton) euTipButton.style.display = 'none';
+        if (tipButton) tipButton.style.display = 'inline-block';
+      }
+    })
+    .catch(error => console.error('Error fetching GeoIP:', error));
+</script>
+
+
+
+
+<div class="modal fade" id="affiliatePricingModal" tabindex="-1" aria-labelledby="affiliatePricingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="affiliatePricingModalLabel"><i class="bi bi-globe"></i>  Tips - Africa - Asia - India <img src="https://flagcdn.com/24x18/in.png" alt="India">  <img src="https://flagpedia.net/data/org/w1160/au.webp" style="width:24px;height:18px;" alt="Africa Union"> </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+              
+              You have discount based on location. <br/>
+              Leave me either YouTube username or email. <br/>
+                
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="FWH5ENQYZB5XS" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="Tips"/>
+        Tips
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select name="os0">
+          <option value="Small reading">
+            Small reading $1.00 USD
+          </option>
+          <option value="2 questions + Energy">
+            2 questions + Energy $2.00 USD
+          </option>
+          <option value="General, multiple">
+            General, multiple $5.00 USD
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on1" value="Message - questions"/>
+        Message - questions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os1" maxLength="200" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="hidden" name="on2" value="Where to send - email, YouTube ????"/>
+        Where to send - email, YouTube ????
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="os2" maxLength="200" />
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a class="btn btn-primary custom-btn" href="/shop/live-stream-tips/">
+                    Details
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <style>
+
+    
+    .custom-btn {
+    color: #ffffff !important; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active {
+    color: #ffffff !important; /* Ensure white text on hover, focus, and active states */
+}
+
 </style>
 
 <!-- CONSPIRACY -->
